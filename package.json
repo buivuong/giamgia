@@ -31,7 +31,6 @@
     "underscore": "^1.8.3"
   },
   "browser": {
-    "semantic-ui": "./src/libs/semantic/dist/semantic.js",
     "facebook-connect": "./src/libs/facebook-connect.js"
   }
 }
