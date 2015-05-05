@@ -4,12 +4,22 @@ var Registration = require('./registration.jsx');
 var Template = React.createClass({
 	render: function(){
 		return (
-			<div className="ui two column centered grid">
-				<div className="column">
-					<div className="ui segment">
-						<Registration/>
+			<div className="register-page simple">
+				<section className="content register-page">
+					<div className="content-liquid">
+						<div className="row" style={{marginRight: 0}}>
+							<div className="register-page-container" style={{lineHeight: '446px', minHeight: '446px'}}>
+								<div className="boxed animated">
+									<div className="inner">
+										<div className="login-title text-center">
+											<h4>Tạo Account Mới</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+				</section>
 			</div>
 		);
 	}

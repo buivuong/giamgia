@@ -11,8 +11,8 @@ var Icon = React.createClass({
 			size: 24
 		};
 	},
-	_mergeStyles: function(...args){
-		return Object.assign({}, ...args);
+	_mergeStyles: function(args){
+		return Object.assign({}, args);
 	},
 	renderGraphic: function(){
 		switch(this.props.icon){

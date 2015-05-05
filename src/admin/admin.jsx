@@ -7,11 +7,7 @@ var RouteHandler = Router.RouteHandler;
 var Admin = React.createClass({
 	render: function(){
 		return (
-			<section className="content">
-				<Navbar/>
-				
-				<RouteHandler/>
-			</section>
+			<RouteHandler/>
 		);
 	}
 });
