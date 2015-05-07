@@ -1,7 +1,7 @@
 var React = require('react');
 var validation = require('../../../config/validation.jsx');
 var $ = require('jquery-browserify');
-var Icon = require('../../../config/icon.jsx');
+//var Icon = require('../../../config/icon.jsx');
 
 var ReactIntl = require('react-intl');
 
@@ -95,7 +95,6 @@ var Registration = React.createClass({
 				<div className="panel-heading">
 					<div className="title">
 						<h2>
-							<Icon icon="email" size="72"/>
 							Thông tin cơ bản
 						</h2>
 					</div>

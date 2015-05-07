@@ -12,8 +12,9 @@ var Template = React.createClass({
 								<div className="boxed animated">
 									<div className="inner">
 										<div className="login-title text-center">
-											<h4>Tạo Account Mới</h4>
+											<h4>Tạo cửa hiệu mới</h4>
 										</div>
+										<Registration/>
 									</div>
 								</div>
 							</div>
