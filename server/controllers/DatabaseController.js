@@ -1,6 +1,30 @@
 var knex = require('../connect.js');
 
 module.exports = {
+	getAdminUsersCreate: function(req, res){
+		knex.schema.dropTableIfExists('admin_users')
+		.then(function(){
+			knex.schema.createTable('admin_users', function(table){
+				table.increments('id').primary();
+				table.string('email', 150);
+				table.string('password', 150);
+				table.dateTime('last_login_at');
+				table.text('token');
+				table.boolean('active');
+				table.timestamps();
+				table.boolean('deleted');
+
+			})
+			.catch(function(error){
+				res.json({message: error});
+			})
+		})
+		.catch(function(error){
+			res.json({message: error});
+		})
+	},
+
+
 	getUsersCreate: function(req, res){
 		knex.schema.dropTableIfExists('users')
 		.then(function(){

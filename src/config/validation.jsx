@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var $ = require('jquery-browserify');
 
 var Validation = {
 	isEmpty: function(value){
@@ -13,108 +14,98 @@ var Validation = {
 			return false;
 		return true;
 	},
-	min: function(value, compare){
-		if(!this.isEmpty(value) && value.toString().length < compare)
+	isMin: function(value, compare){
+		if(value.toString().length < compare)
 			return false;
 		return true;
 	},
-	
-	/*s
-	* field (input, id, message)
-	*/
-	divEmptyWithInputGroup: function(field){
-		if(_.isUndefined(field.message))
-			field.message = 'Bắt buộc nhập';
-
-		var text_error = '<p class="input-help" id="'+field.id+'_empty_error" style="color: #D93240;">'+field.message+'</p>';
-
-		if(this.isEmpty(field.input)){
-			$('#'+field.id).addClass('error');
-			if(!$('#'+field.id).parent().parent().find('#'+field.id+'_empty_error').length)
-				$('#'+field.id).parent().parent().append(text_error);
-			return true;
-		}else{
-			if(!this.isEmpty(field.input) && !$('#'+field.id).parent().parent().find('.input-help').length)
-				$('#'+field.id).removeClass('error');
-			$('#'+field.id).parent().parent().find('#'+field.id+'_empty_error').remove();
-			return false;
-		}
-	},
 
 	/*
-	* field (input, id, message)
+	* 
+	field (input, id, errors: 
+		[
+			{type: required, message},
+			{type: email, message},
+			{type: min, message, min},
+			{type: compare, message, compare_field: (input, id, message) }
+		]
+	)
 	*/
-	divEmailWithInputGroup: function(field){
-		if(_.isUndefined(field.message))
-			field.message = 'Phải nhập email chính xác';
+	divErrorWithInputGroup: function(field){
+		var message = '';
+		var valid = true;
+		var compare_field = {};
+		var compare_check = 0;
 
-		var text_error = '<p class="input-help" id="'+field.id+'_email_error" style="color: #D93240;">'+field.message+'</p>';
+		_.forEach(field.errors, function(error){
+			switch(error.type){
+				case 'required':
+					if(valid){
+						if(this.isEmpty(field.input))
+							valid = false;
+						message = error.message;
+					}
+					break;
+				case 'email':
+					if(valid){
+						if(!this.isEmail(field.input))
+							valid = false;
+						message = error.message;
+					}
+					break;
+				case 'min':
+					if(valid){
+						if(!this.isMin(field.input, error.min))
+							valid = false;
+						message = error.message;
+					}
+					break;
+				case 'compare':
+					if(valid){
+						if(error.compare_field.input.toString() !== field.input.toString()){
+							valid = false;
+							compare_check = 2;
+						}else compare_check = 1;
+						message = error.message
+					}
+					compare_field = $.extend({}, error.compare_field);
+					break;
+			}
+		}.bind(this))
 
-		if(!this.isEmpty(field.input) && !this.isEmail(field.input)){
+		var text_error = '<p class="input-help" style="color: #D93240;">'+message+'</p>';
+
+		$('#'+field.id).parent().parent().find('.input-help').remove();
+		$('#'+field.id).removeClass('error');
+
+		if(!valid){
+			$('#'+field.id).parent().parent().append(text_error);
 			$('#'+field.id).addClass('error');
-			if(!$('#'+field.id).parent().parent().find('#'+field.id+'_email_error').length)
-				$('#'+field.id).parent().parent().append(text_error);
 
-			return false;
+			// CASE COMPARE OBJECT
+			if(compare_check === 2){
+				$('#'+compare_field.id).parent().parent().find('.input-help').remove();
+				$('#'+compare_field.id).removeClass('error');
+
+				var text_error_compare = '<p class="input-help" style="color: #D93240;">'+compare_field.message+'</p>';
+
+				$('#'+compare_field.id).parent().parent().append(text_error_compare);
+				$('#'+compare_field.id).addClass('error');
+			}else if(compare_check === 1){
+				$('#'+compare_field.id).parent().parent().find('.input-help').remove();
+				$('#'+compare_field.id).removeClass('error');				
+			}
+			//END CASE COMPARE OBJECT	
 		}else{
-			if(!this.isEmpty(field.input) && !$('#'+field.id).parent().parent().find('.input-help').length)
-				$('#'+field.id).removeClass('error');
-			$('#'+field.id).parent().parent().find('#'+field.id+'_email_error').remove();
-
-			return true;
+			// CASE COMPARE OBJECT
+			$('#'+compare_field.id).parent().parent().find('.input-help').remove();
+			$('#'+compare_field.id).removeClass('error');
+			// END CASE COMPARE OBJECT
 		}
-	},
-
-	/*
-	* field (input, id, message)
-	* number: min number
-	*/
-	divMinWithInputGroup: function(field, number){
-		if(_.isUndefined(field.message))
-			field.message = 'Phải nhập ít nhất '+number+' ký tự';
-		var text_error = '<p class="input-help" id="'+field.id+'_min_error" style="color: #D93240;">'+field.message+'</p>';
-
-		if(!this.min(field.input, number) && !this.isEmpty(field.input)){
-			$('#'+field.id).addClass('error');
-			if(!$('#'+field.id).parent().parent().find('#'+field.id+'_min_error').length)
-				$('#'+field.id).parent().parent().append(text_error);
-
-			return false;
-		}else{
-			if(!this.isEmpty(field.input) && !$('#'+field.id).parent().parent().find('.input-help').length)
-				$('#'+field.id).removeClass('error');
-			$('#'+field.id).parent().parent().find('#'+field.id+'_min_error').remove();
-
-			return true;
-		}
-	},
-
-	/*
-	* firstField (input, id, message)
-	* lastField (input, id, message)
-	*/
-	divCompareWithInputGroup: function(firstField, lastField){
-		var text_error_first = '<p class="input-help" id="'+firstField.id+'_compare_error" style="color: #D93240;">'+firstField.message+'</p>';
-		var text_error_last = '<p class="input-help" id="'+lastField.id+'_compare_error" style="color: #D93240;">'+lastField.message+'</p>';
-
-		if(firstField.input.toString() !== lastField.input.toString()
-			&& (!this.isEmpty(firstField.input)&&!this.isEmpty(lastField.input)) ){
-			$('#'+firstField.id).addClass('error');
-			$('#'+lastField.id).addClass('error');
-			if(!$('#'+firstField.id).parent().parent().find('#'+firstField.id+'_compare_error').length)
-				$('#'+firstField.id).parent().parent().append(text_error_first);
-			if(!$('#'+lastField.id).parent().parent().find('#'+lastField.id+'_compare_error').length)
-				$('#'+lastField.id).parent().parent().append(text_error_last);
-		}else{
-			$('#'+firstField.id).parent().parent().find('#'+firstField.id+'_compare_error').remove();
-			$('#'+lastField.id).parent().parent().find('#'+lastField.id+'_compare_error').remove();
-
-			if(!this.isEmpty(firstField.input) && !$('#'+firstField.id).parent().parent().find('.input-help').length)
-				$('#'+firstField.id).removeClass('error');
-			if(!this.isEmpty(lastField.input) && !$('#'+lastField.id).parent().parent().find('.input-help').length)
-				$('#'+lastField.id).removeClass('error');
-		}
+		
+		return valid;
 	}
+	
 }
 
 module.exports = Validation;

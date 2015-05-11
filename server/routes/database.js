@@ -11,4 +11,8 @@ module.exports = function(app){
 
 	app.get(module+'users_socials/create', DatabaseController.getUsersSocialsCreate);
 	/* END USERS */
+
+	/* ADMIN */
+	app.get(module+'admin_users/create', DatabaseController.getAdminUsersCreate);
+	/* END ADMIN */
 }

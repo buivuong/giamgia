@@ -14,6 +14,10 @@ require('./routes/security')(app);
 require('./routes/database')(app);
 /* END ROUTES */
 
+/* ADMIN */
+require('./routes/admin/security')(app);
+/* END ADMIN */
+
 var server = app.listen(3001, function(){
 	var host = server.address().address;
 	var port = server.address().port;
