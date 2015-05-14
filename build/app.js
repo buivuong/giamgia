@@ -49385,24 +49385,20 @@ module.exports = require('./lib/React');
 },{"./lib/React":73}],201:[function(require,module,exports){
 var React = require('react');
 var Router = require('react-router');
-var Left_Menu = require('./lmenu.jsx');
 
 var RouteHandler = Router.RouteHandler;
 
 var Admin = React.createClass({displayName: "Admin",
 	render: function(){
 		return (
-			React.createElement("section", {className: "content"}, 
-				React.createElement(Left_Menu, null), 
-				React.createElement(RouteHandler, null)
-			)
+			React.createElement(RouteHandler, null)
 		);
 	}
 });
 
 module.exports = Admin;
 
-},{"./lmenu.jsx":206,"react":200,"react-router":31}],202:[function(require,module,exports){
+},{"react":200,"react-router":31}],202:[function(require,module,exports){
 var React = require('react');
 
 var Template = React.createClass({displayName: "Template",
@@ -49641,6 +49637,7 @@ module.exports = LeftMenu;
 var React = require('react');
 var Router = require('react-router');
 var Auth = require('../mixins/admin_auth.jsx');
+var Left_Menu = require('./lmenu.jsx');
 
 var RouteHandler = Router.RouteHandler;
 
@@ -49651,14 +49648,17 @@ var LoggedIn = React.createClass({displayName: "LoggedIn",
 	},
 	render: function(){
 		return (
-			React.createElement(RouteHandler, null)
+			React.createElement("section", {className: "content"}, 
+				React.createElement(Left_Menu, null), 
+				React.createElement(RouteHandler, null)
+			)
 		);
 	}
 });
 
 module.exports = LoggedIn;
 
-},{"../mixins/admin_auth.jsx":228,"react":200,"react-router":31}],208:[function(require,module,exports){
+},{"../mixins/admin_auth.jsx":228,"./lmenu.jsx":206,"react":200,"react-router":31}],208:[function(require,module,exports){
 var Q = require('q');
 var jquery = require('jquery-browserify');
 var config = require('../../../config/config.jsx');
