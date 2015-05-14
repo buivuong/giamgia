@@ -11,16 +11,16 @@ var Loader = React.createClass({
 		}
 	},
 	stop: function(){
-		$(React.findDOMNode(this.refs.overlay)).addClass('finished');
+		$(this.getDOMNode()).addClass('finished');
 	},
 	play: function(){
-		$(React.findDOMNode(this.refs.overlay)).removeClass('finished');	
+		$(this.getDOMNode()).removeClass('finished');
 	},
 	render: function(){
 		var position = (this.props.within === 'page')?'fixed':'absolute';
 
 		return (
-			<div className="loader-overlay finished" style={{position: position}} ref="overlay">
+			<div className="loader-overlay finished" style={{position: position}}>
 				<div className="loader-spinner">
 			    	<div className="circle"></div>
 			    	<div className="circle"></div>

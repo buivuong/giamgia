@@ -5,6 +5,7 @@ var $ = require('jquery-browserify');
 var _ = require('lodash');
 var RegistrationModel = require('../models/registration.jsx');
 var moment = require('moment');
+var Confirm = require('../../../components/confirm.jsx');
 
 var Registration = React.createClass({
 	propTypes: {
@@ -12,8 +13,7 @@ var Registration = React.createClass({
 	},
 	contextTypes: {
 		validEmail: React.PropTypes.object,
-		validPassword: React.PropTypes.object,
-		validPasswordRepeat: React.PropTypes.object
+		validPassword: React.PropTypes.object
 	},
 	componentWillMount: function(){
 		this.context.validEmail = {id: 'admin_registration_email', input: ''};
@@ -95,21 +95,35 @@ var Registration = React.createClass({
 			RegistrationModel.registration(postData)
 			.then(function(response){
 				this.props.setLoader(false);
+				this.refs.dialog_email_success.open();
 			}.bind(this), function(error){
 				this.props.setLoader(false);
+				if(error.field === 'email'){
+					this.context.validEmail.message = error.message;
+					Validation.divErrorWithInputGroupFromServer(this.context.validEmail);
+				}else if(error.type === 'email'){
+					this.refs.dialog_email_error.open();
+				}
+
 			}.bind(this))
 		}
 	},
 	render: function(){
 		return (
 			<span>
+				<Confirm header="Thông báo" ref="dialog_email_error" type="error">
+					Email không gửi được ! Mời bạn đăng ký lại lần nữa.
+				</Confirm>
+				<Confirm header="Thông báo" ref="dialog_email_success" type="success">
+					Đăng ký thành công. Mời bạn vui lòng kiểm tra email để xác nhận.
+				</Confirm>
 				<div className="row">
 					<div className="col-md-12">
 						<div className="input-group">
 							<span className="input-group-addon">
 								<Icon icon="email" size="18"/>
 							</span>
-							<input className="form-control" id="admin_registration_email" type="text" placeholder="Địa chỉ email" value={this.state.email} onChange={this.onChangeEmail}/>
+							<input className="form-control" id="admin_registration_email" type="text" placeholder="Địa chỉ email" value={this.state.email} onChange={this.onChangeEmail} maxLength="100"/>
 						</div>
 					</div>
 				</div>
@@ -120,7 +134,7 @@ var Registration = React.createClass({
 							<span className="input-group-addon">
 								<Icon icon="lock" size="18" />
 							</span>
-							<input className="form-control" id="admin_registration_password" type="password" placeholder="Mật khẩu" value={this.state.password} onChange={this.onChangePassword}/>
+							<input className="form-control" id="admin_registration_password" type="password" placeholder="Mật khẩu" value={this.state.password} onChange={this.onChangePassword} maxLength="12"/>
 						</div>
 					</div>
 					<div className="col-md-12">
@@ -128,7 +142,7 @@ var Registration = React.createClass({
 							<span className="input-group-addon">
 								<Icon icon="lock" size="18" />
 							</span>
-							<input className="form-control" id="admin_registration_password_repeat" type="password" placeholder="Nhập lại mật khẩu" value={this.state.password_repeat} onChange={this.onChangePasswordRepeat}/>
+							<input className="form-control" id="admin_registration_password_repeat" type="password" placeholder="Nhập lại mật khẩu" value={this.state.password_repeat} onChange={this.onChangePasswordRepeat} maxLength="12"/>
 						</div>
 					</div>
 				</div>

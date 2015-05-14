@@ -1,6 +1,6 @@
 var React = require('react');
-var Registration = require('./registration.jsx');
 var Loader = require('../../../components/loader.jsx');
+var Forgot = require('./forgot.jsx');
 var Auth_Non_Mixin = require('../../../mixins/admin_non_auth.jsx');
 
 var Template = React.createClass({
@@ -12,6 +12,9 @@ var Template = React.createClass({
 		if(isLoad) this.refs.loader.play();
 		else
 			this.refs.loader.stop();
+	},
+	goToLogin: function(){
+		this.context.router.transitionTo('admin_login');
 	},
 	render: function(){
 		return (
@@ -25,9 +28,14 @@ var Template = React.createClass({
 										<div className="inner">
 											<Loader within="element" ref="loader"/>
 											<div className="login-title text-center">
-												<h4>Tạo tài khoản mới</h4>
+												<h4>Quên mật khẩu</h4>
 											</div>
-											<Registration setLoader={this.setLoader}/>
+											<Forgot setLoader={this.setLoader}/>
+										</div>
+										<div className="row" id="footer-outer">
+											<div className="col-md-6">
+												<a onClick={this.goToLogin}>Đăng nhập</a>
+											</div>
 										</div>
 									</div>
 								</div>

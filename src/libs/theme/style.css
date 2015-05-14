@@ -32,6 +32,7 @@ h6 {
 }
 a {
     color: #333;
+    cursor: pointer;
 }
 a:focus, a:hover {
     text-decoration: none!important;

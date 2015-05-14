@@ -1,17 +1,20 @@
 var React = require('react');
-var Registration = require('./registration.jsx');
 var Loader = require('../../../components/loader.jsx');
+var Login = require('./login.jsx');
 var Auth_Non_Mixin = require('../../../mixins/admin_non_auth.jsx');
 
 var Template = React.createClass({
+	mixins: [Auth_Non_Mixin],
 	contextTypes: {
 		router: React.PropTypes.func
 	},
-	mixins: [Auth_Non_Mixin],
 	setLoader: function(isLoad){
 		if(isLoad) this.refs.loader.play();
 		else
 			this.refs.loader.stop();
+	},
+	goToForgot: function(){
+		this.context.router.transitionTo('admin_forgot');
 	},
 	render: function(){
 		return (
@@ -25,9 +28,14 @@ var Template = React.createClass({
 										<div className="inner">
 											<Loader within="element" ref="loader"/>
 											<div className="login-title text-center">
-												<h4>Tạo tài khoản mới</h4>
+												<h4>Đăng nhập hệ thống</h4>
 											</div>
-											<Registration setLoader={this.setLoader}/>
+											<Login setLoader={this.setLoader}/>
+										</div>
+										<div className="row" id="footer-outer">
+											<div className="col-md-6">
+												<a onClick={this.goToForgot}>Quên mật khẩu ?</a>
+											</div>
 										</div>
 									</div>
 								</div>

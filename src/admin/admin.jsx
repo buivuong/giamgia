@@ -1,13 +1,16 @@
 var React = require('react');
 var Router = require('react-router');
-var Navbar = require('./navbar.jsx');
+var Left_Menu = require('./lmenu.jsx');
 
 var RouteHandler = Router.RouteHandler;
 
 var Admin = React.createClass({
 	render: function(){
 		return (
-			<RouteHandler/>
+			<section className="content">
+				<Left_Menu/>
+				<RouteHandler/>
+			</section>
 		);
 	}
 });

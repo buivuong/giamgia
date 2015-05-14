@@ -21,6 +21,15 @@ var Validation = {
 	},
 
 	/*
+	* field (input, id, message)
+	*/
+	divErrorWithInputGroupFromServer: function(field){
+		var text_error = '<p class="input-help" style="color: #D93240;">'+field.message+'</p>';
+		$('#'+field.id).addClass('error');
+		$('#'+field.id).parent().parent().append(text_error);
+	},
+
+	/*
 	* 
 	field (input, id, errors: 
 		[
