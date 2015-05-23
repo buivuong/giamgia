@@ -2,7 +2,7 @@ var knex = require('../connect.js');
 var commonFunction =  require('../function.js');
 var jwt = require('jsonwebtoken');
 var SecurityModel = require('../models/SecurityModel.js');
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = {
 	//REGISTRATION

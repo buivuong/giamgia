@@ -1,6 +1,6 @@
 var knex = require('../../connect.js');
 var commonFunction =  require('../../function.js');
-var _ = require('underscore');
+var _ = require('lodash');
 var passwordHash = require('password-hash');
 var Mail = require('../../mail.js');
 var moment = require('moment');

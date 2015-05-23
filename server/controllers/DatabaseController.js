@@ -10,6 +10,7 @@ module.exports = {
 				table.string('password', 150);
 				table.dateTime('last_login_at');
 				table.text('token');
+				table.integer('parent').defaultTo(0);
 				table.boolean('active');
 				table.timestamps();
 				table.boolean('deleted');
