@@ -2,6 +2,7 @@ var React = require('react');
 var Validation = require('Validation');
 var Alert = require('Alert');
 var LoginModel = require('admin/login/models/model');
+var Cookies = require('cookies-js');
 
 var Form = React.createClass({
 	propTypes: {
@@ -11,11 +12,17 @@ var Form = React.createClass({
 		validEmail: {id: 'admin_login_email', input: null},
 		validPassword: {id: 'admin_login_password', input: null}
 	},
+	contextTypes: {
+		router: React.PropTypes.func
+	},
+	goToForgot: function(){
+		this.context.router.transitionTo('admin_forgot');
+	},
 	getInitialState: function(){
 		return {
 			email: null,
 			password: null,
-			remember_me: null
+			remember_me: false
 		}
 	},
 	onChangeEmail: function(event){
@@ -64,8 +71,11 @@ var Form = React.createClass({
 			this.props.setLoader(true);
 			LoginModel.login(postData)
 			.then(function(response){
-				localStorage.setItem('admin_user', JSON.stringify(response.data));
-				//this.context.router.transitionTo('admin_dashboard');
+				if(response.data.remember_me === 'true') var expire = Infinity;
+				else var expire = 108000;
+				Cookies.set('admin_user', JSON.stringify(response.data), {expires: expire});
+
+				this.context.router.transitionTo('admin_dashboard');
 			}.bind(this), function(error){
 				this.props.setLoader(false);
 				if(error.field === 'email'){
@@ -129,7 +139,7 @@ var Form = React.createClass({
 					</div>
 					<div className="row">
           				<div className="input-field col s12">
-            				<p className="margin medium-small">
+            				<p className="margin medium-small" onClick={this.goToForgot}>
             					<a>Quên mật khẩu</a>
             				</p>
           				</div>

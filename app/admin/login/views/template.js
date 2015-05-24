@@ -4,9 +4,6 @@ var Loader = require('Loader');
 //var Auth_Non_Mixin = require('../../../mixins/admin_non_auth.jsx');
 
 var Template = React.createClass({
-	contextTypes: {
-		router: React.PropTypes.func
-	},
 	/*mixins: [Auth_Non_Mixin],*/
 	setLoader: function(isLoad){
 		if(isLoad) this.refs.loader.play();
