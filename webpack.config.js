@@ -50,5 +50,7 @@ config.addVendor('materialize.css', bower_dir + '/materialize/dist/css/materiali
 config.addVendor('style.css', lib_dir + '/style.css');
 config.addVendor('google-connect', lib_dir + '/google-connect.js');
 config.addVendor('google-mask-clusterer', bower_dir + '/js-marker-clusterer/src/markerclusterer.js');
+config.addVendor('tipso.css', bower_dir + '/tipso/src/tipso.min.css');
+config.addVendor('tipso', bower_dir + '/tipso/src/tipso.min.js');
 
 module.exports = config;

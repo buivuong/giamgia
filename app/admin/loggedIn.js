@@ -1,6 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
-var Nav = require('admin/nav');
+var Nav = require('admin/views/nav');
 
 var RouteHandler = Router.RouteHandler;
 
@@ -9,6 +9,11 @@ var LoggedIn = React.createClass({
 		return (
 			<span>
 				<Nav/>
+				<div id="main">
+					<div className="wrapper">
+
+					</div>
+				</div>
 				<RouteHandler/>
 			</span>
 		);

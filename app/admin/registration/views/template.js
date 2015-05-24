@@ -1,13 +1,13 @@
 var React = require('react');
-var Registration = require('admin/registration/views/form.js');
+var Registration = require('admin/registration/views/form');
 var Loader = require('Loader');
-//var Auth_Non_Mixin = require('../../../mixins/admin_non_auth.jsx');
+var Auth_Non_Mixin = require('admin_non_auth');
 
 var Template = React.createClass({
 	contextTypes: {
 		router: React.PropTypes.func
 	},
-	/*mixins: [Auth_Non_Mixin],*/
+	mixins: [Auth_Non_Mixin],
 	setLoader: function(isLoad){
 		if(isLoad) this.refs.loader.play();
 		else

@@ -8,6 +8,8 @@ require('materialize.css');
 require('style.css');
 require('google-connect');
 require('google-mask-clusterer');
+require('tipso.css');
+require('tipso');
 
 var App = require('app');
 var Admin = require('admin/admin');
