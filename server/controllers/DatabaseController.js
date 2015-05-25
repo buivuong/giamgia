@@ -6,6 +6,7 @@ module.exports = {
 		.then(function(){
 			knex.schema.createTable('admin_users', function(table){
 				table.increments('id').primary();
+				table.string('name', 150);
 				table.string('email', 150);
 				table.string('password', 150);
 				table.dateTime('last_login_at');

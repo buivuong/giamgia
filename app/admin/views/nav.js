@@ -1,7 +1,7 @@
 var React = require('react');
 var Cookies = require('cookies-js');
 var Confirm = require('Confirm');
-var Tooltip = require('tooltip');
+var Tooltip = require('Tooltip');
 
 var Nav = React.createClass({
     contextTypes: {

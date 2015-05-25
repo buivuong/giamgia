@@ -9,12 +9,14 @@ var Form = React.createClass({
 	},
 	validation: {
 		validEmail: {id: 'admin_registration_email', input: null},
+		validName: {id: 'admin_registration_name', input: null},
 		validPassword: {id: 'admin_registration_password', input: null},
-		validPasswordRepeat: {id: 'admin_registration_password_repeat', input: null}
+		validPasswordRepeat: {id: 'admin_registration_password_repeat', input: null},
 	},
 	getInitialState: function(){
 		return {
 			email: null,
+			name: null,
 			password: null,
 			password_repeat: null
 		}
@@ -30,6 +32,17 @@ var Form = React.createClass({
 			this.setState({email: event.target.value});
 
 		return Validation.divError(this.validation.validEmail);
+	},
+	onChangeName: function(event){
+		this.validation.validName.input = $('#'+this.validation.validName.id).val(); 
+		this.validation.validName.errors = [
+			{type: 'required', message: 'Bắt buộc nhập'}
+		];
+
+		if(!_.isUndefined(event))
+			this.setState({name: event.target.value});
+
+		return Validation.divError(this.validation.validName);
 	},
 	onChangePassword: function(event){
 		this.validation.validPassword.input = $('#'+this.validation.validPassword.id).val();
@@ -67,6 +80,7 @@ var Form = React.createClass({
 		var valid_all = true;
 
 		valid_all = this.onChangeEmail();
+		valid_all = this.onChangeName();
 		valid_all = this.onChangePassword();
 		valid_all = this.onChangePasswordRepeat();
 
@@ -74,6 +88,7 @@ var Form = React.createClass({
 
 		var postData = {
 			email: this.state.email, 
+			name: this.state.name,
 			password: this.state.password,
 			last_login_at: now,
 			created_at: now,
@@ -123,6 +138,13 @@ var Form = React.createClass({
 							<i className="mdi-communication-email prefix"></i>
 							<input id="admin_registration_email" className="validate" type="text" value={this.state.email} onChange={this.onChangeEmail} maxLength="100"/>
 							<label htmlFor="admin_registration_email">Email</label>
+						</div>
+					</div>
+					<div className="row margin">
+						<div className="input-field col s12">
+							<i className="mdi-social-person prefix"></i>
+							<input id="admin_registration_name" className="validate" type="text" value={this.state.name} onChange={this.onChangeName} maxLength="100"/>
+							<label htmlFor="admin_registration_name">Tên người dùng</label>
 						</div>
 					</div>
 					<div className="row margin">

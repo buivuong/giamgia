@@ -19,6 +19,8 @@ var Test = require('test');
 var Admin_Forgot = require('admin/forgot/views/template');
 var Admin_LoggedIn = require('admin/loggedIn');
 var Admin_Dashboard = require('admin/dashboard/views/main');
+var Admin_Shop_List = require('admin/shop/views/list/template');
+/*var Admin_Shop_Add = require('admin/shop/views/add/template');*/
 
 var routes = (
 	<Route name="app" path="/" handler={App}>
@@ -28,6 +30,8 @@ var routes = (
 			<Route name="admin_forgot" path="forgot" handler={Admin_Forgot}/>
 			<Route name="loggedIn" handler={Admin_LoggedIn}>
 				<Route name="admin_dashboard" path="dashboard" handler={Admin_Dashboard}/>
+				<Route name="admin_shops" path="shops" handler={Admin_Shop_List}/>
+				/*<Route name="admin_shops" path="shop/add" handler={Admin_Shop_Add}/>*/
 			</Route>
 		</Route>
 		<Route name="test" handler={Test}/>

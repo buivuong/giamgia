@@ -120,7 +120,7 @@ var main = {
 						last_login_at: now
 					})
 					.then(function(updated){
-						var admin_user = {email: row.email, token: token, remember_me: postData.remember_me};
+						var admin_user = {email: row.email, name: row.name, token: token, remember_me: postData.remember_me};
 
 						res.json({data: admin_user});
 					}, function(error){
