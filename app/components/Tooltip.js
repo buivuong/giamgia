@@ -9,7 +9,10 @@ var Tooltip = {
             background: 'black',
             width: 'auto'
         });
-	}
+	},
+    hide: function(field){
+        $(field.dom).tipso('hide');
+    }
 };
 
 module.exports = Tooltip;

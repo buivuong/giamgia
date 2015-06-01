@@ -10,4 +10,5 @@ module.exports = function(app){
 	app.get(module+'checkToken/:token', SecurityController.getCheckToken);
 
 	app.get(module+'checkAuth', SecurityController.getCheckAuth);
+	app.post(module+'changePass', SecurityController.postChangePass);
 }

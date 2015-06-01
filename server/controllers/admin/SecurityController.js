@@ -7,6 +7,50 @@ var moment = require('moment');
 var Config = require('../../config.js');
 
 var main = {
+	postChangePass: function(req, res){
+		var postData = req.body.data;
+
+		knex('admin_users')
+		.where({
+			email: postData.email
+		})
+		.then(function(rows){
+			if(rows.length > 0){
+				var row = rows[0];
+
+				if(!passwordHash.verify(postData.password, row.password))
+					res.status(500).json({field: 'password', message: 'Mật khẩu cũ nhập sai'});
+				else{
+					var new_password = passwordHash.generate(postData.new_password);
+
+					var body = '<p>Bạn vừa mới thay đổi mật khẩu trong chương trình quảng cáo Realtime của chúng tôi</p>'
+					+ '<p><b>Email của bạn:</b> '+postData.email+'</p>'
+					+ '<p><b>Mật khẩu của bạn:</b> '+postData.new_password+'</p>'
+					+ '<p>Mời bạn <a href="'+Config.domainClient+'admin/login">Đăng nhập hệ thống</a></p>';
+
+					Mail.templateRegistrationAdminUsers(postData.email, body)
+					.then(function(response){
+						knex('admin_users')
+						.where({
+							email: postData.email
+						})
+						.update({
+							password: new_password
+						})
+						.then(function(updated){
+							res.status(200).json({data: 'success'});
+						}, function(error){
+							res.status(400).json({error: error});
+						})
+					}, function(error){
+						res.status(500).json({error: error, type: 'email'});
+					})
+				}
+			}
+		}, function(error){
+			res.status(400).json({error: error});
+		})
+	},
 	getCheckAuth: function(req, res){
 		var bearerToken;
 	    var bearerHeader = req.headers.authorization;

@@ -10,13 +10,16 @@ app.use(bodyParser.urlencoded({limit: '100mb', extended: true}));
 app.use(cors());
 
 /* ROUTES */
-require('./routes/security')(app);
 require('./routes/database')(app);
 /* END ROUTES */
 
 /* ADMIN */
 require('./routes/admin/security')(app);
 /* END ADMIN */
+
+/* SHOP TAGS */
+require('./routes/admin/shop_tags')(app);
+/* END SHOP TAGS */
 
 var server = app.listen(3001, function(){
 	var host = server.address().address;

@@ -33,10 +33,6 @@ var config = {
  	},
  	plugins: [
         new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
-            "root.jQuery": "jquery",
 			"_": "lodash",
 			"Q": "q",
 			"moment": "moment"
@@ -44,11 +40,6 @@ var config = {
     ]
 };
 
-config.addVendor('jquery', node_dir + '/jquery/dist/jquery.min.js');
-config.addVendor('materialize', bower_dir + '/materialize/dist/js/materialize.min.js');
-config.addVendor('materialize.css', bower_dir + '/materialize/dist/css/materialize.min.css');
-config.addVendor('style.css', lib_dir + '/style.css');
-config.addVendor('google-connect', lib_dir + '/google-connect.js');
 config.addVendor('google-mask-clusterer', bower_dir + '/js-marker-clusterer/src/markerclusterer.js');
 config.addVendor('tipso.css', bower_dir + '/tipso/src/tipso.min.css');
 config.addVendor('tipso', bower_dir + '/tipso/src/tipso.min.js');

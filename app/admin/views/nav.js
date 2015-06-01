@@ -45,18 +45,8 @@ var Nav = React.createClass({
                             		<li>    
                                 		<a className="waves-effect waves-block waves-light"
                                             ref="menu_guide">
-                                			<i className="mdi-social-public"></i>
+                                			<i className="mdi-action-help"></i>
                                 		</a>
-                            		</li>
-                            		<li>
-                            			<a className="waves-effect waves-block waves-light toggle-fullscreen">
-                            				<i className="mdi-action-settings-overscan"></i>
-                            			</a>
-                            		</li>
-                            		<li>
-                            			<a className="waves-effect waves-block waves-light">
-                            				<i className="mdi-social-notifications"></i>
-                            			</a>
                             		</li>
                             		<li>
                             			<a className="waves-effect waves-block waves-light" onClick={this.logout}

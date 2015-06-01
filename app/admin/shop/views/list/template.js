@@ -11,6 +11,10 @@ var Template = React.createClass({
 	componentDidMount: function(){
         Tooltip.open({dom: React.findDOMNode(this.refs.button_add), content: 'Thêm cửa hàng mới'});
     },
+    goToFormAdd: function(){
+    	Tooltip.hide({dom: React.findDOMNode(this.refs.button_add)});
+    	this.context.router.transitionTo('admin_shop_add');
+    },
 	render: function(){
 		var links = [
 			{text: 'Các cửa hàng'}
@@ -19,7 +23,7 @@ var Template = React.createClass({
 		return (
 			<section id="content">
 				<div className="fixed-action-btn" style={{top: '65px', right: '24px'}}>
-					<a className="btn-floating btn-large red" ref="button_add">
+					<a className="btn-floating btn-large red" ref="button_add" onClick={this.goToFormAdd}>
 						<i className="large mdi-editor-mode-edit"></i>
 					</a>
 				</div>

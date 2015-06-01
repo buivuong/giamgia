@@ -3,10 +3,6 @@ var Router = require('react-router');
 var Route = Router.Route;
 var Cookies = require('cookies-js');
 
-require('materialize');
-require('materialize.css');
-require('style.css');
-require('google-connect');
 require('google-mask-clusterer');
 require('tipso.css');
 require('tipso');
@@ -20,7 +16,8 @@ var Admin_Forgot = require('admin/forgot/views/template');
 var Admin_LoggedIn = require('admin/loggedIn');
 var Admin_Dashboard = require('admin/dashboard/views/main');
 var Admin_Shop_List = require('admin/shop/views/list/template');
-/*var Admin_Shop_Add = require('admin/shop/views/add/template');*/
+var Admin_Shop_Add = require('admin/shop/views/add/template');
+var Admin_Changepass = require('admin/changepass/views/template');
 
 var routes = (
 	<Route name="app" path="/" handler={App}>
@@ -31,7 +28,8 @@ var routes = (
 			<Route name="loggedIn" handler={Admin_LoggedIn}>
 				<Route name="admin_dashboard" path="dashboard" handler={Admin_Dashboard}/>
 				<Route name="admin_shops" path="shops" handler={Admin_Shop_List}/>
-				/*<Route name="admin_shops" path="shop/add" handler={Admin_Shop_Add}/>*/
+				<Route name="admin_shop_add" path="shop/add" handler={Admin_Shop_Add}/>
+				<Route name="admin_changepass" path="changepass" handler={Admin_Changepass}/>
 			</Route>
 		</Route>
 		<Route name="test" handler={Test}/>

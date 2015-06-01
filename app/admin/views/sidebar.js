@@ -16,11 +16,17 @@ var Sidebar = React.createClass({
 			this.setState({name: admin_user.name});
 		}else this.setState({name: 'No Name'});
 	},
+	componentDidMount: function(){
+		$('#user_dropdown_button').dropdown();
+	},
 	goToDashboard: function(){
 		this.context.router.transitionTo('admin_dashboard');
 	},
 	goToShops: function(){
 		this.context.router.transitionTo('admin_shops');
+	},
+	goToChangepass: function(){
+		this.context.router.transitionTo('admin_changepass');	
 	},
 	render: function(){
 		return (
@@ -32,7 +38,23 @@ var Sidebar = React.createClass({
 								<img src="images/avatar.jpg" className="circle responsive-img valign profile-image"/>
 							</div>
 							<div className="col s8 m8 l8">
-								<a className="btn-flat dropdown-button waves-effect waves-light white-text profile-btn">{this.state.name}</a>
+								<a className="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
+									data-activates="user_dropdown" id="user_dropdown_button">
+									{this.state.name}
+									<i className="mdi-navigation-arrow-drop-down right"></i>
+								</a>
+								<ul id="user_dropdown" className="dropdown-content">
+                                    <li>
+                                        <a>
+                                            Tiểu sử
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onClick={this.goToChangepass}>
+                                            Thay mật khẩu
+                                        </a>
+                                    </li>
+                                </ul>
 								<p className="user-roal">Quản trị</p>
 							</div>
 						</div>
@@ -46,16 +68,6 @@ var Sidebar = React.createClass({
 						<a className="waves-effect waves-cyan" onClick={this.goToShops}>
 							<i className="mdi-action-store"></i> Các cửa hàng
 							<span className="new badge">4</span>
-						</a>
-					</li>
-					<li className="bold">
-						<a className="waves-effect waves-cyan">
-							<i className="mdi-social-person"></i> Quản lý người dùng
-						</a>
-					</li>
-					<li className="bold">
-						<a className="waves-effect waves-cyan">
-							<i className="mdi-action-settings"></i> Thiết lập
 						</a>
 					</li>
 				</ul>

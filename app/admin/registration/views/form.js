@@ -136,14 +136,14 @@ var Form = React.createClass({
 					<div className="row margin">
 						<div className="input-field col s12">
 							<i className="mdi-communication-email prefix"></i>
-							<input id="admin_registration_email" className="validate" type="text" value={this.state.email} onChange={this.onChangeEmail} maxLength="100"/>
+							<input id="admin_registration_email" type="text" value={this.state.email} onChange={this.onChangeEmail} maxLength="100"/>
 							<label htmlFor="admin_registration_email">Email</label>
 						</div>
 					</div>
 					<div className="row margin">
 						<div className="input-field col s12">
 							<i className="mdi-social-person prefix"></i>
-							<input id="admin_registration_name" className="validate" type="text" value={this.state.name} onChange={this.onChangeName} maxLength="100"/>
+							<input id="admin_registration_name" type="text" value={this.state.name} onChange={this.onChangeName} maxLength="100"/>
 							<label htmlFor="admin_registration_name">Tên người dùng</label>
 						</div>
 					</div>

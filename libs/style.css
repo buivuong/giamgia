@@ -1496,3 +1496,17 @@ input.bv-invalid[type="text"], input.bv-invalid[type="text"]:focus, input.bv-inv
   }
 }
 /* END SPINNER */
+
+/* CUSTOM MATERIALIZE */
+i.right{
+	margin-left: 0;
+}
+
+.select2-container--default .select2-selection--multiple{
+	border-radius: 0;
+}
+
+.input-field input[type=search]{
+	padding-left: 10px;
+}
+/* END CUSTOM MATERIALIZE */
