@@ -1509,4 +1509,9 @@ i.right{
 .input-field input[type=search]{
 	padding-left: 10px;
 }
+
+.materialize-tags .tt-dropdown-menu{
+	position: absolute;
+	bottom: 0;
+}
 /* END CUSTOM MATERIALIZE */
