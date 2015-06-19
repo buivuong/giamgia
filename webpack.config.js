@@ -10,10 +10,10 @@ var config = {
 		this.resolve.alias[name] = path;
 		this.module.noParse.push(new RegExp(path));
 	},
-	entry: ['./app/main.js'],
+	entry: ['./client/main.js'],
 	resolve: { 
-		root: path.resolve(__dirname, 'app'),
-		modulesDirectories: ['node_modules', 'app/mixins', 'app/config', 'app/components'],
+		root: path.resolve(__dirname, 'client'),
+		modulesDirectories: ['node_modules', 'client/mixins', 'client/components', 'client/modules'],
 		alias: {} 
 	},
 	output: {
@@ -28,14 +28,18 @@ var config = {
       		{ test: /\.woff|woff2$/,   loader: "url-loader?prefix=font/&limit=100000&mimetype=application/font-woff" },
             { test: /\.ttf$/,    loader: "url-loader?prefix=font/" },
             { test: /\.eot$/,    loader: "url-loader?prefix=font/" },
-            { test: /\.svg$/,    loader: "url-loader?prefix=font/" }
+            { test: /\.svg$/,    loader: "url-loader?prefix=font/" },
+			{include: /\.json$/, loaders: ["json-loader"]}
     	]
  	},
+	resolve: {
+		extensions: ['', '.json', '.jsx', '.js']
+	},
  	plugins: [
         new webpack.ProvidePlugin({
-			"_": "lodash",
 			"Q": "q",
-			"moment": "moment"
+			"moment": "moment-timezone",
+			"async": "async"
         })
     ]
 };
