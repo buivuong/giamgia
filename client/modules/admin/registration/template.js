@@ -1,5 +1,5 @@
 var React = require('react');
-var Registration_Form = require('admin/registration/form');
+var Registration_Form = require('modules/admin/registration/form');
 
 var Template = React.createClass({
 	contextTypes: {

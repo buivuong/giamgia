@@ -1,6 +1,6 @@
 var React = require('react');
 var RegistrationController = require('controllers/admin/registration.js');
-var FormMixin = require('FormMixin');
+var FormMixin = require('mixins/FormMixin');
 
 var Form = React.createClass({
 	id_pre: 'admin_registration_',

@@ -1,5 +1,5 @@
 var React = require('react');
-var Login_Form = require('admin/login/form');
+var Login_Form = require('modules/admin/login/form');
 
 var Template = React.createClass({
 	contextTypes: {

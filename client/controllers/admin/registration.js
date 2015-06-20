@@ -1,6 +1,6 @@
 var React = require('react');
 var SecurityService = require('services/security');
-var Validation = require('validation');
+var Validation = require('components/validation');
 var Config = require('config');
 
 var Controller = {

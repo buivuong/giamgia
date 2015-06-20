@@ -10,15 +10,18 @@ var config = {
 		this.resolve.alias[name] = path;
 		this.module.noParse.push(new RegExp(path));
 	},
-	entry: ['./client/main.js'],
-	resolve: { 
-		root: path.resolve(__dirname, 'client'),
-		modulesDirectories: ['node_modules', 'client/mixins', 'client/components', 'client/modules'],
+	entry: {
+		web: './client/main.js',
+		mobile: './mobile_client/main.js'
+	},
+	resolve: {
+		root: path.resolve(__dirname),
+		modulesDirectories: ['node_modules', 'client', 'mobile_client'],
 		alias: {} 
 	},
 	output: {
 		path: './build',
-		filename: 'bundle.js'
+		filename: '[name].bundle.js'
 	},
 	module: {
 		noParse: [],
@@ -43,9 +46,5 @@ var config = {
         })
     ]
 };
-
-config.addVendor('google-mask-clusterer', bower_dir + '/js-marker-clusterer/src/markerclusterer.js');
-config.addVendor('tipso.css', bower_dir + '/tipso/src/tipso.min.css');
-config.addVendor('tipso', bower_dir + '/tipso/src/tipso.min.js');
 
 module.exports = config;
