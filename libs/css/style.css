@@ -1,0 +1,970 @@
+
+/******** I. GLOBAL *********/
+/****************************/
+
+/*** 1. FONT ***/
+h1, h2, h3, h4, .myriadpro, .leftpanel, .heading {
+	font-family: MyriadPro-Regular, "Myriad Pro Regular", MyriadPro, "Myriad Pro", Helvetica, Arial, sans-serif
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	color:#000;
+}
+
+/*** 2. COLOR  ***/
+.color-main{
+	color:#1b6a9f;
+}
+.color-green{
+	color:green;
+}
+.color-red{
+	color:red;
+}
+.color-red-strong{
+	color:red !important;
+}
+
+/*** 3. BACKGROUND  ***/
+.bg-main{
+	background:#428BCA;
+}
+
+/*** 4. BORDER  ***/
+
+.border-blue-color{
+	border-color:#4983ad;
+}
+.border-bluelight{
+	border-color:#bad2e2;
+}
+.border-main {
+	border: #bbd2e2 1px solid
+}
+.border-blue{
+	border: 1px solid #5F96BC;
+}
+
+
+/***  5. BUTTON ***/
+.btn{
+	border-radius: 0;
+}
+.btn-primary{
+	background:#49a4e0 !important;
+	border:none;
+	padding: 4px 10px;
+	border-radius:0;
+}
+.btn-blue{
+	background: #5FAFE4;
+	color:white;
+}
+
+/***  6. OTHER ***/
+
+.header-right {
+	margin-right: 50px
+}
+.border-double{
+	border-bottom:1px solid #5F96BC;
+	border-top:1px solid #5F96BC;
+	display:inline-block;
+	padding:3px 0;
+}
+.general-wrap {
+	padding-left: 20px;
+	padding-right: 60px
+}
+
+.question{
+	background: #06C;
+	color:#fff;
+	border-radius: 50%;
+}
+.dropdown-menu{
+	border-radius:0;
+}
+/*left- menu*/
+*{
+	border-radius: 0;
+}
+.userlogin {
+	margin: 20px 0 40px;
+	text-align: center
+}
+.userlogin img {
+	display: inline-block;
+}
+.nav-stacked > li + li{
+	margin-top: 1px;
+}
+
+/*********** II. PAGE ****************/
+/*************************************/
+
+/****** 1.1  HEADER PROFILE *******/
+
+.header-profile-box {
+	background: #fff;
+	padding: 20px 60px 0 20px;
+	position: relative;
+	height: 80px;
+}
+.header-profile-box hr {
+	border-color: #5F96BC;
+	margin: 14px 0 0
+}
+ .header-profile-box img {
+	margin: 0 25px 0 0;
+	-moz-border-radius: 65px;
+	-webkit-border-radius: 65px;
+	border-radius: 65px;
+	vertical-align: middle
+}
+.header_profile {
+	position: absolute;
+	padding: 10px;
+	top: 0;
+	left: 70px
+}
+.header-profile p {
+	margin-bottom: 0
+}
+.header-title {
+	position: absolute;
+	left: 70px;
+	top: 50%;
+	margin-top: -10px
+}
+.nav-pills > li > a{
+	border-radius:0;
+}
+.dashboard {
+	margin: 0 0 10px;
+	font-size: 24px;
+	color: #1b6a9f;
+	text-decoration: none
+}
+/**  Quick Link*/
+ .quicklink-box {
+	padding: 9.5px 20px;
+	background: #f6f6f6
+}
+.quicklink {
+	padding-left: 20px
+}
+.quicklink:before {
+	position: absolute;
+	content: "/";
+	color: #666;
+	margin-left: -13px
+}
+
+
+/******** 1.2 FOOTER*********/
+
+footer {
+	padding: 10px 60px 10px 20px;
+	font-family: Arial, Helvetica, sans-serif
+}
+.hr-footer {
+	border-color: #cfd5e5;
+}
+.menu-footer li a {
+	padding: 0 3px;
+	color: #666
+}
+.menu-footer li:first-child a {
+	padding-left: 0
+}
+.menu-footer li:before {
+	position: absolute;
+	content: "-";
+	margin-left: -10px
+}
+.menu-footer li:first-child:before {
+	content: ""
+}
+.social-box{
+	float:right;
+}
+.social-box li {
+	color: #fff;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	background: #5fafe4;
+	width: 37px;
+	height: 37px;
+	text-align: center;
+	font-size: 23px;
+	padding-top: 7px
+}
+.hotline-footer {
+	padding-left: 25px
+}
+.hotline-footer:before {
+	background: url(../images/phoneicon.png);
+	position: absolute;
+	content: "";
+	margin-left: -25px;
+	margin-top: 3px;
+	width: 18px;
+	height: 18px
+}
+
+/*********** II. PAGE ****************/
+/*************************************/
+
+/****** 1. HOME *******/
+/* Find Provider */
+.find-provider-wrap {
+	padding: 30px 60px 20px 20px;
+	background: #f2f2f2;
+}
+.find-provider-wrap .heading-box {
+	position: relative
+}
+.find-provider-wrap .heading {
+	position: absolute;
+	top: 0;
+	left: 60px
+}
+/* Home Body */
+ .home-body-wrap {
+	padding: 50px 20px 0 !important; 
+}
+ .home-body-wrap img {
+	float: left;
+	margin-right: 15px
+}
+
+/********** 2. TALK TO DOCTOR*********/
+
+/* 2.1 Doctor Group */
+.doctorgroup-wrap {
+	padding: 50px 60px 100px 20px
+}
+.doctorgroup-wrap .page li a {
+	border: #333 1px solid;
+	font-size: 12px;
+	padding: 6px 12px;
+	color: #333;
+	text-decoration: none;
+	display: block;
+	width: 75px
+}
+.doctorgroup-wrap .page li.disabled a {
+	color: #999;
+	border-color: #999
+}
+.doctorgroup-discription-box {
+	padding: 5px 10px;
+	max-width: 168px;
+	min-height: 160px;
+	margin-left: 70px
+}
+.doctorgroup-discription-box .status {
+	margin-bottom: 5px
+}
+.doctorgroup-discription-box .majay {
+	color: #868686
+}
+.doctorgroup-box {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: #f0f0f0 1px solid
+}
+.available {
+	color: #7fba00;
+	padding-left: 25px
+}
+.available::before {
+	background: url(../images/img-available.png) no-repeat;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	margin-top: 0px;
+	margin-left: -25px;
+	content: "";
+}
+ .waiting {
+	color: #fcd116;
+	padding-left: 25px;	
+}
+ .waiting::before {
+	background: url(../images/img-waiting.png) no-repeat;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	margin-top: 0px;
+	margin-left: -25px;
+	content: "";
+}
+.offline {
+	color: rgba(2, 43, 48, 0.5)
+}
+.doctorgroup-box .btn {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	margin-top: 10px;
+}
+
+/****** 2.2 Details ******/
+.doctorgroup-detail-wrap .prices{
+	border: 1px solid #5F96BC;
+	padding: 6px 12px 3px;
+}
+.doctorgroup-detail-wrap .connect{
+	position:absolute;
+	top: 20px;
+	right: 15px;
+	padding: 10px 20px;
+	text-align: center;
+}
+.doctorgroup-detail-wrap .connect .btn{
+	padding: 4px 15px;
+}
+
+/******** 3. MY HEALTH GROUP ************/
+
+/* 3.1 Quicklink My Health */
+.quicklink-header-box {
+	position: absolute;
+	top: 2px;
+	right: 40px
+}
+.header-profile-box.myhealth-wrap hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.quicklink-header-box li {
+	text-align: center
+}
+.quicklink-header-box li a {
+	color: #ef5934;
+	padding: 0 15px
+}
+/* 3.2 Profile box */
+.profile-title-box {
+	padding: 20px 60px 20px 20px;
+	background: #f2f2f2;
+	position: relative
+}
+.save-box {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 40px 60px 40px 20px
+}
+.save-box a img {
+	vertical-align: middle;
+	margin-right: 5px
+}
+.myhealth-body-box {
+	padding: 40px 60px 30px 20px
+}
+.body-box {
+    padding: 30px 60px 30px 20px;
+}
+.myhealth-body-box .measurements {
+	padding: 20px 0
+}
+.myhealth-body-box .detail {
+	width: 100%;
+	background: #49a4e0;
+	padding: 5px 10px;
+	height:61px;
+	
+}
+.myhealth-body-box .detail span{
+	padding: 14px 0;
+	display: block;
+}
+.myhealth-body-box .detail  a{
+	display:block;
+}
+.myhealth-history-wrap {
+	position: relative;
+	padding: 20px 0
+}
+.myhealth-history-wrap .support-link {
+	position: absolute;
+	top: 30px;
+	right: 0px
+}
+.myhealth-history-box {
+	border: #5f96bc 1px solid;
+	padding: 10px 20px 10px 30px;
+	margin-bottom: 30px;
+}
+.myhealth-myproviders-wrap .message-page {
+	top: 5px;
+	right: 15px
+}
+.myhealth-history-wrap{
+	min-height:330px;
+}
+
+/****** 3.3 Measurements ********/
+.add-measurement-box{
+	max-width: 390px;
+	margin:auto;
+}
+.add-measurement-wrap .btn{
+	margin-left: 182px;
+	padding: 3px 36px;
+}
+.add-measurement-box .btn{
+	margin-left:106px;	
+}
+
+/********   4. MESSAGE CENTER  ***********/
+.myhealth-messagecenter-wrap {
+	padding: 0 60px 20px 20px
+}
+.myhealth-messagecenter-wrap .tab-content {
+	border: #5f96bc 1px solid;
+	padding: 10px !important;
+	margin-top: 30px
+}
+/*.myhealth-messagecenter-box {
+	border: #5f96bc 1px solid;
+	padding: 20px 20px 50px;
+	min-height: 435px;
+	position: relative
+}
+.myhealth-messagecenter-box.bg-empty {
+	background: url(../images/bg-empty-message.png) center center no-repeat
+}
+.message-center-list li {
+	margin-bottom: 10px
+}
+.message-center-list li.active {
+	color: #000;
+}
+.message-number {
+	position: absolute;
+	bottom: 5px;
+	left: 10px
+}
+.message-page {
+	position: absolute;
+	bottom: 5px;
+	right: 10px
+}*/
+/********** 5. MY APPOINTMENT*********/
+.upcoming-appointments-box {
+	padding: 30px 20px;
+	min-height: 430px
+}
+.upcoming-appointments-box.empty-box {
+	background: url(../images/bg-empty-appointment.png) center center no-repeat
+}
+
+/********  6. TEST COMPUTER  **********/
+.test-computer-wrap {
+	padding-top: 20px;	
+}
+
+.test-computer-box{
+	min-height: 300px;
+}
+
+.test-computer-wrap .btn-primary{
+	width:120px;
+}
+.test-computer-list{
+	min-height:150px;	
+}
+.test-computer-list li{
+	padding:5px 20px;
+	overflow:hidden;
+    text-overflow:ellipsis;
+	 white-space: nowrap; 
+}
+.webcam-box{
+	min-height:200px;
+}
+
+/********  7. MY ACCOUNT  **********/
+
+.myaccount-box .btn-primary{
+	margin-top:-22px;
+	min-width:70px;
+}
+.myaccount-box .btn-success{
+	margin-top:-24px;
+}
+.myaccount-box dt{
+	width:150px;
+	white-space: normal;
+}
+.myaccount-box dd{
+	margin-left:170px;
+}
+.myaccount-box #tab2 dt{
+	width: 240px;
+}
+.myaccount-box #tab2 dd{
+	margin-left: 260px;
+}
+.myaccount-box #tab2 .specail dt{
+	width: 450px;
+}
+.myaccount-box #tab2 .specail dd{
+	margin-left: 470px;
+}
+.myaccount-box .mih{
+	min-height: 150px;	
+}
+.myaccount-box label.special{
+	width:73px;
+	text-align:right;
+}
+.myaccount-box .radio input[type="radio"]{
+	margin-top:-3px;
+}
+.myaccount-box .save-box{
+	bottom:0;
+	top:auto;
+	padding:20px;
+}
+/********  8. MY ACCOUNT  **********/
+.help-support-wrap .btn-primary{
+	padding: 7px 27px;
+	font-size: 16px;
+}
+
+/******** 9. ASSESSMENT **********/
+.assessment-wrap .form-search{
+	width:300px;
+}
+.assessment-wrap .btn-primary{
+	padding:4px 20px;
+}
+.assessment-box{
+	padding:28px 10px 20px !important;
+}
+
+/******** 10. CONNECT **********/
+.connect-box{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.connect-box .doctorgroup-discription-box{
+	max-width: 200px;
+	min-height: 120px;
+}
+/******  ELEMENT *************/
+/*****************************
+
+/******** A. PANEL**********/
+ .panel{
+	 position:relative;
+	 border-radius:0;
+ }
+ .panel-body {
+	padding: 0;
+}
+.panel-main {
+	border-color: #bbd2e2;
+	width: 235px;
+	margin-right: auto;
+	margin-left: auto
+}
+.panel-main > .panel-heading {
+	color: #FFF;
+	background-color: #1b6a9f;
+	border-color: #bbd2e2
+}
+.panel-footer {
+    padding: 20px;
+}
+.panel-heading, .panel-footer {
+    background: #FFF none repeat scroll 0% 0%;
+    border-color: transparent;
+}
+/******** B. CALENDAR********/
+.ui-datepicker {
+	width: 235px;
+	padding: 0;
+	background-color: #fff;
+	border: #BBD2E2 1px solid;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	margin: -1px
+}
+.ui-datepicker .ui-datepicker-header {
+	background: #1b6a9f
+}
+.ui-datepicker .ui-datepicker-title {
+	color: #fff !important;
+	text-transform: capitalize
+}
+.ui-datepicker table {
+	padding: 0 0.2em 0
+}
+.ui-datepicker th {
+	background: #d9d9d9;
+	color: #1b6a9f
+}
+/********** B.1 my appointment *********/
+.myhealth-myappointment-wrap .ui-datepicker {
+	padding: 0;
+	padding: 0 0.6em
+}
+.myhealth-myappointment-wrap .ui-datepicker .ui-datepicker-header {
+	background: #fff
+}
+.myhealth-myappointment-wrap .ui-datepicker .ui-datepicker-title {
+	color: #1b6a9f !important;
+	font-weight: 700
+}
+.ui-datepicker th {
+	color: #808098
+}
+.myhealth-myappointment-wrap .ui-datepicker-prev {
+	background: transparent url(../images/calendar-arrow-main.png) no-repeat 15px 8px
+}
+.myhealth-myappointment-wrap .ui-datepicker-next {
+	background: transparent url(../images/calendar-arrow-main.png) no-repeat -10px 8px
+}
+.myhealth-myappointment-wrap .ui-state-hover {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: 0.5
+}
+
+/******* C. TAB****/
+.basic-wizard .nav li {
+	width: 190px
+}
+.basic-wizard .nav > li > a {
+	background: #8cc3ea !important;
+	color: #fff !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)" !important;
+	filter: alpha(opacity=100) !important;
+	opacity: 1 !important;
+	border: #fff solid 1px !important;
+	padding: 6px !important
+}
+.basic-wizard .nav li.active a, .basic-wizard .nav li.active a:focus, .basic-wizard .nav li.active a:active {
+	background: #1b6a9f !important;
+	border-right: #fff solid 1px !important
+}
+.basic-wizard .nav li.active:before {
+	position: absolute;
+	border-top: 15px solid #1B6A9F;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	content: "";
+	bottom: -15px;
+	margin-left: 2px;
+	z-index: 5
+}
+.basic-wizard .tab-content {
+	padding-top: 30px
+}
+/* A.1 Test Computer */
+.test-computer-wrap .basic-wizard .nav li{
+	width: 150px;
+}
+.test-computer-wrap .basic-wizard .nav > li > a{
+	padding:9.5px 6px!important;
+}
+
+/********** D. FORM *********/
+.form-control {
+	background-color: transparent;
+	border: #ddd 1px solid;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	width: 100%;
+	height:30px;
+	box-shadow:none;
+}
+
+ .form-control.form-control-small{
+	 width: 60px;
+	font-size: 12px;
+	height: 24px;
+ }
+ select {
+	background-color: transparent;
+	border: 1px solid #DDD;
+	padding: 6px;
+	width: auto
+}
+.control-label {
+	text-align: left;
+	font-weight: 100
+}
+.form-inline label {
+	font-weight: 100
+}
+.form-group {
+	margin-bottom: 10px !important;
+}
+.form-inline select.form-control {
+	padding: 3px 30px 3px 5px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background-color: transparent;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	margin-right: 15px;
+	font-size:16px;
+	color:#000;
+}
+
+.radio, .checkbox{
+	margin:0;
+}
+ select.select-sm{
+	height: 24px;
+	padding: 0 6px;
+	font-size: 12px;
+ }
+.tab3 .myhealth-history-box select.select-sm{
+	  width:70%;
+}
+ /* my health */
+.myhealth-history-box label {
+	font-weight: 100
+}
+.myhealth-history-box .radio{
+	padding-left:15px;
+}
+.myhealth-history-box .radio input[type="radio"] {
+	margin-left: -14px
+}
+.myhealth-history-box .radio label {
+	padding-left: 5px
+}
+.myhealth-history-box .form-control {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid rgb(141, 180, 207);
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	height: 27px;
+	font-size: 12px
+}
+.myhealth-history-wrap .tab3 button{
+    width: 70%;
+}
+/* Message center */
+
+.myhealth-messagecenter-wrap select {
+	padding: 5px;
+	border: 1px solid #a4c3d9;
+	margin-bottom: 30px
+}
+.myhealth-messagecenter-wrap label {
+	padding: 5px 0 5px 20px
+}
+
+/*.form-inline select {
+	margin-top: -4px
+}*/
+
+/****** D.1 Search Form*******/
+.search-wrap {
+	padding: 10px 60px 10px 20px;
+	background: url(../images/bg-search.jpg) no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.search-box {
+	margin: auto
+}
+.myhealth-myhistory-wrap select, 
+.search-wrap select {
+	width: 177px;
+	background-color: transparent;
+	border: #ddd 1px solid;
+	padding: 6px
+}
+.search-wrap .form-control {
+	width: 177px;
+	background-color: transparent;
+	border: #ddd 1px solid;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	color:#000;
+}
+.search-wrap .control-label {
+	text-align: left;
+	font-weight: 100
+}
+.search-wrap button {
+	width: 100%;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	max-width: 323px;
+}
+
+/**** E. MODAL  ***/
+. modal-wrap{
+	padding: 5px 10px;
+	min-height: 100px;
+	margin-left: 70px;
+}
+.modal-body{
+	overflow:auto;
+	height:500px;
+	margin-bottom:20px;
+}
+.modal-header .close{
+ 	opacity: 0.8;
+	color:#fff !important;
+	font-weight:400;
+}
+.modal-body p{
+	margin-bottom:0;
+}
+/******** MEDIA SCREEN  *******/
+ @media screen and (max-width: 992px) {
+.mainpanel .form-inline select.form-control {
+	padding: 3px 20px 3px 5px
+}
+footer {
+	text-align: center
+}
+.myhealth-messagecenter-box.bg-empty, .empty-box {
+	-webkit-background-size: contain !important;
+	background-size: contain !important
+}
+.doctorgroup-wrap, .search-wrap, .myhealth-body-box, .myhealth-messagecenter-wrap, .body-box, footer {
+	padding: 10px 15px
+}
+.mainpanel .find-provider-wrap {
+	padding: 30px 15px 50px
+}
+.mainpanel .header-profile-box {
+	padding: 20px 15px 0
+}
+.mainpanel .general-wrap {
+	padding-left: 15px;
+	padding-right: 15px
+}
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+footer {
+	position: absolute;
+	bottom: -108px;
+	background: #fff;
+	width: 100%
+}
+}
+@media screen and (max-width: 767px) {
+.header-right{
+		margin-right:0;
+}
+.menutoggle {
+    width: 48px !important;
+}
+.menutoggle .fa{
+    margin: 14px 0px 0px 16px !important;
+}
+.myhealth-myhistory-wrap select, .search-wrap select, .search-wrap .input-group, .search-wrap .form-control {
+	width: 100%
+}
+.search-box {
+	width: auto
+}
+.save-box {
+	position: static;
+	padding: 20px 0
+}
+.mainpanel .header-profile-box {
+	height: auto
+}
+.myhealth-history-wrap .support-link {
+	position: static
+}
+.myhealth-history-box .radio input[type="radio"] {
+	margin-left: 10px
+}
+.myhealth-history-box .radio label {
+	padding-left: 30px
+}
+.tab3 .myhealth-history-box select.select-sm,
+.myhealth-history-wrap .tab3 button{
+    width: 100%;
+	margin-top:10px;
+}
+.basic-wizard .nav li {
+	width: auto !important;
+}
+.myhealth-messagecenter-wrap select {
+	margin-bottom: 10px;
+	width: 100%
+}
+.myhealth-messagecenter-box {
+	margin-bottom: 10px
+}
+footer {
+	bottom: -214px
+}
+.myhealth-history-box label.margin-right-larger{
+	padding-left:0 !important;
+	margin-right:0 !important;
+}
+.myhealth-history-box .form-control{
+	display:inline-block;
+}
+.doctorgroup-detail-wrap .connect{
+	position:static;
+}
+.modal-body{
+	height:350px;
+}
+.test-computer-wrap .text-right{
+	text-align:center;
+}
+/*****  MY ACCOUNT  *******/
+.myaccount-box dt{
+	width:100px !important;
+	float:left;
+	text-align:right
+}
+.myaccount-box dd{
+	margin-left:120px !important;
+}
+.myaccount-box .border-left{
+	border-left:none;
+}
+.myaccount-box .discription{
+	border-top: 1px solid #BAD2E2;
+}
+.myaccount-box .radio input[type="radio"]{
+	margin-top:5px;
+}
+.myaccount-box #tab6 select{
+	margin-bottom:6px;
+}
+.myaccount-box .btn-primary,
+.myaccount-box .btn-success {
+    margin-top: 7px;
+    float: none !important;
+}
+.assessment-wrap .form-search {
+    width: 100%;
+    margin-bottom: 6px;
+}
+.social-box{
+	float:none;
+}
+}
