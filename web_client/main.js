@@ -16,12 +16,19 @@ require('wysiwyg-editor');
 require('datetimepicker.css');
 require('datetimepicker');
 
+require('select2.css');
+require('select2');
+
+require('spinner.css');
+require('custom.css');
+
 var Router = require('react-router');
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 
-var initData = require('languages/gb');
+var Config = require('config');
+var initData = require('languages/'+Config.lang);
 var DropLang = require('components/dropdown/DropLang');
 var IntlMixin = ReactIntl.IntlMixin;
 
@@ -55,7 +62,8 @@ var DevAdd = require('dev/components/add');
 
 var Client = require('client/app');
 var Client_Home = require('client/home/view');
-var Client_Login = require('client/users/components/login');
+var Client_Login = require('client/users/components/login/view');
+var Client_Signup = require('client/users/components/signup/view');
 
 var routes = (
     <Route handler={App} name="app" path="/">
@@ -64,6 +72,7 @@ var routes = (
             <DefaultRoute handler={Client_Home}/>
             <Route handler={Client_Home} name="client_home" path="home"/>
             <Route handler={Client_Login} name="client_login" path="login"/>
+            <Route handler={Client_Signup} name="client_signup" path="signup"/>
         </Route>
     </Route>
 );

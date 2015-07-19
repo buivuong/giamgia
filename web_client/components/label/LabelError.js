@@ -15,7 +15,7 @@ var LabelError = React.createClass({
 	},
 	open: function(message){
 		this.setState({
-			display: 'inline-block',
+			display: 'block',
 			message: message
 		});
 	},
@@ -27,9 +27,9 @@ var LabelError = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className={'ui pointing '+this.props.position+' red label'} style={{display: this.state.display}}>
-      			{this.state.message}
-    		</div>
+			<p className="text-danger" style={{display: this.state.display, fontSize: '0.8em'}}>
+				{this.state.message}
+			</p>
 		)
 	}
 });

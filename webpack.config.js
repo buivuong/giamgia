@@ -80,4 +80,10 @@ config.addVendor('wysiwyg-editor.css', bower_dir+'/wysiwyg.js/dist/wysiwyg-edito
 config.addVendor('datetimepicker', bower_dir+'/datetimepicker/jquery.datetimepicker.js');
 config.addVendor('datetimepicker.css', bower_dir+'/datetimepicker/jquery.datetimepicker.css');
 
+config.addVendor('select2.css', lib_dir+'/css/select2.css');
+config.addVendor('select2', lib_dir+'/js/select2.min.js');
+
+config.addVendor('spinner.css', lib_dir+'/spinner.css');
+config.addVendor('custom.css', lib_dir+'/custom.css');
+
 module.exports = config;

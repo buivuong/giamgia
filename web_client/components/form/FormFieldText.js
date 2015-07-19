@@ -3,64 +3,81 @@ var Valid = require('valid');
 
 var Field = React.createClass({
 	$root: null,
-	focus: 0,
-	isClickedForm: 0,
 	propTypes: {
-		id: React.PropTypes.string.isRequired,
-		name: React.PropTypes.string.isRequired,
-		label: React.PropTypes.string,
+		customClass: React.PropTypes.string,
+		customInputClass: React.PropTypes.string,
+		type: React.PropTypes.string,
 		placeholder: React.PropTypes.string,
+		name: React.PropTypes.string,
 		validate: React.PropTypes.object,
-		required: React.PropTypes.bool,
-		type: React.PropTypes.string
+		maxlength: React.PropTypes.number,
+		onChange: React.PropTypes.func
 	},
 	getDefaultProps: function(){
 		return {
+			customClass: 'form-group',
+			customInputClass: 'form-control',
+			maxlength: 150,
 			type: 'text'
 		}
 	},
 	componentDidMount: function(){
 		this.$root = $(React.findDOMNode(this));
-
-		if(this.props.required)
-			this.$root.addClass('required');
 	},
 	clear: function(){
 		this.$root.find('input').val(null);
 	},
 	clearError: function(){
-		this.$root.removeClass('error');
+		this.$root.removeClass('has-error');
 		this.refs.label_error.hide();
 	},
 	addError: function(message){
-		this.$root.addClass('error');
-		this.refs.label_error.open(message);
-	},
-	onChangeInput: function(event){
-		if(this.focus || this.isClickedForm){
-			var error = Valid.getClientError(this.props.validate, event.target.value);
-			if(is.not.empty(error)){
-				this.addError(error);
-			}else{
-				this.clearError();
-			}
+		var split_message = message.split(":");
+		if(split_message.length > 0){
+			this.$root.addClass('has-error');
+			this.refs.label_error.open(split_message[0]);
 		}
 	},
-	onFocusInput: function(event){
-		this.focus = 1;
-		return this.focus;
+	checkNumeric: function(character, value){
+		if(this.props.type === 'numeric'){
+    		if(is.not.number(parseInt(character))){
+    			this.$root.find('input').val(value.slice(0, -1));
+    		}
+    	}
 	},
-	clickForm: function(){
-		this.isClickedForm = 1;
+	checkMaxLength: function(value){
+		if(value.length > this.props.maxlength){
+    		this.$root.find('input').val(value.slice(0, -1));
+    	}
+	},
+    onChangeInput: function(event){
+    	var character = event.target.value.slice(-1);
+
+    	this.checkNumeric(character, event.target.value);
+    	this.checkMaxLength(event.target.value);
+
+    	var error = Valid.getClientError(this.props.validate, event.target.value);
+		if(is.not.empty(error)){
+			this.addError(error);
+		}else{
+			this.clearError();
+			if(is.function(this.props.onChange))
+				this.props.onChange(event);
+		}
+    },
+    getValue: function(){
+    	return this.$root.find('input').val();
     },
 	render: function(){
-		var placeholder = (is.undefined(this.props.placeholder))?this.props.label:this.props.placeholder;
-
 		return (
-			<div className="field">
-        		<label htmlFor={this.props.id}>{this.props.label}</label>
-        		<input id={this.props.id} name={this.props.name} type={this.props.type} 
-        			onFocus={this.onFocusInput} onChange={this.onChangeInput} placeholder={placeholder}/>
+			<div className={this.props.customClass}>
+        		{this.props.children}
+        		<input 
+        			type={this.props.type} 
+        			name={this.props.name} 
+        			className={this.props.customInputClass} 
+					placeholder={this.props.placeholder} 
+					onChange={this.onChangeInput}/>
         		<LabelError message="" ref="label_error"/>
         	</div>
 		)
