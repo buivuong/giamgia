@@ -1,6 +1,6 @@
-var IntlMixin = ReactIntl.IntlMixin;
 var Left = require('client/users/components/signup/left');
 var FormSignup = require('client/users/components/signup/form');
+var IntlMixin = ReactIntl.IntlMixin;
 
 var View = React.createClass({
 	mixins: [IntlMixin],

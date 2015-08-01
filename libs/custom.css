@@ -22,3 +22,7 @@
 	z-index: 1000;
 	transform: translateX(-50%) translateY(-50%);
 }
+
+a{
+	cursor: pointer;
+}

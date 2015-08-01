@@ -86,4 +86,6 @@ config.addVendor('select2', lib_dir+'/js/select2.min.js');
 config.addVendor('spinner.css', lib_dir+'/spinner.css');
 config.addVendor('custom.css', lib_dir+'/custom.css');
 
+config.addVendor('jquery-mask-input', bower_dir+'/jquery.inputmask/dist/jquery.inputmask.bundle.min.js');
+
 module.exports = config;

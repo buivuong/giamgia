@@ -26,6 +26,12 @@ var Field = React.createClass({
 	},
 	clear: function(){
 		this.$root.find('input').val(null);
+		var error = Valid.getClientError(this.props.validate, null);
+		if(is.not.empty(error)){
+			this.addError(error);
+		}else{
+			this.clearError();
+		}
 	},
 	clearError: function(){
 		this.$root.removeClass('has-error');
@@ -49,6 +55,25 @@ var Field = React.createClass({
 		if(value.length > this.props.maxlength){
     		this.$root.find('input').val(value.slice(0, -1));
     	}
+	},
+	onPasteInput: function(event){
+		setTimeout(function(){
+			var inputValue = this.$root.find('input').val();
+			if(inputValue.length > this.props.maxlength) this.$root.find('input').val("");
+		}.bind(this), 0)
+	},
+	onChangeFocus: function(event){
+		var character = event.target.value.slice(-1);
+
+    	this.checkNumeric(character, event.target.value);
+    	this.checkMaxLength(event.target.value);
+
+    	var error = Valid.getClientError(this.props.validate, event.target.value);
+		if(is.not.empty(error)){
+			this.addError(error);
+		}else{
+			this.clearError();
+		}
 	},
     onChangeInput: function(event){
     	var character = event.target.value.slice(-1);
@@ -76,8 +101,10 @@ var Field = React.createClass({
         			type={this.props.type} 
         			name={this.props.name} 
         			className={this.props.customInputClass} 
-					placeholder={this.props.placeholder} 
-					onChange={this.onChangeInput}/>
+					placeholder={this.props.placeholder}
+					onFocus={this.onChangeFocus} 
+					onChange={this.onChangeInput}
+					onPaste={this.onPasteInput}/>
         		<LabelError message="" ref="label_error"/>
         	</div>
 		)

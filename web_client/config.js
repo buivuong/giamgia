@@ -7,19 +7,9 @@ var Config = {
 	serverTimezone: 'Asia/Ho_Chi_Minh',
 	clientTimezone: 'Asia/Ho_Chi_Minh',
 	lang: 'gb',
-	monthOfYear: [
-		{value: "January"},
-		{value: "February"},
-		{value: "March"},
-		{value: "April"},
-		{value: "May"},
-		{value: "June"},
-		{value: "July"},
-		{value: "August"},
-		{value: "September"},
-		{value: "Octorber"},
-		{value: "November"},
-		{value: "December"}
+	genders: [
+		{value: 'male', name: 'Male'},
+		{value: 'female', name: 'Female'}
 	],
 	countries: Countries
 }

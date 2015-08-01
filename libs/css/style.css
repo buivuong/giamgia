@@ -16,7 +16,7 @@ body{
 	color:#1b6a9f;
 }
 .color-green{
-	color:green;
+	color:#7FBA00;
 }
 .color-red{
 	color:red;
@@ -24,12 +24,40 @@ body{
 .color-red-strong{
 	color:red !important;
 }
-
+.color-bluelight{
+	color:#48A9FC;
+}
+/*.active a, 
+a:hover, a:hover h3{
+	color:#5FAFE4 !important;
+			-webkit-transition: all 0.5s ease 0s;
+	        transition: all 0.5s ease 0s;
+}
+.active img, 
+a:hover img{
+	background-color:#5FAFE4;
+		-webkit-transition: all 0.5s ease 0s;
+	        transition: all 0.5s ease 0s;
+}*/
 /*** 3. BACKGROUND  ***/
 .bg-main{
 	background:#428BCA;
 }
-
+.bg-red{
+	background-color: #ef5a34;
+}
+.bg-violet{
+	background-color: #bf55ec;
+}
+.bg-blue{
+	background-color: #3a98d8;
+}
+.bg-green{
+	background-color: #2ecc71;
+}
+.bg-orange{
+	background-color: #fbb44c;
+}
 /*** 4. BORDER  ***/
 
 .border-blue-color{
@@ -45,26 +73,34 @@ body{
 	border: 1px solid #5F96BC;
 }
 
-
 /***  5. BUTTON ***/
 .btn{
 	border-radius: 0;
+	padding: 6.5px 10px;
 }
 .btn-primary{
 	background:#49a4e0 !important;
 	border:none;
-	padding: 4px 10px;
 	border-radius:0;
 }
 .btn-blue{
 	background: #5FAFE4;
 	color:white;
 }
-
+.btn-success{
+	background:#7FBA00 !important;
+	border:none;
+	border-radius:0;
+}
+.btn-remove{
+	background:#999;
+	color:#fff !important;
+	border:none;
+}
 /***  6. OTHER ***/
 
 .header-right {
-	margin-right: 50px
+	margin-right: 10px
 }
 .border-double{
 	border-bottom:1px solid #5F96BC;
@@ -74,7 +110,7 @@ body{
 }
 .general-wrap {
 	padding-left: 20px;
-	padding-right: 60px
+	padding-right: 20px
 }
 
 .question{
@@ -84,6 +120,23 @@ body{
 }
 .dropdown-menu{
 	border-radius:0;
+}
+.alert {
+    padding: 10px;
+    border-radius: 0px;
+}
+.decimal-leading-zero{
+	list-style-type:decimal-leading-zero;
+}
+.important:before{
+	position: absolute;
+	content: "*";
+	color: #F00;
+	margin-left: -10px;
+	font-size: 15px;
+}
+.width-70px{
+	width:70px !important;
 }
 /*left- menu*/
 *{
@@ -97,7 +150,10 @@ body{
 	display: inline-block;
 }
 .nav-stacked > li + li{
-	margin-top: 1px;
+	margin-top: 0;
+}
+.padding-round{
+	padding:15px !important;
 }
 
 /*********** II. PAGE ****************/
@@ -107,9 +163,9 @@ body{
 
 .header-profile-box {
 	background: #fff;
-	padding: 20px 60px 0 20px;
+	padding: 14px 20px 0;
 	position: relative;
-	height: 80px;
+	height: 70px;
 }
 .header-profile-box hr {
 	border-color: #5F96BC;
@@ -122,10 +178,19 @@ body{
 	border-radius: 65px;
 	vertical-align: middle
 }
+.header-profile-box .btn-primary{
+	position: absolute;
+	right: 20px;
+	top: 30px;
+	padding: 7.5px 20px;
+}
+.header-profile-box .img-box{
+	height:41px;
+}
 .header_profile {
 	position: absolute;
 	padding: 10px;
-	top: 0;
+	top: 4px;
 	left: 70px
 }
 .header-profile p {
@@ -135,7 +200,7 @@ body{
 	position: absolute;
 	left: 70px;
 	top: 50%;
-	margin-top: -10px
+	margin-top: -12px
 }
 .nav-pills > li > a{
 	border-radius:0;
@@ -165,7 +230,7 @@ body{
 /******** 1.2 FOOTER*********/
 
 footer {
-	padding: 10px 60px 10px 20px;
+	padding: 10px 20px 10px;
 	font-family: Arial, Helvetica, sans-serif
 }
 .hr-footer {
@@ -198,8 +263,8 @@ footer {
 	width: 37px;
 	height: 37px;
 	text-align: center;
-	font-size: 23px;
-	padding-top: 7px
+	font-size: 20px;
+	padding-top: 9px
 }
 .hotline-footer {
 	padding-left: 25px
@@ -214,37 +279,67 @@ footer {
 	height: 18px
 }
 
+
 /*********** II. PAGE ****************/
 /*************************************/
 
 /****** 1. HOME *******/
 /* Find Provider */
-.find-provider-wrap {
-	padding: 30px 60px 20px 20px;
+.find-doctor-wrap {
+	padding: 30px 20px 20px;
 	background: #f2f2f2;
 }
-.find-provider-wrap .heading-box {
+.find-doctor-wrap .heading-box {
 	position: relative
 }
-.find-provider-wrap .heading {
+.find-doctor-wrap .heading {
 	position: absolute;
 	top: 0;
 	left: 60px
+}
+.find-doctor-wrap .btn{
+	float:right;
+	width:120px;
 }
 /* Home Body */
  .home-body-wrap {
 	padding: 50px 20px 0 !important; 
 }
- .home-body-wrap img {
+.home-body-box img {
 	float: left;
 	margin-right: 15px
 }
+.home-body-box span{
+	  display:block;
+	  line-height:1.2;
+	  margin-top:6px;
+  }
 
-/********** 2. TALK TO DOCTOR*********/
+/********** 2. TALK TO Doctor*********/
 
 /* 2.1 Doctor Group */
 .doctorgroup-wrap {
-	padding: 50px 60px 100px 20px
+	padding: 50px 20px 100px;
+}
+/*
+.search-doctor{
+	position: absolute;
+	right: 0px;
+	background: #49A4E0;
+	height: 70px;
+	top: 0px;
+	padding: 22px 13px 26px 42px;
+	cursor: pointer;
+}
+*/
+.search-doctor{
+	background: #49A4E0;
+	height: 50px;
+	padding: 11px 35px;
+	cursor: pointer;
+}
+.toggle-search-box{
+	display:none;
 }
 .doctorgroup-wrap .page li a {
 	border: #333 1px solid;
@@ -260,10 +355,8 @@ footer {
 	border-color: #999
 }
 .doctorgroup-discription-box {
-	padding: 5px 10px;
-	max-width: 168px;
-	min-height: 160px;
-	margin-left: 70px
+	padding: 0 15px;
+	margin-left: 70px;
 }
 .doctorgroup-discription-box .status {
 	margin-bottom: 5px
@@ -274,7 +367,9 @@ footer {
 .doctorgroup-box {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	border: #f0f0f0 1px solid
+	border: #f0f0f0 1px solid;
+	padding:15px;
+	cursor: pointer;
 }
 .available {
 	color: #7fba00;
@@ -312,7 +407,11 @@ footer {
 	margin-top: 10px;
 }
 
+
 /****** 2.2 Details ******/
+.doctorgroup-detail-wrap{
+	position:relative;
+}
 .doctorgroup-detail-wrap .prices{
 	border: 1px solid #5F96BC;
 	padding: 6px 12px 3px;
@@ -324,32 +423,96 @@ footer {
 	padding: 10px 20px;
 	text-align: center;
 }
+.myhealth-mydoctors-wrap .doctorgroup-detail-wrap .connect{
+	text-align: left;
+	padding:0;
+}
 .doctorgroup-detail-wrap .connect .btn{
 	padding: 4px 15px;
 }
-
+.doctorgroup-detail-wrap .btn-speacial,
+.appointment-request-box.btn-speacial{
+	width:90px;
+}
+.appointment-request-box td, .appointment-request-box th {
+    padding: 2px 10px 2px 0;
+}
+.add-box, .remove-box{
+	position:relative;
+	padding-left:25px;
+	cursor: pointer;
+}
+.add-box:before{
+	position:absolute;
+	content:"";
+	width: 20px;
+	height: 16px;
+	margin-left: -25px;
+	margin-top: 3px;
+	background:url(../images/icon-add-remove.jpg) 153px 0px;
+}
+.remove-box:before{
+	position:absolute;
+	content:"";
+	width: 20px;
+	height: 16px;
+	margin-left: -25px;
+	margin-top: 3px;
+	background:url(../images/icon-add-remove.jpg) 134px 0px;
+}
 /******** 3. MY HEALTH GROUP ************/
 
 /* 3.1 Quicklink My Health */
+
+
+
+/******** Edit 18/7/2015  *************/
+
 .quicklink-header-box {
-	position: absolute;
-	top: 2px;
-	right: 40px
+	padding:10.7px 0;
 }
+.quicklink-header-box li img{
+	background-color:#2abb9b;
+	-webkit-transition: all 0.7s ease 0s;
+	        transition: all 0.7s ease 0s;
+}
+.quicklink-header-box li a {
+	color: #2abb9b;
+	padding-left: 23.2px;
+	display:block;
+	text-decoration:none;
+	-webkit-transition: all 0.7s ease 0s;
+	        transition: all 0.7s ease 0s;
+}
+
+.quicklink-header-box li.active img,
+.quicklink-header-box li a:hover img{
+	background-color:#5fafe4;
+}
+.quicklink-header-box li.active a,
+.quicklink-header-box li a:hover {
+	color: #5fafe4;
+}
+.header-profile-box.no-img-header-box .header-title{
+	left:20px;
+}
+.myhealth-mydoctors-wrap h3{
+	margin-bottom:14px;
+}
+.number-doctor{
+	padding:4px 16px;
+	background: #8CC3EA;
+}
+/******************************/
+
+
 .header-profile-box.myhealth-wrap hr {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.quicklink-header-box li {
-	text-align: center
-}
-.quicklink-header-box li a {
-	color: #ef5934;
-	padding: 0 15px
-}
 /* 3.2 Profile box */
 .profile-title-box {
-	padding: 20px 60px 20px 20px;
+	padding: 20px 20px 20px;
 	background: #f2f2f2;
 	position: relative
 }
@@ -357,35 +520,61 @@ footer {
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 40px 60px 40px 20px
+	padding: 20px;
 }
 .save-box a img {
 	vertical-align: middle;
 	margin-right: 5px
 }
 .myhealth-body-box {
-	padding: 40px 60px 30px 20px
+	padding: 20px 20px 30px;
 }
 .body-box {
-    padding: 30px 60px 30px 20px;
+    padding: 30px 20px 30px;
 }
-.myhealth-body-box .measurements {
-	padding: 20px 0
-}
-.myhealth-body-box .detail {
+
+
+/* Replace .myhealth-body-box = measurements  (18/07/2015) */
+
+.measurements .detail {
 	width: 100%;
-	background: #49a4e0;
-	padding: 5px 10px;
 	height:61px;
-	
 }
-.myhealth-body-box .detail span{
-	padding: 14px 0;
+.measurements .detail  img{
+	background-color:#ef5934;
+	-webkit-transition: all 0.5s ease 0s;
+	        transition: all 0.5s ease 0s;
+}
+
+.measurements .detail span{
+	padding: 25px 0;
 	display: block;
 }
-.myhealth-body-box .detail  a{
+.measurements .detail  a{
 	display:block;
+	text-decoration:none;
+	-webkit-transition: all 0.5s ease 0s;
+	        transition: all 0.5s ease 0s;
 }
+.measurements .detail.active a,
+.measurements .detail  a:hover{
+	color:#5FAFE4;
+}
+.measurements .detail.active img,
+.measurements .detail  a:hover img{
+	background-color:#5FAFE4;
+}
+
+/**********************/
+
+/* Add (27/07/2015) */
+.no-data-box{
+	position:absolute;
+	top:40px;
+	left:50%;
+	margin-left:-127px;
+}
+/***************/
 .myhealth-history-wrap {
 	position: relative;
 	padding: 20px 0
@@ -396,16 +585,19 @@ footer {
 	right: 0px
 }
 .myhealth-history-box {
-	border: #5f96bc 1px solid;
+	border: #B1D6F0 1px solid;
 	padding: 10px 20px 10px 30px;
 	margin-bottom: 30px;
 }
-.myhealth-myproviders-wrap .message-page {
+.myhealth-mydoctors-wrap .message-page {
 	top: 5px;
 	right: 15px
 }
 .myhealth-history-wrap{
 	min-height:330px;
+}
+.right-special{
+	padding-right:23px;
 }
 
 /****** 3.3 Measurements ********/
@@ -421,23 +613,39 @@ footer {
 	margin-left:106px;	
 }
 
+
 /********   4. MESSAGE CENTER  ***********/
 .myhealth-messagecenter-wrap {
-	padding: 0 60px 20px 20px
+	padding: 0 20px 20px;
 }
 .myhealth-messagecenter-wrap .tab-content {
 	border: #5f96bc 1px solid;
 	padding: 10px !important;
 	margin-top: 30px
 }
-/*.myhealth-messagecenter-box {
+
+
+/******* added (18/7/2015)*******/
+.panel-email .btn-lg{
+	min-width:100px;
+}
+.panel-email .dl-horizontal dt{
+	width: 70px;
+	text-align: left;
+}
+.panel-email .dl-horizontal dd{
+	margin-left: 90px;
+}
+
+/********************************/
+.myhealth-messagecenter-box {
 	border: #5f96bc 1px solid;
-	padding: 20px 20px 50px;
-	min-height: 435px;
+	padding: 20px;
 	position: relative
 }
 .myhealth-messagecenter-box.bg-empty {
-	background: url(../images/bg-empty-message.png) center center no-repeat
+	background: url(../images/bg-empty-message.png) center center no-repeat;
+	min-height: 435px;
 }
 .message-center-list li {
 	margin-bottom: 10px
@@ -454,7 +662,7 @@ footer {
 	position: absolute;
 	bottom: 5px;
 	right: 10px
-}*/
+}
 /********** 5. MY APPOINTMENT*********/
 .upcoming-appointments-box {
 	padding: 30px 20px;
@@ -490,39 +698,20 @@ footer {
 }
 
 /********  7. MY ACCOUNT  **********/
-
+.myaccount-wrap{
+	 padding-top: 60px;
+    padding-bottom: 30px;
+}
 .myaccount-box .btn-primary{
-	margin-top:-22px;
-	min-width:70px;
+	margin-top:-26px;
+	min-width:90px;
 }
 .myaccount-box .btn-success{
 	margin-top:-24px;
 }
-.myaccount-box dt{
-	width:150px;
-	white-space: normal;
-}
-.myaccount-box dd{
-	margin-left:170px;
-}
-.myaccount-box #tab2 dt{
-	width: 240px;
-}
-.myaccount-box #tab2 dd{
-	margin-left: 260px;
-}
-.myaccount-box #tab2 .specail dt{
-	width: 450px;
-}
-.myaccount-box #tab2 .specail dd{
-	margin-left: 470px;
-}
-.myaccount-box .mih{
-	min-height: 150px;	
-}
-.myaccount-box label.special{
-	width:73px;
-	text-align:right;
+.myaccount-box .discription img{
+	float:right;
+	margin-right:15px;
 }
 .myaccount-box .radio input[type="radio"]{
 	margin-top:-3px;
@@ -532,13 +721,36 @@ footer {
 	top:auto;
 	padding:20px;
 }
-/********  8. MY ACCOUNT  **********/
 .help-support-wrap .btn-primary{
 	padding: 7px 27px;
 	font-size: 16px;
 }
+.quicklink-header-account-box{
+	padding: 10.7px 0px;
+}
+.quicklink-header-account-box li img{
+	-webkit-transition: all 0.7s ease 0s;
+	        transition: all 0.7s ease 0s;
+}
+.quicklink-header-account-box li a {
+	color:#000;
+	padding: 0 15px;
+	display:block;
+	text-decoration:none;
+	-webkit-transition: all 0.7s ease 0s;
+	        transition: all 0.7s ease 0s;
+}
 
-/******** 9. ASSESSMENT **********/
+.quicklink-header-account-box li.active img,
+.quicklink-header-account-box a:hover img{
+	background-color:#5fafe4;
+}
+.quicklink-header-account-box li.active a,
+.quicklink-header-account-box li a:hover {
+	color: #5fafe4;
+}
+/******** 8. ASSESSMENT **********/
+/* remove (18/07/2015)
 .assessment-wrap .form-search{
 	width:300px;
 }
@@ -548,15 +760,17 @@ footer {
 .assessment-box{
 	padding:28px 10px 20px !important;
 }
-
-/******** 10. CONNECT **********/
+*/
+/******** 9. CONNECT **********/
 .connect-box{
-	padding-top:30px;
 	padding-bottom:30px;
 }
 .connect-box .doctorgroup-discription-box{
 	max-width: 200px;
 	min-height: 120px;
+}
+.connect-box .btn{
+	min-width:110px;
 }
 /******  ELEMENT *************/
 /*****************************
@@ -587,6 +801,14 @@ footer {
     background: #FFF none repeat scroll 0% 0%;
     border-color: transparent;
 }
+.panel-primary{
+	border-color: #BCE8F1;
+}
+.panel-primary > .panel-heading{
+	color: #31708F;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+}
 /******** B. CALENDAR********/
 .ui-datepicker {
 	width: 235px;
@@ -596,7 +818,8 @@ footer {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	margin: -1px
+	margin: -1px;
+	z-index:10 !important;
 }
 .ui-datepicker .ui-datepicker-header {
 	background: #1b6a9f
@@ -640,8 +863,21 @@ footer {
 }
 
 /******* C. TAB****/
-.basic-wizard .nav li {
+.basic-wizard{ 
+	position:relative;
+}
+.basic-wizard .btn-heading-tab{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 7.5px 20px;
+	min-width:100px;
+}
+.basic-wizard.block-wizard .nav li {
 	width: 190px
+}
+.basic-wizard.myhealth-wizard li + li{
+	padding-left:3px;
 }
 .basic-wizard .nav > li > a {
 	background: #8cc3ea !important;
@@ -676,7 +912,6 @@ footer {
 .test-computer-wrap .basic-wizard .nav > li > a{
 	padding:9.5px 6px!important;
 }
-
 /********** D. FORM *********/
 .form-control {
 	background-color: transparent;
@@ -685,7 +920,11 @@ footer {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	width: 100%;
-	height:30px;
+	height:33px;
+	box-shadow:none;
+	padding:6px 25px 6px 12px;
+}
+.form-control:focus{
 	box-shadow:none;
 }
 
@@ -698,11 +937,12 @@ footer {
 	background-color: transparent;
 	border: 1px solid #DDD;
 	padding: 6px;
-	width: auto
+	width: auto;
+	height:33px;
 }
 .control-label {
 	text-align: left;
-	font-weight: 100
+	font-weight: 100;
 }
 .form-inline label {
 	font-weight: 100
@@ -740,7 +980,7 @@ footer {
 	font-weight: 100
 }
 .myhealth-history-box .radio{
-	padding-left:15px;
+	padding-left:23px;
 }
 .myhealth-history-box .radio input[type="radio"] {
 	margin-left: -14px
@@ -762,6 +1002,9 @@ footer {
 .myhealth-history-wrap .tab3 button{
     width: 70%;
 }
+.myhealth-myconsultations-wrap .form-search-box{
+	display:inline-block;
+}
 /* Message center */
 
 .myhealth-messagecenter-wrap select {
@@ -769,33 +1012,40 @@ footer {
 	border: 1px solid #a4c3d9;
 	margin-bottom: 30px
 }
-.myhealth-messagecenter-wrap label {
+/*.myhealth-messagecenter-wrap label {
 	padding: 5px 0 5px 20px
-}
+}*/
 
 /*.form-inline select {
 	margin-top: -4px
 }*/
-
+.add-measurement-box .input-group-addon{
+	font-size: 20px;
+	padding: 6px;
+	border:none;
+	background: none;
+	color:#636E7B;
+}
 /****** D.1 Search Form*******/
 .search-wrap {
-	padding: 10px 60px 10px 20px;
+	padding: 10px 20px 10px;
 	background: url(../images/bg-search.jpg) no-repeat;
-	-webkit-background-size: cover;
-	background-size: cover;
 }
 .search-box {
 	margin: auto
 }
+.search-box label{
+	font-size:12px;
+}
 .myhealth-myhistory-wrap select, 
 .search-wrap select {
-	width: 177px;
+	width: 184px;
 	background-color: transparent;
 	border: #ddd 1px solid;
 	padding: 6px
 }
 .search-wrap .form-control {
-	width: 177px;
+	width: 184px;
 	background-color: transparent;
 	border: #ddd 1px solid;
 	-moz-border-radius: 0;
@@ -812,10 +1062,82 @@ footer {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	max-width: 323px;
+	width: 150px;
+}
+.more-search{
+	background:#9ecfee !important;
+}
+.form-search-box{
+	position: relative;
+}
+.form-search-box input{
+	padding: 6px 25px 6px 12px;
+}
+.form-search-box img{
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 7px;
+	right: 6px;
+}
+.myhealth-history-box select.form-control{
+	color: #555;
+	font-size:12px;
+}
+.myhealth-history-box table .form-control{
+	display: inline-block;
+    width: auto;
+}
+/*******added 18/07/2015***********/
+/*my health group*/
+.add-measurement-box label{
+	min-width:100px;
 }
 
+/***************************/
+
+
+/******* Add 19/07/2015 *********/
+/********  My Account  **********/
+.myaccount-box  .control-label{
+	width:156px;
+	text-align:right;
+	color:#000;
+	margin-right:6px;
+}
+.myaccount-box .special-box .control-label{
+	width:110px;
+}
+.myaccount-box .form-control {
+    width: 241px;
+}
+.myaccount-box select.form-control{
+	margin-right:0;
+	padding: 3px 10px 3px 5px;
+	font-size:14px;
+}
+.myaccount-box .date-special select.form-control{
+	width:auto;
+}
+.myaccount-box .mi-speacial .control-label{
+	width: auto;
+}
+.myaccount-box .mi-speacial .form-control{
+	width:50px;
+}
+.myaccount-box .mi-speacial-beside .form-control {
+    width: 150px;
+}
+
+
+
 /**** E. MODAL  ***/
+.modal{
+	z-index:8;
+}
+.modal-backdrop{
+	z-index:7;
+}
 . modal-wrap{
 	padding: 5px 10px;
 	min-height: 100px;
@@ -823,7 +1145,7 @@ footer {
 }
 .modal-body{
 	overflow:auto;
-	height:500px;
+	max-height:500px;
 	margin-bottom:20px;
 }
 .modal-header .close{
@@ -834,6 +1156,31 @@ footer {
 .modal-body p{
 	margin-bottom:0;
 }
+/******* Add 19/07/2015 *********/
+/********  My Account  **********/
+.myaccount-box .modal-content{
+	max-width:500px;
+	height:auto;
+}
+.myaccount-box .modal-body{
+	height: auto;
+	padding: 30px 35px 0;
+	max-height:450px;
+}
+
+/******** F. TABLE *********/
+.table{
+	margin-bottom: 0px;
+}
+.table-info thead tr th {
+    background-color: rgb(239, 239, 239) !important;
+	color: rgb(39, 39, 39) !important;
+}
+.myaccount-box td, .myaccount-box th{
+	padding:2px 10px;
+}
+/*******************************/
+
 /******** MEDIA SCREEN  *******/
  @media screen and (max-width: 992px) {
 .mainpanel .form-inline select.form-control {
@@ -849,7 +1196,7 @@ footer {
 .doctorgroup-wrap, .search-wrap, .myhealth-body-box, .myhealth-messagecenter-wrap, .body-box, footer {
 	padding: 10px 15px
 }
-.mainpanel .find-provider-wrap {
+.mainpanel .find-doctor-wrap {
 	padding: 30px 15px 50px
 }
 .mainpanel .header-profile-box {
@@ -866,6 +1213,21 @@ footer {
 	bottom: -108px;
 	background: #fff;
 	width: 100%
+}
+/****** added (18/7/2015)********/
+/*health group*/
+.quicklink-header-account-box.list-inline >li,
+.quicklink-header-box.list-inline > li{
+	padding-left:0;
+	padding-right:0;
+}
+.quicklink-header-account-box li a,
+.quicklink-header-box li a{
+	padding:0 2px;
+}
+.quicklink-header-account-box,
+.quicklink-header-box{
+	font-size:12px;
 }
 }
 @media screen and (max-width: 767px) {
@@ -935,6 +1297,7 @@ footer {
 	text-align:center;
 }
 /*****  MY ACCOUNT  *******/
+
 .myaccount-box dt{
 	width:100px !important;
 	float:left;
@@ -960,11 +1323,27 @@ footer {
     margin-top: 7px;
     float: none !important;
 }
+/* (18/07/2015)
 .assessment-wrap .form-search {
     width: 100%;
     margin-bottom: 6px;
 }
+*/
 .social-box{
 	float:none;
+}
+/****** added (18/7/2015)********/
+/*health group*/
+.quicklink-header-box.list-inline > li{
+	padding-left: 5px !important;
+	padding-bottom: 10px;
+}
+.quicklink-header-box.list-inline > li a{
+	padding: 0px 15px !important; 
+}
+/**** Tab *****/
+.basic-wizard .btn-heading-tab {
+    position: static;
+    width: 100%;
 }
 }

@@ -21,6 +21,14 @@ var Valid = {
 					error = message;
 					break;
 				}
+			}else if(key === 'date'){
+				var split = input.split('/');
+				var full_split = split[1]+'/'+split[0]+'/'+split[2];
+
+				if(is.not.dateString(full_split)){
+					error = message;
+					break;
+				}
 			}
 		}
 

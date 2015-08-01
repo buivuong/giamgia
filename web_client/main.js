@@ -13,6 +13,8 @@ require('wysiwyg-editor.css');
 require('wysiwyg');
 require('wysiwyg-editor');
 
+require('jquery-mask-input');
+
 require('datetimepicker.css');
 require('datetimepicker');
 
@@ -31,6 +33,7 @@ var Config = require('config');
 var initData = require('languages/'+Config.lang);
 var DropLang = require('components/dropdown/DropLang');
 var IntlMixin = ReactIntl.IntlMixin;
+var Loader = require('components/loader/Common');
 
 var App = React.createClass({
     mixins: [IntlMixin],
@@ -56,14 +59,12 @@ var App = React.createClass({
     }
 });
 
-var Dev = require('dev/components/app');
-var DevHome = require('dev/components/home');
-var DevAdd = require('dev/components/add');
-
 var Client = require('client/app');
 var Client_Home = require('client/home/view');
 var Client_Login = require('client/users/components/login/view');
 var Client_Signup = require('client/users/components/signup/view');
+
+var Client_Test = require('client/test/components/view');
 
 var routes = (
     <Route handler={App} name="app" path="/">
@@ -73,6 +74,7 @@ var routes = (
             <Route handler={Client_Home} name="client_home" path="home"/>
             <Route handler={Client_Login} name="client_login" path="login"/>
             <Route handler={Client_Signup} name="client_signup" path="signup"/>
+            <Route handler={Client_Test} name="client_test" path="test"/>
         </Route>
     </Route>
 );

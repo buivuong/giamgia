@@ -84,7 +84,7 @@
 .dataTables_paginate a.paginate_active {
 	border: 1px solid #ddd;
 	padding: 5px 12px;
-	margin-right: 5px;
+	margin-left: 5px;
 	cursor: pointer;
 	color: #636E7B;
 	line-height: 21px;

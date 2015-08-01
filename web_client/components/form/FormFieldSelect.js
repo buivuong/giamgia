@@ -26,7 +26,7 @@ var Field = React.createClass({
             placeholder: this.props.placeholder
 		})
 		.live('change', function(event){
-			var error = Valid.getClientError(this.props.validate, event.target.value);    	
+			var error = Valid.getClientError(this.props.validate, event.target.value);
 
 			if(is.not.empty(error)){
 				this.addError(error);
