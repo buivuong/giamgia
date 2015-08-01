@@ -127,7 +127,6 @@
  @import url('font-awesome.min.css');
  @import url('jquery-ui-1.10.3.css');
  @import url('select2.css');
- @import url('wysiwyg-color');
  @import url('jquery.datatables.css');
  @import url('bootstrap-wysihtml5.css');
  @import url('style.css');
@@ -145,9 +144,11 @@ body {
 body.notfound,  body.signin {
 	background: #e4e7ea;
 }
+/********edited 18/7/2015******/
 input, select, textarea {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #636e7b;
+	border: 1px solid #DDD;
 }
 a:focus, a:active {
 	outline: none;
@@ -220,7 +221,7 @@ strong {
 }
 .searchform input {
 	width: 250px;
-	background: #fff url(../images/icon-search.png) no-repeat 95% center;
+	/*background: #fff url(../images/icon-search.png) no-repeat 95% center;*/
 	float: left;
 	padding: 18px 20px;
 	border: 0;
@@ -271,8 +272,8 @@ strong {
 	border-left: 1px solid #eee;
 	position: relative;
 }
-.headermenu > li > .login,  .headermenu > li > .logout {
-	padding: 14px 15px;
+.headermenu > li > .login,  .headermenu > li > .logout, .headermenu > li > .account{
+	padding: 14px 10px;
 	display: block;
 	text-decoration: none;
 }
@@ -425,7 +426,7 @@ strong {
 	overflow-y: auto;
 }
 .logopanel {
-	padding: 28.5px 8px;
+	padding: 26.5px 8px;
 	background: #fff;
 	text-align: center;
 }
@@ -637,8 +638,7 @@ strong {
 .mainpanel {
 	margin-left: 240px;
 	background: #fff;
-	min-height: 550px;
-	;
+	min-height: 700px;
 	position: relative;
 }
 .pageheader {
@@ -677,7 +677,6 @@ strong {
 }
 .pageheader .fa-file-text {
 	padding: 6px 10px;
-`
 }
 .pageheader .fa-map-marker {
 	padding: 6px 12px;
@@ -986,7 +985,7 @@ div.error label.error:before {
 
 
 
-.basic-wizard .nav li a {
+.basic-wizard block-wizard .nav li a {
 	background: #e4e7ea;
 	border-bottom: 1px solid #ccc;
 	color: #4A535E;
@@ -996,29 +995,29 @@ div.error label.error:before {
 	border-radius: 0;
 	opacity: 0.75;
 }
-.basic-wizard .nav li:last-child a {
+.basic-wizard block-wizard .nav li:last-child a {
 	border-right: 0;
 }
-.basic-wizard .nav li a:hover {
+.basic-wizard block-wizard .nav li a:hover {
 	background-color: #f7f7f7;
 	opacity: 1;
 }
-.basic-wizard .nav li.active a,  .basic-wizard .nav li.active a:focus,  .basic-wizard .nav li.active a:active {
+.basic-wizard block-wizard .nav li.active a,  .basic-wizard block-wizard .nav li.active a:focus,  .basic-wizard block-wizard .nav li.active a:active {
 	background: #fcfcfc;
 	border-bottom-color: #fcfcfc;
 	color: #333;
 	opacity: 1;
 }
-.basic-wizard ul li a span {
+.basic-wizard block-wizard ul li a span {
 	font-family: 'LatoBold', sans-serif;
 }
-.basic-wizard .pager {
+.basic-wizard block-wizard .pager {
 	margin: 0;
 	border-top: 1px solid #ddd;
 	background: #f7f7f7;
 	padding: 10px;
 }
-.basic-wizard .pager li a {
+.basic-wizard block-wizard .pager li a {
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -1026,33 +1025,33 @@ div.error label.error:before {
 	background-color: #428BCA;
 	color: #fff;
 }
-.basic-wizard .pager li a:hover {
+.basic-wizard block-wizard .pager li a:hover {
 	background-color: #3276B1;
 	border-color: #285E8E;
 }
-.basic-wizard .pager li.disabled a {
+.basic-wizard block-wizard .pager li.disabled a {
 	background: #eee;
 	color: #999;
 	border-color: #ccc;
 }
-.basic-wizard .progress {
+.basic-wizard block-wizard .progress {
 	height: 12px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
 }
-.basic-wizard .nav-disabled-click li a:hover,  .basic-wizard .nav-disabled-click li a:active,  .basic-wizard .nav-disabled-click li a:focus {
+.basic-wizard block-wizard .nav-disabled-click li a:hover,  .basic-wizard block-wizard .nav-disabled-click li a:active,  .basic-wizard block-wizard .nav-disabled-click li a:focus {
 	background-color: #E4E7EA;
 	opacity: 0.75;
 	color: #4A535E;
 	cursor: default;
 }
-.basic-wizard .nav-disabled-click li.active a:hover,  .basic-wizard .nav-disabled-click li.active a:active,  .basic-wizard .nav-disabled-click li.active a:focus {
+.basic-wizard block-wizard .nav-disabled-click li.active a:hover,  .basic-wizard block-wizard .nav-disabled-click li.active a:active,  .basic-wizard block-wizard .nav-disabled-click li.active a:focus {
 	background: #fcfcfc;
 	color: #333;
 	opacity: 1;
 }
-.basic-wizard .tab-content {
+.basic-wizard block-wizard .tab-content {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -1514,9 +1513,11 @@ div.error label.error:before {
 .table-email td:first-child {
 	width: 30px;
 }
+/*
 .table-email td:nth-child(2) {
 	width: 30px;
 }
+*/
 .table-email .media {
 	margin: 0;
 	padding: 0;
@@ -2599,10 +2600,10 @@ div.error label.error:before {
 	margin-top: 15px;
 }
 .signinpanel .uname {
-	background: #fff url(../images/user.png) no-repeat 95% center;
+	/*background: #fff url(../images/user.png) no-repeat 95% center;*/
 }
 .signinpanel .pword {
-	background: #fff url(../images/locked.png) no-repeat 95% center;
+	/*background: #fff url(../images/locked.png) no-repeat 95% center;*/
 }
 .signinpanel .btn {
 	margin-top: 15px;
