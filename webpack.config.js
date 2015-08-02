@@ -54,7 +54,11 @@ var config = {
             extend: "extend",
 			ReactIntl: "react-intl",
 			Validate: "validate.js",
-            wysiwyg: "wysiwyg"
+            wysiwyg: "wysiwyg",
+			
+			Panel: "web_client/components/panel/panel",
+			Liner: "web_client/components/liner/liner",
+			Image: "web_client/components/image/image"
         })
     ]
 };

@@ -103,7 +103,7 @@
 	    }
 	});
 
-	var Test = __webpack_require__(301);
+	var Test = __webpack_require__(300);
 
 	var routes = (
 	    React.createElement(Route, {handler: App, name: "app", path: "/"}, 
@@ -30081,12 +30081,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./countries": 298,
-		"./countries.js": 298,
-		"./gb": 299,
-		"./gb.js": 299,
-		"./vn": 300,
-		"./vn.js": 300
+		"./gb": 298,
+		"./gb.js": 298,
+		"./vn": 299,
+		"./vn.js": 299
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -30104,17 +30102,6 @@
 
 /***/ },
 /* 298 */
-/***/ function(module, exports) {
-
-	var Countries = [
-		{name: 'Australia', code: 'AUT'},
-		{name: 'Vietnam', code: 'VIE'}
-	];
-
-	module.exports = Countries;
-
-/***/ },
-/* 299 */
 /***/ function(module, exports) {
 
 	var Lang = {
@@ -30167,7 +30154,7 @@
 	module.exports = Lang;
 
 /***/ },
-/* 300 */
+/* 299 */
 /***/ function(module, exports) {
 
 	var Lang = {
@@ -30182,18 +30169,65 @@
 	module.exports = Lang;
 
 /***/ },
-/* 301 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React) {var Test = React.createClass({displayName: "Test",
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Image) {var Test = React.createClass({displayName: "Test",
 		render: function(){
 			return (
-				React.createElement("div", null, "Test")
+				React.createElement(Panel, {className: "leftpanel"}, 
+					React.createElement(Panel, {className: "logopanel"}, 
+						React.createElement(Image, {src: "images/logo-1.png", style: {width: '210', height: '38'}})
+					)
+				)
 			)
 		}
 	});
 
 	module.exports = Test;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(301), __webpack_require__(302)))
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Panel = React.createClass({displayName: "Panel",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("div", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+			)
+		}
+	});
+
+	module.exports = Panel;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Panel = React.createClass({displayName: "Panel",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			src: React.PropTypes.string,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("img", {className: this.props.className, onClick: this.props.onClick, style: this.props.style, src: this.props.src})
+			)
+		}
+	});
+
+	module.exports = Panel;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }
