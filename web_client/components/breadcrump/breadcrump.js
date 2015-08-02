@@ -1,4 +1,4 @@
-var Liner = React.createClass({
+var Breadcrump = React.createClass({
 	propTypes: {
 		className: React.PropTypes.string,
 		style: React.PropTypes.object,
@@ -13,4 +13,4 @@ var Liner = React.createClass({
 	}
 });
 
-module.exports = Liner;
+module.exports = Breadcrump;

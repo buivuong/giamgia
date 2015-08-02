@@ -1,4 +1,4 @@
-var Panel = React.createClass({
+var Image = React.createClass({
 	propTypes: {
 		className: React.PropTypes.string,
 		style: React.PropTypes.object,
@@ -12,4 +12,4 @@ var Panel = React.createClass({
 	}
 });
 
-module.exports = Panel;
+module.exports = Image;

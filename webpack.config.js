@@ -57,8 +57,25 @@ var config = {
             wysiwyg: "wysiwyg",
 			
 			Panel: "web_client/components/panel/panel",
-			Liner: "web_client/components/liner/liner",
-			Image: "web_client/components/image/image"
+			Inner: "web_client/components/inner/inner",
+			Image: "web_client/components/image/image",
+			List: "web_client/components/list/list",
+			ListItem: "web_client/components/list/item",
+			Link: "web_client/components/link/link",
+			Span: "web_client/components/span/span",
+			Section: "web_client/components/section/section",
+			Header: "web_client/components/header/header",
+			ButtonGroup: "web_client/components/button/group",
+			MenuToggle: "web_client/components/menu/toggle",
+			Icon: "web_client/components/icon/icon",
+			Breadcrump: "web_client/components/breadcrump/breadcrump",
+			Title: "web_client/components/title/title",
+			Bold: "web_client/components/bold/bold",
+			Sentence: "web_client/components/sentence/sentence",
+			Footer: "web_client/components/footer/footer",
+			Divider: "web_client/components/divider/divider",
+			Row: "web_client/components/row/row",
+			Column: "web_client/components/column/column"
         })
     ]
 };

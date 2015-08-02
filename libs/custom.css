@@ -26,3 +26,7 @@
 a{
 	cursor: pointer;
 }
+
+.list-inline>li:not(:first-child){
+	margin-left: 3px;
+}

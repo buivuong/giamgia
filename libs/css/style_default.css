@@ -222,6 +222,7 @@ strong {
 .searchform input {
 	width: 250px;
 	/*background: #fff url(../images/icon-search.png) no-repeat 95% center;*/
+	background: #fff;
 	float: left;
 	padding: 18px 20px;
 	border: 0;
@@ -2601,9 +2602,11 @@ div.error label.error:before {
 }
 .signinpanel .uname {
 	/*background: #fff url(../images/user.png) no-repeat 95% center;*/
+	background: #fff;
 }
 .signinpanel .pword {
 	/*background: #fff url(../images/locked.png) no-repeat 95% center;*/
+	background: #fff;
 }
 .signinpanel .btn {
 	margin-top: 15px;
