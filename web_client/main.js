@@ -28,6 +28,7 @@ var Router = require('react-router');
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
+var NotFoundRoute = Router.NotFoundRoute;
 
 var Config = require('config');
 var initData = require('languages/'+Config.lang);
@@ -55,12 +56,20 @@ var App = React.createClass({
     }
 });
 
-var Test = require('test/test');
+var Client = require('client/app');
+var Client_LoggedIn = require('client/loggedIn');
+var Client_Home = require('client/home/components/home');
+var Client_Notfound = require('client/notFound');
 
 var routes = (
     <Route handler={App} name="app" path="/">
-        <DefaultRoute handler={Test}/>
-        <Route handler={Test} name="test"/>
+        <Route handler={Client} name="client">
+            <Route handler={Client_LoggedIn} name="client_loggedIn" path="loggedIn">
+                <DefaultRoute handler={Client_Home}/>
+                <Route handler={Client_Home} name="client_home" path="home"/>
+                <NotFoundRoute handler={Client_Notfound}/>
+            </Route>
+        </Route>
     </Route>
 );
 
