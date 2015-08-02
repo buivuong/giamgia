@@ -59,7 +59,12 @@ var App = React.createClass({
 var Client = require('client/app');
 var Client_LoggedIn = require('client/loggedIn');
 var Client_Home = require('client/home/components/home');
-var Client_Notfound = require('client/notFound');
+
+var Client_MessageCenter = require('client/messageCenter/components/core');
+var Client_MessageCenter_Compose = require('client/messageCenter/components/compose');
+
+var Client_Consultation = require('client/consultation/components/core');
+var Client_Consultation_View = require('client/consultation/components/view');
 
 var routes = (
     <Route handler={App} name="app" path="/">
@@ -67,7 +72,13 @@ var routes = (
             <Route handler={Client_LoggedIn} name="client_loggedIn" path="loggedIn">
                 <DefaultRoute handler={Client_Home}/>
                 <Route handler={Client_Home} name="client_home" path="home"/>
-                <NotFoundRoute handler={Client_Notfound}/>
+                <Route handler={Client_MessageCenter} name="client_messageCenter" path="message-center">
+                    <Route handler={Client_MessageCenter_Compose} name="client_messageCenter_compose" path="compose"/>
+                </Route>
+                <Route handler={Client_Consultation} name="client_consultation" path="consultation">
+                    <DefaultRoute handler={Client_Consultation_View}/>
+                    <Route handler={Client_Consultation_View} name="client_consultation_view" path="view"/>
+                </Route>
             </Route>
         </Route>
     </Route>

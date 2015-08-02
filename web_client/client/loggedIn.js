@@ -3,9 +3,9 @@ var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 var IntlMixin = ReactIntl.IntlMixin;
 
-var Leftmenu = require('templates/leftmenu');
-var AppFooter = require('templates/footer');
-var HeaderBar = require('templates/headerbar');
+var Leftmenu = require('client/templates/leftmenu');
+var AppFooter = require('client/templates/footer');
+var HeaderBar = require('client/templates/headerbar');
 
 var LoggedIn = React.createClass({
     mixins: [IntlMixin],

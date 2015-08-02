@@ -56,6 +56,8 @@ var config = {
 			Validate: "validate.js",
             wysiwyg: "wysiwyg",
 			
+			Wrap: "web_client/components/wrap/wrap",
+			Box: "web_client/components/box/box",
 			Panel: "web_client/components/panel/panel",
 			Inner: "web_client/components/inner/inner",
 			Image: "web_client/components/image/image",
@@ -65,6 +67,7 @@ var config = {
 			Span: "web_client/components/span/span",
 			Section: "web_client/components/section/section",
 			Header: "web_client/components/header/header",
+			Button: "web_client/components/button/button",
 			ButtonGroup: "web_client/components/button/group",
 			MenuToggle: "web_client/components/menu/toggle",
 			Icon: "web_client/components/icon/icon",
@@ -75,7 +78,19 @@ var config = {
 			Footer: "web_client/components/footer/footer",
 			Divider: "web_client/components/divider/divider",
 			Row: "web_client/components/row/row",
-			Column: "web_client/components/column/column"
+			Column: "web_client/components/column/column",
+			Form: "web_client/components/form/form",
+			FormGroup: "web_client/components/form/group",
+			Label: "web_client/components/label/label",
+			Input: "web_client/components/input/input",
+			Table: "web_client/components/table/table",
+			TableRow: "web_client/components/table/row",
+			TableHeader: "web_client/components/table/header",
+			TableColumn: "web_client/components/table/column",
+			Dialog: "web_client/components/dialog/dialog",
+			DialogBody: "web_client/components/dialog/body",
+			DialogContent: "web_client/components/dialog/content",
+			DialogHeader: "web_client/components/dialog/header"
         })
     ]
 };
