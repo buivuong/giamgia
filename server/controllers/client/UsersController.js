@@ -24,10 +24,11 @@ var main = {
 	postCheckEmail: function(req, res){
 		var postData = req.body.data;
 
-		return res.status(200).json({data: 'success'});
-
-		/*knex('users')
-		.where('email', postData.email)
+		knex('emails')
+		.where({
+			name: postData.email,
+			type: 'primary'
+		})
 		.then(function(response){
 			if(response.length > 0)
 				res.status(400).json({data: 'error'});
@@ -36,7 +37,7 @@ var main = {
 		})
 		.catch(function(error){
 			res.status(500).json(error);
-		})*/	
+		})
 	},
 	postRegister: function(req, res){
 		var postData = req.body.data;
