@@ -90,7 +90,10 @@ var config = {
 			Dialog: "web_client/components/dialog/dialog",
 			DialogBody: "web_client/components/dialog/body",
 			DialogContent: "web_client/components/dialog/content",
-			DialogHeader: "web_client/components/dialog/header"
+			DialogHeader: "web_client/components/dialog/header",
+            Tab: "web_client/components/tab/tab",
+            Hr: "web_client/components/hr/hr",
+            Wizard: "web_client/components/wizard/wizard"
         })
     ]
 };

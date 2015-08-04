@@ -11,6 +11,9 @@ var ListItem = React.createClass({
 	addClass: function(className){
 		this.$root.addClass(className);
 	},
+	removeClass: function(className){
+		this.$root.removeClass(className);
+	},
 	render: function(){
 		return (
 			<li className={this.props.className} onClick={this.props.onClick} style={this.props.style}>

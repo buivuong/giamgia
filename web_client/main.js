@@ -66,6 +66,8 @@ var Client_MessageCenter_Compose = require('client/messageCenter/components/comp
 var Client_Consultation = require('client/consultation/components/core');
 var Client_Consultation_View = require('client/consultation/components/view');
 
+var Client_Session = require('client/session/components/core'),
+    Client_Session_Steps = require('client/session/components/steps/steps');
 var routes = (
     <Route handler={App} name="app" path="/">
         <Route handler={Client} name="client">
@@ -78,6 +80,9 @@ var routes = (
                 <Route handler={Client_Consultation} name="client_consultation" path="consultation">
                     <DefaultRoute handler={Client_Consultation_View}/>
                     <Route handler={Client_Consultation_View} name="client_consultation_view" path="view"/>
+                </Route>
+                <Route handler={Client_Session} name="client_session" path="session">
+                    <Route handler={Client_Session_Steps} name="client_session_steps" path="steps" />
                 </Route>
             </Route>
         </Route>
