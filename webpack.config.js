@@ -90,7 +90,9 @@ var config = {
 			Dialog: "web_client/components/dialog/dialog",
 			DialogBody: "web_client/components/dialog/body",
 			DialogContent: "web_client/components/dialog/content",
-			DialogHeader: "web_client/components/dialog/header"
+			DialogHeader: "web_client/components/dialog/header",
+			LabelError: "web_client/components/label/error",
+			Loader: "web_client/components/loader/loader"
         })
     ]
 };
