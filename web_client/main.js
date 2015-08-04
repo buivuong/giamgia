@@ -71,6 +71,9 @@ var Client_Appointment_View = require('client/appointment/components/view');
 
 var Client_Register = require('client/user/components/register/view');
 
+var Client_Session = require('client/session/components/core');
+var Client_Session_Steps = require('client/session/components/steps/steps');
+
 var routes = (
     <Route handler={App} name="app" path="/">
         <Route handler={Client} name="client">
@@ -88,6 +91,9 @@ var routes = (
                 <Route handler={Client_Appointment} name="client_appointment" path="appointment">
                     <DefaultRoute handler={Client_Appointment_View}/>
                     <Route handler={Client_Appointment_View} name="client_appointment_view" path="view"/>
+                </Route>
+                <Route handler={Client_Session} name="client_session" path="session">
+                    <Route handler={Client_Session_Steps} name="client_session_steps" path="steps" />
                 </Route>
             </Route>
         </Route>

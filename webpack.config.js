@@ -92,7 +92,10 @@ var config = {
 			DialogContent: "web_client/components/dialog/content",
 			DialogHeader: "web_client/components/dialog/header",
 			LabelError: "web_client/components/label/error",
-			Loader: "web_client/components/loader/loader"
+			Loader: "web_client/components/loader/loader",
+            Tab: "web_client/components/tab/tab",
+            Hr: "web_client/components/hr/hr",
+            Wizard: "web_client/components/wizard/wizard"
         })
     ]
 };

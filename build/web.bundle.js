@@ -117,6 +117,9 @@
 
 	var Client_Register = __webpack_require__(442);
 
+	var Client_Session = __webpack_require__(471);
+	var Client_Session_Steps = __webpack_require__(472);
+
 	var routes = (
 	    React.createElement(Route, {handler: App, name: "app", path: "/"}, 
 	        React.createElement(Route, {handler: Client, name: "client"}, 
@@ -134,6 +137,9 @@
 	                React.createElement(Route, {handler: Client_Appointment, name: "client_appointment", path: "appointment"}, 
 	                    React.createElement(DefaultRoute, {handler: Client_Appointment_View}), 
 	                    React.createElement(Route, {handler: Client_Appointment_View, name: "client_appointment_view", path: "view"})
+	                ), 
+	                React.createElement(Route, {handler: Client_Session, name: "client_session", path: "session"}, 
+	                    React.createElement(Route, {handler: Client_Session_Steps, name: "client_session_steps", path: "steps"})
 	                )
 	            )
 	        )
@@ -24078,7 +24084,7 @@
 /* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "9c97232a974f0e4859c3d5c720a8e53f.svg"
+	module.exports = __webpack_require__.p + "fb2540fde3302e8e0ed47ffcc93a7691.svg"
 
 /***/ },
 /* 207 */
@@ -24122,7 +24128,7 @@
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "776d58f453c8fe5d6a89e9c31ee223ff.svg"
+	module.exports = __webpack_require__.p + "dc89f84240347782f3a88e9f4d2d62e7.svg"
 
 /***/ },
 /* 213 */
@@ -24235,7 +24241,7 @@
 
 
 	// module
-	exports.push([module.id, "ul.wysihtml5-toolbar {\n\tmargin: 0;\n\tpadding: 0;\n\tdisplay: block;\n}\n\nul.wysihtml5-toolbar::after {\n\tclear: both;\n\tdisplay: table;\n\tcontent: \"\";\n}\n\nul.wysihtml5-toolbar > li {\n\tfloat: left;\n\tdisplay: list-item;\n\tlist-style: none;\n\tmargin: 0 5px 10px 0;\n}\n\nul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {\n\tfont-weight: bold;\n}\n\nul.wysihtml5-toolbar a[data-wysihtml5-command=italic] {\n\tfont-style: italic;\n}\n\nul.wysihtml5-toolbar a[data-wysihtml5-command=underline] {\n\ttext-decoration: underline;\n}\n\nul.wysihtml5-toolbar a.btn.wysihtml5-command-active {\n\tbackground-image: none;\n\tbackground-color: #fff;\n\toutline: 0;\n}\n\nul.wysihtml5-commands-disabled .dropdown-menu {\n\tdisplay: none !important;\n}\n\nul.wysihtml5-toolbar div.wysihtml5-colors {\n  display:block;\n  width: 50px;\n  height: 20px;\n  margin-top: 2px;\n  margin-left: 5px;\n  position: absolute;\n  pointer-events: none;\n}\n\nul.wysihtml5-toolbar a.wysihtml5-colors-title {\n  padding-left: 70px;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"black\"] {\n  background: black !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"silver\"] {\n  background: silver !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"gray\"] {\n  background: gray !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"maroon\"] {\n  background: maroon !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"red\"] {\n  background: red !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"purple\"] {\n  background: purple !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"green\"] {\n  background: green !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"olive\"] {\n  background: olive !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"navy\"] {\n  background: navy !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"blue\"] {\n  background: blue !important;\n}\n\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"orange\"] {\n  background: orange !important;\n}\n", ""]);
+	exports.push([module.id, "ul.wysihtml5-toolbar {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tdisplay: block;\r\n}\r\n\r\nul.wysihtml5-toolbar::after {\r\n\tclear: both;\r\n\tdisplay: table;\r\n\tcontent: \"\";\r\n}\r\n\r\nul.wysihtml5-toolbar > li {\r\n\tfloat: left;\r\n\tdisplay: list-item;\r\n\tlist-style: none;\r\n\tmargin: 0 5px 10px 0;\r\n}\r\n\r\nul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {\r\n\tfont-weight: bold;\r\n}\r\n\r\nul.wysihtml5-toolbar a[data-wysihtml5-command=italic] {\r\n\tfont-style: italic;\r\n}\r\n\r\nul.wysihtml5-toolbar a[data-wysihtml5-command=underline] {\r\n\ttext-decoration: underline;\r\n}\r\n\r\nul.wysihtml5-toolbar a.btn.wysihtml5-command-active {\r\n\tbackground-image: none;\r\n\tbackground-color: #fff;\r\n\toutline: 0;\r\n}\r\n\r\nul.wysihtml5-commands-disabled .dropdown-menu {\r\n\tdisplay: none !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div.wysihtml5-colors {\r\n  display:block;\r\n  width: 50px;\r\n  height: 20px;\r\n  margin-top: 2px;\r\n  margin-left: 5px;\r\n  position: absolute;\r\n  pointer-events: none;\r\n}\r\n\r\nul.wysihtml5-toolbar a.wysihtml5-colors-title {\r\n  padding-left: 70px;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"black\"] {\r\n  background: black !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"silver\"] {\r\n  background: silver !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"gray\"] {\r\n  background: gray !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"maroon\"] {\r\n  background: maroon !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"red\"] {\r\n  background: red !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"purple\"] {\r\n  background: purple !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"green\"] {\r\n  background: green !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"olive\"] {\r\n  background: olive !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"navy\"] {\r\n  background: navy !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"blue\"] {\r\n  background: blue !important;\r\n}\r\n\r\nul.wysihtml5-toolbar div[data-wysihtml5-command-value=\"orange\"] {\r\n  background: orange !important;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -24758,7 +24764,7 @@
 
 
 	// module
-	exports.push([module.id, ".xdsoft_datetimepicker {\n\tbox-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);\n\tbackground: #fff;\n\tborder-bottom: 1px solid #bbb;\n\tborder-left: 1px solid #ccc;\n\tborder-right: 1px solid #ccc;\n\tborder-top: 1px solid #ccc;\n\tcolor: #333;\n\tfont-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n\tpadding: 8px;\n\tpadding-left: 0;\n\tpadding-top: 2px;\n\tposition: absolute;\n\tz-index: 9999;\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n\tdisplay: none;\n}\n\n.xdsoft_datetimepicker iframe {\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\twidth: 75px;\n\theight: 210px;\n\tbackground: transparent;\n\tborder: none;\n}\n\n/*For IE8 or lower*/\n.xdsoft_datetimepicker button {\n\tborder: none !important;\n}\n\n.xdsoft_noselect {\n\t-webkit-touch-callout: none;\n\t-webkit-user-select: none;\n\t-khtml-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\t-o-user-select: none;\n\tuser-select: none;\n}\n\n.xdsoft_noselect::selection { background: transparent }\n.xdsoft_noselect::-moz-selection { background: transparent }\n\n.xdsoft_datetimepicker.xdsoft_inline {\n\tdisplay: inline-block;\n\tposition: static;\n\tbox-shadow: none;\n}\n\n.xdsoft_datetimepicker * {\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_datepicker, .xdsoft_datetimepicker .xdsoft_timepicker {\n\tdisplay: none;\n}\n\n.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {\n\tdisplay: block;\n}\n\n.xdsoft_datetimepicker .xdsoft_datepicker {\n\twidth: 224px;\n\tfloat: left;\n\tmargin-left: 8px;\n}\n\n.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_datepicker {\n\twidth: 256px;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker {\n\twidth: 58px;\n\tfloat: left;\n\ttext-align: center;\n\tmargin-left: 8px;\n\tmargin-top: 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker {\n\tmargin-top: 8px;\n\tmargin-bottom: 3px\n}\n\n.xdsoft_datetimepicker .xdsoft_mounthpicker {\n\tposition: relative;\n\ttext-align: center;\n}\n\n.xdsoft_datetimepicker .xdsoft_label i,\n.xdsoft_datetimepicker .xdsoft_prev,\n.xdsoft_datetimepicker .xdsoft_next,\n.xdsoft_datetimepicker .xdsoft_today_button {\n\tbackground-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0NBRjI1NjM0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0NBRjI1NjQ0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0FGMjU2MTQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0FGMjU2MjQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoNEP54AAAIOSURBVHja7Jq9TsMwEMcxrZD4WpBYeKUCe+kTMCACHZh4BFfHO/AAIHZGFhYkBBsSEqxsLCAgXKhbXYOTxh9pfJVP+qutnZ5s/5Lz2Y5I03QhWji2GIcgAokWgfCxNvcOCCGKqiSqhUp0laHOne05vdEyGMfkdxJDVjgwDlEQgYQBgx+ULJaWSXXS6r/ER5FBVR8VfGftTKcITNs+a1XpcFoExREIDF14AVIFxgQUS+h520cdud6wNkC0UBw6BCO/HoCYwBhD8QCkQ/x1mwDyD4plh4D6DDV0TAGyo4HcawLIBBSLDkHeH0Mg2yVP3l4TQMZQDDsEOl/MgHQqhMNuE0D+oBh0CIr8MAKyazBH9WyBuKxDWgbXfjNf32TZ1KWm/Ap1oSk/R53UtQ5xTh3LUlMmT8gt6g51Q9p+SobxgJQ/qmsfZhWywGFSl0yBjCLJCMgXail3b7+rumdVJ2YRss4cN+r6qAHDkPWjPjdJCF4n9RmAD/V9A/Wp4NQassDjwlB6XBiCxcJQWmZZb8THFilfy/lfrTvLghq2TqTHrRMTKNJ0sIhdo15RT+RpyWwFdY96UZ/LdQKBGjcXpcc1AlSFEfLmouD+1knuxBDUVrvOBmoOC/rEcN7OQxKVeJTCiAdUzUJhA2Oez9QTkp72OTVcxDcXY8iKNkxGAJXmJCOQwOa6dhyXsOa6XwEGAKdeb5ET3rQdAAAAAElFTkSuQmCC);\n}\n\n.xdsoft_datetimepicker .xdsoft_label i {\n\topacity: 0.5;\n\tbackground-position: -92px -19px;\n\tdisplay: inline-block;\n\twidth: 9px;\n\theight: 20px;\n\tvertical-align: middle;\n}\n\n.xdsoft_datetimepicker .xdsoft_prev {\n\tfloat: left;\n\tbackground-position: -20px 0;\n}\n.xdsoft_datetimepicker .xdsoft_today_button {\n\tfloat: left;\n\tbackground-position: -70px 0;\n\tmargin-left: 5px;\n}\n\n.xdsoft_datetimepicker .xdsoft_next {\n\tfloat: right;\n\tbackground-position: 0 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_next,\n.xdsoft_datetimepicker .xdsoft_prev ,\n.xdsoft_datetimepicker .xdsoft_today_button {\n\tbackground-color: transparent;\n\tbackground-repeat: no-repeat;\n\tborder: 0 none;\n\tcursor: pointer;\n\tdisplay: block;\n\theight: 30px;\n\topacity: 0.5;\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\";\n\toutline: medium none;\n\toverflow: hidden;\n\tpadding: 0;\n\tposition: relative;\n\ttext-indent: 100%;\n\twhite-space: nowrap;\n\twidth: 20px;\n\tmin-width: 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {\n\tfloat: none;\n\tbackground-position: -40px -15px;\n\theight: 15px;\n\twidth: 30px;\n\tdisplay: block;\n\tmargin-left: 14px;\n\tmargin-top: 7px;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev {\n\tbackground-position: -40px 0;\n\tmargin-bottom: 7px;\n\tmargin-top: 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {\n\theight: 151px;\n\toverflow: hidden;\n\tborder-bottom: 1px solid #ddd;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div {\n\tbackground: #f5f5f5;\n\tborder-top: 1px solid #ddd;\n\tcolor: #666;\n\tfont-size: 12px;\n\ttext-align: center;\n\tborder-collapse: collapse;\n\tcursor: pointer;\n\tborder-bottom-width: 0;\n\theight: 25px;\n\tline-height: 25px;\n}\n\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div > div:first-child {\n\tborder-top-width: 0;\n}\n\n.xdsoft_datetimepicker .xdsoft_today_button:hover,\n.xdsoft_datetimepicker .xdsoft_next:hover,\n.xdsoft_datetimepicker .xdsoft_prev:hover {\n\topacity: 1;\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)\";\n}\n\n.xdsoft_datetimepicker .xdsoft_label {\n\tdisplay: inline;\n\tposition: relative;\n\tz-index: 9999;\n\tmargin: 0;\n\tpadding: 5px 3px;\n\tfont-size: 14px;\n\tline-height: 20px;\n\tfont-weight: bold;\n\tbackground-color: #fff;\n\tfloat: left;\n\twidth: 182px;\n\ttext-align: center;\n\tcursor: pointer;\n}\n\n.xdsoft_datetimepicker .xdsoft_label:hover>span {\n\ttext-decoration: underline;\n}\n\n.xdsoft_datetimepicker .xdsoft_label:hover i {\n\topacity: 1.0;\n}\n\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {\n\tborder: 1px solid #ccc;\n\tposition: absolute;\n\tright: 0;\n\ttop: 30px;\n\tz-index: 101;\n\tdisplay: none;\n\tbackground: #fff;\n\tmax-height: 160px;\n\toverflow-y: hidden;\n}\n\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect{ right: -7px }\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect{ right: 2px }\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {\n\tcolor: #fff;\n\tbackground: #ff8000;\n}\n\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option {\n\tpadding: 2px 10px 2px 5px;\n\ttext-decoration: none !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {\n\tbackground: #33aaff;\n\tbox-shadow: #178fe5 0 1px 3px 0 inset;\n\tcolor: #fff;\n\tfont-weight: 700;\n}\n\n.xdsoft_datetimepicker .xdsoft_month {\n\twidth: 100px;\n\ttext-align: right;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar {\n\tclear: both;\n}\n\n.xdsoft_datetimepicker .xdsoft_year{\n\twidth: 48px;\n\tmargin-left: 5px;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar table {\n\tborder-collapse: collapse;\n\twidth: 100%;\n\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td > div {\n\tpadding-right: 5px;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar th {\n\theight: 25px;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td,.xdsoft_datetimepicker .xdsoft_calendar th {\n\twidth: 14.2857142%;\n\tbackground: #f5f5f5;\n\tborder: 1px solid #ddd;\n\tcolor: #666;\n\tfont-size: 12px;\n\ttext-align: right;\n\tvertical-align: middle;\n\tpadding: 0;\n\tborder-collapse: collapse;\n\tcursor: pointer;\n\theight: 25px;\n}\n.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td,.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th {\n\twidth: 12.5%;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar th {\n\tbackground: #f1f1f1;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {\n\tcolor: #33aaff;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default {\n\tbackground: #ffe9d2;\n\tbox-shadow: #ffb871 0 1px 4px 0 inset;\n\tcolor: #000;\n}\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_mint {\n\tbackground: #c1ffc9;\n\tbox-shadow: #00dd1c 0 1px 4px 0 inset;\n\tcolor: #000;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {\n\tbackground: #33aaff;\n\tbox-shadow: #178fe5 0 1px 3px 0 inset;\n\tcolor: #fff;\n\tfont-weight: 700;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month,\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled,\n.xdsoft_datetimepicker .xdsoft_time_box >div >div.xdsoft_disabled {\n\topacity: 0.5;\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\";\n\tcursor: default;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled {\n\topacity: 0.2;\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div:hover {\n\tcolor: #fff !important;\n\tbackground: #ff8000 !important;\n\tbox-shadow: none !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current.xdsoft_disabled:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current.xdsoft_disabled:hover {\n\tbackground: #33aaff !important;\n\tbox-shadow: #178fe5 0 1px 3px 0 inset !important;\n\tcolor: #fff !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_disabled:hover {\n\tcolor: inherit\t!important;\n\tbackground: inherit !important;\n\tbox-shadow: inherit !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar th {\n\tfont-weight: 700;\n\ttext-align: center;\n\tcolor: #999;\n\tcursor: default;\n}\n\n.xdsoft_datetimepicker .xdsoft_copyright {\n\tcolor: #ccc !important;\n\tfont-size: 10px;\n\tclear: both;\n\tfloat: none;\n\tmargin-left: 8px;\n}\n\n.xdsoft_datetimepicker .xdsoft_copyright a { color: #eee !important }\n.xdsoft_datetimepicker .xdsoft_copyright a:hover { color: #aaa !important }\n\n.xdsoft_time_box {\n\tposition: relative;\n\tborder: 1px solid #ccc;\n}\n.xdsoft_scrollbar >.xdsoft_scroller {\n\tbackground: #ccc !important;\n\theight: 20px;\n\tborder-radius: 3px;\n}\n.xdsoft_scrollbar {\n\tposition: absolute;\n\twidth: 7px;\n\tright: 0;\n\ttop: 0;\n\tbottom: 0;\n\tcursor: pointer;\n}\n.xdsoft_scroller_box {\n\tposition: relative;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark {\n\tbox-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.506);\n\tbackground: #000;\n\tborder-bottom: 1px solid #444;\n\tborder-left: 1px solid #333;\n\tborder-right: 1px solid #333;\n\tborder-top: 1px solid #333;\n\tcolor: #ccc;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box {\n\tborder-bottom: 1px solid #222;\n}\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div {\n\tbackground: #0a0a0a;\n\tborder-top: 1px solid #222;\n\tcolor: #999;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label {\n\tbackground-color: #000;\n}\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select {\n\tborder: 1px solid #333;\n\tbackground: #000;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {\n\tcolor: #000;\n\tbackground: #007fff;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {\n\tbackground: #cc5500;\n\tbox-shadow: #b03e00 0 1px 3px 0 inset;\n\tcolor: #000;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label i,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_prev,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_next,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_today_button {\n\tbackground-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUExQUUzOTA0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUExQUUzOTE0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQTFBRTM4RTQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQTFBRTM4RjQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp0VxGEAAAIASURBVHja7JrNSgMxEMebtgh+3MSLr1T1Xn2CHoSKB08+QmR8Bx9A8e7RixdB9CKCoNdexIugxFlJa7rNZneTbLIpM/CnNLsdMvNjM8l0mRCiQ9Ye61IKCAgZAUnH+mU3MMZaHYChBnJUDzWOFZdVfc5+ZFLbrWDeXPwbxIqrLLfaeS0hEBVGIRQCEiZoHQwtlGSByCCdYBl8g8egTTAWoKQMRBRBcZxYlhzhKegqMOageErsCHVkk3hXIFooDgHB1KkHIHVgzKB4ADJQ/A1jAFmAYhkQqA5TOBtocrKrgXwQA8gcFIuAIO8sQSA7hidvPwaQGZSaAYHOUWJABhWWw2EMIH9QagQERU4SArJXo0ZZL18uvaxejXt/Em8xjVBXmvFr1KVm/AJ10tRe2XnraNqaJvKE3KHuUbfK1E+VHB0q40/y3sdQSxY4FHWeKJCunP8UyDdqJZenT3ntVV5jIYCAh20vT7ioP8tpf6E2lfEMwERe+whV1MHjwZB7PBiCxcGQWwKZKD62lfGNnP/1poFAA60T7rF1UgcKd2id3KDeUS+oLWV8DfWAepOfq00CgQabi9zjcgJVYVD7PVzQUAUGAQkbNJTBICDhgwYTjDYD6XeW08ZKh+A4pYkzenOxXUbvZcWz7E8ykRMnIHGX1XPl+1m2vPYpL+2qdb8CDAARlKFEz/ZVkAAAAABJRU5ErkJggg==);\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\n\tbackground: #0a0a0a;\n\tborder: 1px solid #222;\n\tcolor: #999;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\n\tbackground: #0e0e0e;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today {\n\tcolor: #cc5500;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_default {\n\tbackground: #ffe9d2;\n\tbox-shadow: #ffb871 0 1px 4px 0 inset;\n\tcolor:#000;\n}\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_mint {\n\tbackground: #c1ffc9;\n\tbox-shadow: #00dd1c 0 1px 4px 0 inset;\n\tcolor:#000;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {\n\tbackground: #cc5500;\n\tbox-shadow: #b03e00 0 1px 3px 0 inset;\n\tcolor: #000;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td:hover,\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div:hover {\n\tcolor: #000 !important;\n\tbackground: #007fff !important;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\n\tcolor: #666;\n}\n\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright { color: #333 !important }\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a { color: #111 !important }\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a:hover { color: #555 !important }\n\n.xdsoft_dark .xdsoft_time_box {\n\tborder: 1px solid #333;\n}\n\n.xdsoft_dark .xdsoft_scrollbar >.xdsoft_scroller {\n\tbackground: #333 !important;\n}\n.xdsoft_datetimepicker .xdsoft_save_selected {\n    display: block;\n    border: 1px solid #dddddd !important;\n    margin-top: 5px;\n    width: 100%;\n    color: #454551;\n    font-size: 13px;\n}\n.xdsoft_datetimepicker .blue-gradient-button {\n\tfont-family: \"museo-sans\", \"Book Antiqua\", sans-serif;\n\tfont-size: 12px;\n\tfont-weight: 300;\n\tcolor: #82878c;\n\theight: 28px;\n\tposition: relative;\n\tpadding: 4px 17px 4px 33px;\n\tborder: 1px solid #d7d8da;\n\tbackground: -moz-linear-gradient(top, #fff 0%, #f4f8fa 73%);\n\t/* FF3.6+ */\n\tbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(73%, #f4f8fa));\n\t/* Chrome,Safari4+ */\n\tbackground: -webkit-linear-gradient(top, #fff 0%, #f4f8fa 73%);\n\t/* Chrome10+,Safari5.1+ */\n\tbackground: -o-linear-gradient(top, #fff 0%, #f4f8fa 73%);\n\t/* Opera 11.10+ */\n\tbackground: -ms-linear-gradient(top, #fff 0%, #f4f8fa 73%);\n\t/* IE10+ */\n\tbackground: linear-gradient(to bottom, #fff 0%, #f4f8fa 73%);\n\t/* W3C */\n\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f4f8fa',GradientType=0 );\n/* IE6-9 */\n}\n.xdsoft_datetimepicker .blue-gradient-button:hover, .xdsoft_datetimepicker .blue-gradient-button:focus, .xdsoft_datetimepicker .blue-gradient-button:hover span, .xdsoft_datetimepicker .blue-gradient-button:focus span {\n  color: #454551;\n  background: -moz-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\n  /* FF3.6+ */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f8fa), color-stop(73%, #FFF));\n  /* Chrome,Safari4+ */\n  background: -webkit-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\n  /* Chrome10+,Safari5.1+ */\n  background: -o-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\n  /* Opera 11.10+ */\n  background: -ms-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\n  /* IE10+ */\n  background: linear-gradient(to bottom, #f4f8fa 0%, #FFF 73%);\n  /* W3C */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fa', endColorstr='#FFF',GradientType=0 );\n  /* IE6-9 */\n}\n", ""]);
+	exports.push([module.id, ".xdsoft_datetimepicker {\r\n\tbox-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);\r\n\tbackground: #fff;\r\n\tborder-bottom: 1px solid #bbb;\r\n\tborder-left: 1px solid #ccc;\r\n\tborder-right: 1px solid #ccc;\r\n\tborder-top: 1px solid #ccc;\r\n\tcolor: #333;\r\n\tfont-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n\tpadding: 8px;\r\n\tpadding-left: 0;\r\n\tpadding-top: 2px;\r\n\tposition: absolute;\r\n\tz-index: 9999;\r\n\t-moz-box-sizing: border-box;\r\n\tbox-sizing: border-box;\r\n\tdisplay: none;\r\n}\r\n\r\n.xdsoft_datetimepicker iframe {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\twidth: 75px;\r\n\theight: 210px;\r\n\tbackground: transparent;\r\n\tborder: none;\r\n}\r\n\r\n/*For IE8 or lower*/\r\n.xdsoft_datetimepicker button {\r\n\tborder: none !important;\r\n}\r\n\r\n.xdsoft_noselect {\r\n\t-webkit-touch-callout: none;\r\n\t-webkit-user-select: none;\r\n\t-khtml-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.xdsoft_noselect::selection { background: transparent }\r\n.xdsoft_noselect::-moz-selection { background: transparent }\r\n\r\n.xdsoft_datetimepicker.xdsoft_inline {\r\n\tdisplay: inline-block;\r\n\tposition: static;\r\n\tbox-shadow: none;\r\n}\r\n\r\n.xdsoft_datetimepicker * {\r\n\t-moz-box-sizing: border-box;\r\n\tbox-sizing: border-box;\r\n\tpadding: 0;\r\n\tmargin: 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_datepicker, .xdsoft_datetimepicker .xdsoft_timepicker {\r\n\tdisplay: none;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {\r\n\tdisplay: block;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_datepicker {\r\n\twidth: 224px;\r\n\tfloat: left;\r\n\tmargin-left: 8px;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_datepicker {\r\n\twidth: 256px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker {\r\n\twidth: 58px;\r\n\tfloat: left;\r\n\ttext-align: center;\r\n\tmargin-left: 8px;\r\n\tmargin-top: 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_datepicker.active+.xdsoft_timepicker {\r\n\tmargin-top: 8px;\r\n\tmargin-bottom: 3px\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_mounthpicker {\r\n\tposition: relative;\r\n\ttext-align: center;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label i,\r\n.xdsoft_datetimepicker .xdsoft_prev,\r\n.xdsoft_datetimepicker .xdsoft_next,\r\n.xdsoft_datetimepicker .xdsoft_today_button {\r\n\tbackground-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Q0NBRjI1NjM0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Q0NBRjI1NjQ0M0UwMTFFNDk4NkFGMzJFQkQzQjEwRUIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0FGMjU2MTQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0FGMjU2MjQzRTAxMUU0OTg2QUYzMkVCRDNCMTBFQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoNEP54AAAIOSURBVHja7Jq9TsMwEMcxrZD4WpBYeKUCe+kTMCACHZh4BFfHO/AAIHZGFhYkBBsSEqxsLCAgXKhbXYOTxh9pfJVP+qutnZ5s/5Lz2Y5I03QhWji2GIcgAokWgfCxNvcOCCGKqiSqhUp0laHOne05vdEyGMfkdxJDVjgwDlEQgYQBgx+ULJaWSXXS6r/ER5FBVR8VfGftTKcITNs+a1XpcFoExREIDF14AVIFxgQUS+h520cdud6wNkC0UBw6BCO/HoCYwBhD8QCkQ/x1mwDyD4plh4D6DDV0TAGyo4HcawLIBBSLDkHeH0Mg2yVP3l4TQMZQDDsEOl/MgHQqhMNuE0D+oBh0CIr8MAKyazBH9WyBuKxDWgbXfjNf32TZ1KWm/Ap1oSk/R53UtQ5xTh3LUlMmT8gt6g51Q9p+SobxgJQ/qmsfZhWywGFSl0yBjCLJCMgXail3b7+rumdVJ2YRss4cN+r6qAHDkPWjPjdJCF4n9RmAD/V9A/Wp4NQassDjwlB6XBiCxcJQWmZZb8THFilfy/lfrTvLghq2TqTHrRMTKNJ0sIhdo15RT+RpyWwFdY96UZ/LdQKBGjcXpcc1AlSFEfLmouD+1knuxBDUVrvOBmoOC/rEcN7OQxKVeJTCiAdUzUJhA2Oez9QTkp72OTVcxDcXY8iKNkxGAJXmJCOQwOa6dhyXsOa6XwEGAKdeb5ET3rQdAAAAAElFTkSuQmCC);\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label i {\r\n\topacity: 0.5;\r\n\tbackground-position: -92px -19px;\r\n\tdisplay: inline-block;\r\n\twidth: 9px;\r\n\theight: 20px;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_prev {\r\n\tfloat: left;\r\n\tbackground-position: -20px 0;\r\n}\r\n.xdsoft_datetimepicker .xdsoft_today_button {\r\n\tfloat: left;\r\n\tbackground-position: -70px 0;\r\n\tmargin-left: 5px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_next {\r\n\tfloat: right;\r\n\tbackground-position: 0 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_next,\r\n.xdsoft_datetimepicker .xdsoft_prev ,\r\n.xdsoft_datetimepicker .xdsoft_today_button {\r\n\tbackground-color: transparent;\r\n\tbackground-repeat: no-repeat;\r\n\tborder: 0 none;\r\n\tcursor: pointer;\r\n\tdisplay: block;\r\n\theight: 30px;\r\n\topacity: 0.5;\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\";\r\n\toutline: medium none;\r\n\toverflow: hidden;\r\n\tpadding: 0;\r\n\tposition: relative;\r\n\ttext-indent: 100%;\r\n\twhite-space: nowrap;\r\n\twidth: 20px;\r\n\tmin-width: 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {\r\n\tfloat: none;\r\n\tbackground-position: -40px -15px;\r\n\theight: 15px;\r\n\twidth: 30px;\r\n\tdisplay: block;\r\n\tmargin-left: 14px;\r\n\tmargin-top: 7px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev {\r\n\tbackground-position: -40px 0;\r\n\tmargin-bottom: 7px;\r\n\tmargin-top: 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {\r\n\theight: 151px;\r\n\toverflow: hidden;\r\n\tborder-bottom: 1px solid #ddd;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div {\r\n\tbackground: #f5f5f5;\r\n\tborder-top: 1px solid #ddd;\r\n\tcolor: #666;\r\n\tfont-size: 12px;\r\n\ttext-align: center;\r\n\tborder-collapse: collapse;\r\n\tcursor: pointer;\r\n\tborder-bottom-width: 0;\r\n\theight: 25px;\r\n\tline-height: 25px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div > div:first-child {\r\n\tborder-top-width: 0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_today_button:hover,\r\n.xdsoft_datetimepicker .xdsoft_next:hover,\r\n.xdsoft_datetimepicker .xdsoft_prev:hover {\r\n\topacity: 1;\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)\";\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label {\r\n\tdisplay: inline;\r\n\tposition: relative;\r\n\tz-index: 9999;\r\n\tmargin: 0;\r\n\tpadding: 5px 3px;\r\n\tfont-size: 14px;\r\n\tline-height: 20px;\r\n\tfont-weight: bold;\r\n\tbackground-color: #fff;\r\n\tfloat: left;\r\n\twidth: 182px;\r\n\ttext-align: center;\r\n\tcursor: pointer;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label:hover>span {\r\n\ttext-decoration: underline;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label:hover i {\r\n\topacity: 1.0;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {\r\n\tborder: 1px solid #ccc;\r\n\tposition: absolute;\r\n\tright: 0;\r\n\ttop: 30px;\r\n\tz-index: 101;\r\n\tdisplay: none;\r\n\tbackground: #fff;\r\n\tmax-height: 160px;\r\n\toverflow-y: hidden;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect{ right: -7px }\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect{ right: 2px }\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {\r\n\tcolor: #fff;\r\n\tbackground: #ff8000;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option {\r\n\tpadding: 2px 10px 2px 5px;\r\n\ttext-decoration: none !important;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {\r\n\tbackground: #33aaff;\r\n\tbox-shadow: #178fe5 0 1px 3px 0 inset;\r\n\tcolor: #fff;\r\n\tfont-weight: 700;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_month {\r\n\twidth: 100px;\r\n\ttext-align: right;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar {\r\n\tclear: both;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_year{\r\n\twidth: 48px;\r\n\tmargin-left: 5px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar table {\r\n\tborder-collapse: collapse;\r\n\twidth: 100%;\r\n\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td > div {\r\n\tpadding-right: 5px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar th {\r\n\theight: 25px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td,.xdsoft_datetimepicker .xdsoft_calendar th {\r\n\twidth: 14.2857142%;\r\n\tbackground: #f5f5f5;\r\n\tborder: 1px solid #ddd;\r\n\tcolor: #666;\r\n\tfont-size: 12px;\r\n\ttext-align: right;\r\n\tvertical-align: middle;\r\n\tpadding: 0;\r\n\tborder-collapse: collapse;\r\n\tcursor: pointer;\r\n\theight: 25px;\r\n}\r\n.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td,.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th {\r\n\twidth: 12.5%;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar th {\r\n\tbackground: #f1f1f1;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {\r\n\tcolor: #33aaff;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default {\r\n\tbackground: #ffe9d2;\r\n\tbox-shadow: #ffb871 0 1px 4px 0 inset;\r\n\tcolor: #000;\r\n}\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_mint {\r\n\tbackground: #c1ffc9;\r\n\tbox-shadow: #00dd1c 0 1px 4px 0 inset;\r\n\tcolor: #000;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {\r\n\tbackground: #33aaff;\r\n\tbox-shadow: #178fe5 0 1px 3px 0 inset;\r\n\tcolor: #fff;\r\n\tfont-weight: 700;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month,\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled,\r\n.xdsoft_datetimepicker .xdsoft_time_box >div >div.xdsoft_disabled {\r\n\topacity: 0.5;\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)\";\r\n\tcursor: default;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled {\r\n\topacity: 0.2;\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td:hover,\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div:hover {\r\n\tcolor: #fff !important;\r\n\tbackground: #ff8000 !important;\r\n\tbox-shadow: none !important;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current.xdsoft_disabled:hover,\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current.xdsoft_disabled:hover {\r\n\tbackground: #33aaff !important;\r\n\tbox-shadow: #178fe5 0 1px 3px 0 inset !important;\r\n\tcolor: #fff !important;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled:hover,\r\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_disabled:hover {\r\n\tcolor: inherit\t!important;\r\n\tbackground: inherit !important;\r\n\tbox-shadow: inherit !important;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_calendar th {\r\n\tfont-weight: 700;\r\n\ttext-align: center;\r\n\tcolor: #999;\r\n\tcursor: default;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_copyright {\r\n\tcolor: #ccc !important;\r\n\tfont-size: 10px;\r\n\tclear: both;\r\n\tfloat: none;\r\n\tmargin-left: 8px;\r\n}\r\n\r\n.xdsoft_datetimepicker .xdsoft_copyright a { color: #eee !important }\r\n.xdsoft_datetimepicker .xdsoft_copyright a:hover { color: #aaa !important }\r\n\r\n.xdsoft_time_box {\r\n\tposition: relative;\r\n\tborder: 1px solid #ccc;\r\n}\r\n.xdsoft_scrollbar >.xdsoft_scroller {\r\n\tbackground: #ccc !important;\r\n\theight: 20px;\r\n\tborder-radius: 3px;\r\n}\r\n.xdsoft_scrollbar {\r\n\tposition: absolute;\r\n\twidth: 7px;\r\n\tright: 0;\r\n\ttop: 0;\r\n\tbottom: 0;\r\n\tcursor: pointer;\r\n}\r\n.xdsoft_scroller_box {\r\n\tposition: relative;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark {\r\n\tbox-shadow: 0 5px 15px -5px rgba(255, 255, 255, 0.506);\r\n\tbackground: #000;\r\n\tborder-bottom: 1px solid #444;\r\n\tborder-left: 1px solid #333;\r\n\tborder-right: 1px solid #333;\r\n\tborder-top: 1px solid #333;\r\n\tcolor: #ccc;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box {\r\n\tborder-bottom: 1px solid #222;\r\n}\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div {\r\n\tbackground: #0a0a0a;\r\n\tborder-top: 1px solid #222;\r\n\tcolor: #999;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label {\r\n\tbackground-color: #000;\r\n}\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select {\r\n\tborder: 1px solid #333;\r\n\tbackground: #000;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {\r\n\tcolor: #000;\r\n\tbackground: #007fff;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {\r\n\tbackground: #cc5500;\r\n\tbox-shadow: #b03e00 0 1px 3px 0 inset;\r\n\tcolor: #000;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_label i,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_prev,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_next,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_today_button {\r\n\tbackground-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAeCAYAAADaW7vzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUExQUUzOTA0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUExQUUzOTE0M0UyMTFFNDlBM0FFQTJENTExRDVBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQTFBRTM4RTQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQTFBRTM4RjQzRTIxMUU0OUEzQUVBMkQ1MTFENUE4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp0VxGEAAAIASURBVHja7JrNSgMxEMebtgh+3MSLr1T1Xn2CHoSKB08+QmR8Bx9A8e7RixdB9CKCoNdexIugxFlJa7rNZneTbLIpM/CnNLsdMvNjM8l0mRCiQ9Ye61IKCAgZAUnH+mU3MMZaHYChBnJUDzWOFZdVfc5+ZFLbrWDeXPwbxIqrLLfaeS0hEBVGIRQCEiZoHQwtlGSByCCdYBl8g8egTTAWoKQMRBRBcZxYlhzhKegqMOageErsCHVkk3hXIFooDgHB1KkHIHVgzKB4ADJQ/A1jAFmAYhkQqA5TOBtocrKrgXwQA8gcFIuAIO8sQSA7hidvPwaQGZSaAYHOUWJABhWWw2EMIH9QagQERU4SArJXo0ZZL18uvaxejXt/Em8xjVBXmvFr1KVm/AJ10tRe2XnraNqaJvKE3KHuUbfK1E+VHB0q40/y3sdQSxY4FHWeKJCunP8UyDdqJZenT3ntVV5jIYCAh20vT7ioP8tpf6E2lfEMwERe+whV1MHjwZB7PBiCxcGQWwKZKD62lfGNnP/1poFAA60T7rF1UgcKd2id3KDeUS+oLWV8DfWAepOfq00CgQabi9zjcgJVYVD7PVzQUAUGAQkbNJTBICDhgwYTjDYD6XeW08ZKh+A4pYkzenOxXUbvZcWz7E8ykRMnIHGX1XPl+1m2vPYpL+2qdb8CDAARlKFEz/ZVkAAAAABJRU5ErkJggg==);\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\r\n\tbackground: #0a0a0a;\r\n\tborder: 1px solid #222;\r\n\tcolor: #999;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\r\n\tbackground: #0e0e0e;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today {\r\n\tcolor: #cc5500;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_default {\r\n\tbackground: #ffe9d2;\r\n\tbox-shadow: #ffb871 0 1px 4px 0 inset;\r\n\tcolor:#000;\r\n}\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_mint {\r\n\tbackground: #c1ffc9;\r\n\tbox-shadow: #00dd1c 0 1px 4px 0 inset;\r\n\tcolor:#000;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current {\r\n\tbackground: #cc5500;\r\n\tbox-shadow: #b03e00 0 1px 3px 0 inset;\r\n\tcolor: #000;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td:hover,\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box >div >div:hover {\r\n\tcolor: #000 !important;\r\n\tbackground: #007fff !important;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th {\r\n\tcolor: #666;\r\n}\r\n\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright { color: #333 !important }\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a { color: #111 !important }\r\n.xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a:hover { color: #555 !important }\r\n\r\n.xdsoft_dark .xdsoft_time_box {\r\n\tborder: 1px solid #333;\r\n}\r\n\r\n.xdsoft_dark .xdsoft_scrollbar >.xdsoft_scroller {\r\n\tbackground: #333 !important;\r\n}\r\n.xdsoft_datetimepicker .xdsoft_save_selected {\r\n    display: block;\r\n    border: 1px solid #dddddd !important;\r\n    margin-top: 5px;\r\n    width: 100%;\r\n    color: #454551;\r\n    font-size: 13px;\r\n}\r\n.xdsoft_datetimepicker .blue-gradient-button {\r\n\tfont-family: \"museo-sans\", \"Book Antiqua\", sans-serif;\r\n\tfont-size: 12px;\r\n\tfont-weight: 300;\r\n\tcolor: #82878c;\r\n\theight: 28px;\r\n\tposition: relative;\r\n\tpadding: 4px 17px 4px 33px;\r\n\tborder: 1px solid #d7d8da;\r\n\tbackground: -moz-linear-gradient(top, #fff 0%, #f4f8fa 73%);\r\n\t/* FF3.6+ */\r\n\tbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(73%, #f4f8fa));\r\n\t/* Chrome,Safari4+ */\r\n\tbackground: -webkit-linear-gradient(top, #fff 0%, #f4f8fa 73%);\r\n\t/* Chrome10+,Safari5.1+ */\r\n\tbackground: -o-linear-gradient(top, #fff 0%, #f4f8fa 73%);\r\n\t/* Opera 11.10+ */\r\n\tbackground: -ms-linear-gradient(top, #fff 0%, #f4f8fa 73%);\r\n\t/* IE10+ */\r\n\tbackground: linear-gradient(to bottom, #fff 0%, #f4f8fa 73%);\r\n\t/* W3C */\r\n\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f4f8fa',GradientType=0 );\r\n/* IE6-9 */\r\n}\r\n.xdsoft_datetimepicker .blue-gradient-button:hover, .xdsoft_datetimepicker .blue-gradient-button:focus, .xdsoft_datetimepicker .blue-gradient-button:hover span, .xdsoft_datetimepicker .blue-gradient-button:focus span {\r\n  color: #454551;\r\n  background: -moz-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\r\n  /* FF3.6+ */\r\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f8fa), color-stop(73%, #FFF));\r\n  /* Chrome,Safari4+ */\r\n  background: -webkit-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\r\n  /* Chrome10+,Safari5.1+ */\r\n  background: -o-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\r\n  /* Opera 11.10+ */\r\n  background: -ms-linear-gradient(top, #f4f8fa 0%, #FFF 73%);\r\n  /* IE10+ */\r\n  background: linear-gradient(to bottom, #f4f8fa 0%, #FFF 73%);\r\n  /* W3C */\r\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f8fa', endColorstr='#FFF',GradientType=0 );\r\n  /* IE6-9 */\r\n}\r\n", ""]);
 
 	// exports
 
@@ -26933,7 +26939,7 @@
 
 
 	// module
-	exports.push([module.id, "@-moz-keyframes spinner-loader {\n  0% {\n    -moz-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -moz-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spinner-loader {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n@keyframes spinner-loader {\n  0% {\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n/* :not(:required) hides this rule from IE9 and below */\n.spinner-loader:not(:required) {\n  -moz-animation: spinner-loader 1500ms infinite linear;\n  -webkit-animation: spinner-loader 1500ms infinite linear;\n  animation: spinner-loader 1500ms infinite linear;\n  -moz-border-radius: 0.5em;\n  -webkit-border-radius: 0.5em;\n  border-radius: 0.5em;\n  -moz-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\n  -webkit-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\n  box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\n  display: inline-block;\n  font-size: 10px;\n  width: 1em;\n  height: 1em;\n  margin: 1.5em;\n  overflow: hidden;\n  text-indent: 100%;\n}", ""]);
+	exports.push([module.id, "@-moz-keyframes spinner-loader {\r\n  0% {\r\n    -moz-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -moz-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n@-webkit-keyframes spinner-loader {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n@keyframes spinner-loader {\r\n  0% {\r\n    -moz-transform: rotate(0deg);\r\n    -ms-transform: rotate(0deg);\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -moz-transform: rotate(360deg);\r\n    -ms-transform: rotate(360deg);\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n/* :not(:required) hides this rule from IE9 and below */\r\n.spinner-loader:not(:required) {\r\n  -moz-animation: spinner-loader 1500ms infinite linear;\r\n  -webkit-animation: spinner-loader 1500ms infinite linear;\r\n  animation: spinner-loader 1500ms infinite linear;\r\n  -moz-border-radius: 0.5em;\r\n  -webkit-border-radius: 0.5em;\r\n  border-radius: 0.5em;\r\n  -moz-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\r\n  -webkit-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\r\n  box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;\r\n  display: inline-block;\r\n  font-size: 10px;\r\n  width: 1em;\r\n  height: 1em;\r\n  margin: 1.5em;\r\n  overflow: hidden;\r\n  text-indent: 100%;\r\n}", ""]);
 
 	// exports
 
@@ -26973,7 +26979,7 @@
 
 
 	// module
-	exports.push([module.id, ".dimmer{\n\tz-index: 100;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\ttext-align: center;\n\tvertical-align: middle;\n\tbackground-color: rgba(255,255,255,.8);\n\tline-height: 1;\n\ttransition: background-color .5s linear;\n\twill-change: opacity;\n}\n\n.dimmer .spinner-loader{\n\tdisplay: block;\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\tmargin: 0;\n\tz-index: 1000;\n\ttransform: translateX(-50%) translateY(-50%);\n}\n\na{\n\tcursor: pointer;\n}\n\n.list-inline>li:not(:first-child){\n\tmargin-left: 3px;\n}", ""]);
+	exports.push([module.id, ".dimmer{\r\n\tz-index: 100;\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\ttext-align: center;\r\n\tvertical-align: middle;\r\n\tbackground-color: rgba(255,255,255,.8);\r\n\tline-height: 1;\r\n\ttransition: background-color .5s linear;\r\n\twill-change: opacity;\r\n}\r\n\r\n.dimmer .spinner-loader{\r\n\tdisplay: block;\r\n\tposition: absolute;\r\n\ttop: 50%;\r\n\tleft: 50%;\r\n\tmargin: 0;\r\n\tz-index: 1000;\r\n\ttransform: translateX(-50%) translateY(-50%);\r\n}\r\n\r\na{\r\n\tcursor: pointer;\r\n}\r\n\r\n.list-inline>li:not(:first-child){\r\n\tmargin-left: 3px;\r\n}", ""]);
 
 	// exports
 
@@ -30537,6 +30543,9 @@
 		},
 		addClass: function(className){
 			this.$root.addClass(className);
+		},
+		removeClass: function(className){
+			this.$root.removeClass(className);
 		},
 		render: function(){
 			return (
@@ -49723,6 +49732,1852 @@
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(341)(module)))
+
+/***/ },
+/* 471 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Router = __webpack_require__(257),
+		RouteHandler = Router.RouteHandler,
+	    Section = React.createClass({displayName: "Section",
+		render: function(){
+			return (
+				React.createElement(RouteHandler, null)
+				);
+		}
+	});
+	module.exports = Section;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 472 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Breadcrump, Link, Box, Header, Title, Hr, Panel, Wizard, Tab, Row, Column) {var Doctor = __webpack_require__(478);
+	var Medical = __webpack_require__(481);
+	var Computer = __webpack_require__(487);
+	var Payment = __webpack_require__(476);
+	var Confirm = __webpack_require__(492);
+	var StepTemplate = __webpack_require__(494);
+
+	var	Steps = React.createClass({displayName: "Steps",
+		tabRefs: null,
+		componentDidMount: function(){
+			this.tabRefs=["doctor", "medical", "computer", "payment", "confirm"];
+			this.refs["doctor"].show();
+		},
+		componenWillUnMount: function(){
+			this.tabRefs = null;
+		},
+		onClick: function(keyParams){
+			for(var i=0; i<this.tabRefs.length; i++){
+				if(this.tabRefs[i]===keyParams){
+					this.refs[this.tabRefs[i]].show();
+				}
+				else{
+					this.refs[this.tabRefs[i]].hide();
+				}
+			}
+		},
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement(Breadcrump, {className: "quicklink-box"}, 
+						React.createElement(Link, {className: "color-grey"}, 
+							"Home"
+						), 
+						React.createElement(Link, {className: "quicklink color-grey"}, 
+							"Choose Doctor"
+						)
+					), 
+					React.createElement(Box, {className: "header-profile-box no-img-header-box"}, 
+						React.createElement(Box, {className: "img-box"}), 
+							React.createElement(Header, {className: "header-title"}, 
+								React.createElement(Title, {type: "h2", className: "dashboard"}, 
+									"Choose Doctor"
+								)
+							), 
+							React.createElement(Hr, null)
+					), 
+					React.createElement(Box, {className: "connect-box general-wrap"}, 
+						React.createElement(Panel, {className: "panel-body panel-body-nopadding"}, 
+							React.createElement(Wizard, {className: "basic-wizard"}, 
+								React.createElement(StepTemplate, {ref: "step", onClick: this.onClick}), 
+								React.createElement(Tab, {className: "tab-content"}, 
+									React.createElement(Tab, {className: "tab-pane active"}, 
+										React.createElement(Row, {className: "row"}, 
+											React.createElement(Column, {className: "col-xs-12"}, 
+												React.createElement(Doctor, {ref: "doctor"}), 
+												React.createElement(Medical, {ref: "medical"}), 
+												React.createElement(Computer, {ref: "computer"}), 
+												React.createElement(Payment, {ref: "payment"}), 
+												React.createElement(Confirm, {ref: "confirm"})
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = Steps;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(332), __webpack_require__(307), __webpack_require__(333), __webpack_require__(327), __webpack_require__(319), __webpack_require__(473), __webpack_require__(303), __webpack_require__(474), __webpack_require__(475), __webpack_require__(324), __webpack_require__(325)))
+
+/***/ },
+/* 473 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Hr = React.createClass({displayName: "Hr",
+		propTypes: {
+			className: React.PropTypes.string,
+			onClick: React.PropTypes.func,
+			style: React.PropTypes.object
+		},
+		render: function(){
+			return (
+				React.createElement("hr", {className: this.props.className, onClick: this.props.onClick, style: this.props.style})
+				);
+		}
+	});
+	module.exports = Hr;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 474 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Wizard = React.createClass({displayName: "Wizard",
+		propTypes: {
+			className: React.PropTypes.string,
+			onClick: React.PropTypes.func,
+			style: React.PropTypes.object
+		},
+		render: function(){
+			return (
+				React.createElement("div", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+				);
+		}
+	});
+	module.exports = Wizard;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 475 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Tab = React.createClass({displayName: "Tab",
+		
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.string,
+			onClick: React.PropTypes.func
+		},
+
+		render: function(){
+			return (
+				React.createElement("div", {className: this.props.className, style: this.props.style, onClick: this.props.onClick}, 
+					this.props.children
+				)
+				);
+		}
+	});
+	module.exports = Tab;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 476 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var PaymentUpdate = __webpack_require__(477);
+	var StepPayment = React.createClass({displayName: "StepPayment",
+		getInitialState: function(){
+			return {display: "none"};
+		},
+		show: function(){
+			this.setState({display: "block"});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(PaymentUpdate, null), 
+					React.createElement(Wrap, {className: "text-center margin-bottom-6x"}, 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Back"
+								), 
+							React.createElement(ListItem, null
+							), 
+								React.createElement(Link, {className: "btn btn-primary  btn-lg"}, 
+									"Update Payment"
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = StepPayment;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307)))
+
+/***/ },
+/* 477 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Wrap, Sentence, Bold, Span, Link, Hr, Form, Label, Input) {var PaymentUpdate = React.createClass({displayName: "PaymentUpdate",
+		render : function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+					React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-btns"}, 
+							React.createElement(Title, {type: "h4", className: "no-margin"}, 
+								"Payment"
+							)
+						)
+					), 
+					React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+						React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger"}, 
+							React.createElement(Column, {className: "col-sm-8 col-sm-offset-2 col-xs-12"}, 
+								React.createElement(Wrap, {className: "text-center"}, 
+									React.createElement(Sentence, {className: "color-main font-size-18px"}, 
+										React.createElement(Bold, null, 
+											React.createElement(Span, {className: "margin-right"}, 
+												"Visit Cost:"
+											), 
+												"$45.00"
+										)
+									)
+								), 
+								React.createElement(Sentence, null, 
+									"Have a coupon?", 
+									React.createElement(Link, null, 
+										"Enter coupon code"
+									)
+								), 
+								React.createElement(Hr, {className: "border-bluelight"}), 
+								React.createElement(Title, {type: "h3", className: "color-main"}, 
+									"Credit Card Information"
+								), 
+								React.createElement(Form, {className: "form-horizontal"}, 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Name of Card:"
+										), 
+										React.createElement(Column, {className: "col-sm-8"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Credit Card"
+										), 
+										React.createElement(Column, {className: "col-sm-8"}, 
+											React.createElement("select", {className: "form-control"}, 
+												React.createElement("option", null, "- Credit Card -")
+											)
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Credit Card Number:"
+										), 
+										React.createElement(Column, {className: "col-sm-8"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Expires"
+										), 
+										React.createElement(Column, {className: "col-sm-4 col-xs-6"}, 
+											React.createElement("select", {className: "form-control"}, 
+												React.createElement("option", null, "- Mouth -"), 
+												React.createElement("option", null, "1"), 
+												React.createElement("option", null, "2")
+											)
+										), 
+										React.createElement(Column, {className: "col-sm-4 col-xs-6"}, 
+											React.createElement("select", {className: "form-control"}, 
+												React.createElement("option", null, "- Year -"), 
+												React.createElement("option", null, "2015"), 
+												React.createElement("option", null, " 2014")
+											)
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Security Code:"
+										), 
+										React.createElement(Column, {className: "col-sm-4"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										), 
+										React.createElement(Column, {className: "col-sm-4"}, 
+											React.createElement(Link, {className: "font-size-18px color-main"}, 
+												React.createElement(Bold, null, 
+													"?"
+												)
+											)
+										)
+									)
+								), 
+								React.createElement(Title, {type: "h3", className: "color-main"}, 
+									"Credit Card Information"
+								), 
+								React.createElement(Form, {className: "form-horizontal"}, 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+											"Address 1:"
+										), 
+										React.createElement(Column, {className: "col-sm-8"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Address 2:"
+										), 
+										React.createElement(Column, {className: "col-sm-8"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										)
+									), 
+									React.createElement(Wrap, {className: "form-group"}, 
+										React.createElement(Label, {className: "col-sm-4 control-label"}, 
+											React.createElement(Span, {className: "color-red"}, 
+												"*"
+											), 
+												"Credit Card"
+										), 
+										React.createElement(Column, {className: "col-sm-4"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										), 
+										React.createElement(Column, {className: "col-sm-2"}, 
+											React.createElement("select", {type: "text", className: "form-control no-padding"}, 
+												React.createElement("option", null, "State")
+											)
+										), 
+										React.createElement(Column, {className: "col-sm-2"}, 
+											React.createElement(Input, {type: "text", className: "form-control"})
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = PaymentUpdate;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(319), __webpack_require__(324), __webpack_require__(325), __webpack_require__(334), __webpack_require__(321), __webpack_require__(322), __webpack_require__(312), __webpack_require__(307), __webpack_require__(473), __webpack_require__(335), __webpack_require__(337), __webpack_require__(338)))
+
+/***/ },
+/* 478 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var AboutVisit = __webpack_require__(479);
+	var AboutYou = __webpack_require__(480);
+	var StepChooseDoctor = React.createClass({displayName: "StepChooseDoctor",
+		getInitialState: function(){
+			return {display: "none"};
+		},
+		show: function(){
+			this.setState({
+				display: "block"
+			});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(AboutVisit, null), 
+					React.createElement(AboutYou, null), 
+					React.createElement(Wrap, {className: "text-center margin-bottom-6x"}, 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary  btn-lg"}, 
+									"Next"
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = StepChooseDoctor;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307)))
+
+/***/ },
+/* 479 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Box, Image, Wrap, Sentence, Form, Bold, Input) {var AboutVisit = React.createClass({displayName: "AboutVisit",
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+							React.createElement(Panel, {className: "panel-btns"}, 
+								React.createElement(Title, {type: "h4", className: "no-margin"}, 
+									"About This Visit"
+								)
+							)
+						), 
+						React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+							React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger"}, 
+								React.createElement(Column, {className: "col-sm-8 col-sm-offset-2 col-xs-12"}, 
+									React.createElement(Box, {className: "img-box pull-left"}, 
+										React.createElement(Image, {src: "images/img-doctor-2.jpg"})
+									), 
+									React.createElement(Box, {className: "doctorgroup-discription-box"}, 
+										React.createElement(Wrap, {className: "name"}, 
+											React.createElement(Sentence, {className: "no-margin-bottom"}, 
+												"Nguyen Ngọc Thu Trang"
+											), 
+											React.createElement(Wrap, {className: "lever"}, 
+												React.createElement(Image, {src: "images/img-lever.png"})
+											)
+										), 
+										React.createElement(Wrap, {className: "majay color-greydarken"}, 
+											React.createElement(Sentence, {className: "no-margin-bottom"}, 
+												"Internal Medicine"
+											)
+										)
+									), 
+									React.createElement(Form, null, 
+										React.createElement(Sentence, {className: "color-main"}, 
+											React.createElement(Bold, null, 
+												"What you would like to discuss today"
+											)
+										), 
+										React.createElement(Input, {type: "text", className: "form-control", style: {size: "100%"}})
+									)
+								)
+							)
+						)
+					)
+				);
+		}
+	});
+	module.exports = AboutVisit;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(319), __webpack_require__(324), __webpack_require__(325), __webpack_require__(333), __webpack_require__(304), __webpack_require__(334), __webpack_require__(321), __webpack_require__(335), __webpack_require__(322), __webpack_require__(338)))
+
+/***/ },
+/* 480 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Form, Label, Span, Input) {var AboutYou = React.createClass({displayName: "AboutYou",
+	render: function(){
+		return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+							React.createElement(Panel, {className: "panel-btns"}, 
+								React.createElement(Title, {type: "h4", className: "no-margin"}, 
+									"About You"
+								)
+							)
+						), 
+						React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+							React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+								React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger"}, 
+									React.createElement(Column, {className: "col-sm-8 col-sm-offset-2 col-xs-12"}, 
+										React.createElement(Form, {className: "form-inline"}, 
+											React.createElement(Label, null, React.createElement(Span, {className: "color-red"}, "*"), "Phone:"), 
+											React.createElement(Input, {type: "text", className: "form-control"}), 
+											React.createElement(Span, null, 
+												"The doctor may call you to follow up."
+											)
+										)
+									)
+								)
+							)
+						)
+				)
+					
+			);
+	}
+	});
+	module.exports = AboutYou;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(319), __webpack_require__(324), __webpack_require__(325), __webpack_require__(335), __webpack_require__(337), __webpack_require__(312), __webpack_require__(338)))
+
+/***/ },
+/* 481 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var MedicalCondition = __webpack_require__(482);
+	var MedicalMedication = __webpack_require__(483);
+	var MedicalAllergie = __webpack_require__(484);
+	var MedicalSerieAndProcedure = __webpack_require__(485);
+	var MedicalPrimaryCare = __webpack_require__(486);
+	var StepMedicalHistory = React.createClass({displayName: "StepMedicalHistory",
+		getInitialState: function(){
+			return {display: "none"};
+		},
+		show: function(){
+			this.setState({display: "block"});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(MedicalCondition, null), 
+					React.createElement(MedicalMedication, null), 
+					React.createElement(MedicalAllergie, null), 
+					React.createElement(MedicalSerieAndProcedure, null), 
+					React.createElement(MedicalPrimaryCare, null), 
+					React.createElement(Wrap, {className: "text-center margin-bottom-6x"}, 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Back"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Continute"
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = StepMedicalHistory;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307)))
+
+/***/ },
+/* 482 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalCondition = React.createClass({displayName: "MedicalCondition",
+		render: function(){
+			return (
+					React.createElement(Box, {className: "myhealth-history-box"}, 
+						React.createElement(Row, {className: "row"}, 
+							React.createElement(Column, {className: "col-xs-12"}, 
+								React.createElement(Title, {type: "h4", className: "color-main"}, 
+									"My Health Conditions"
+								), 
+								React.createElement(Form, {className: "form-group row"}, 
+									React.createElement(Label, {className: "color-black col-sm-10 col-xs-12"}, 
+										"Do you have any health conditions?"
+									), 
+									React.createElement(Column, {className: "col-sm-2 col-xs-12 text-right right-special"}, 
+										React.createElement(Row, {className: "row"}, 
+											React.createElement(Column, {className: "col-xs-6"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio", value: "1"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Yes"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-xs-6"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"No"
+													)
+												)
+											)
+										)
+									)
+								), 
+								React.createElement(Panel, {className: "table-responsive"}, 
+									React.createElement(Table, {className: "table table-info"}, 
+										React.createElement("thead", null, 
+											React.createElement(TableRow, null, 
+												React.createElement(TableHeader, null, 
+													"My Conditions:"
+												), 
+
+												React.createElement(TableHeader, null, 
+													"Reported Date"
+												), 
+
+												React.createElement(TableHeader, null, 
+													"Source?"
+												), 
+
+												React.createElement(TableHeader, null
+												)
+											)
+										), 
+										React.createElement("tbody", null, 
+											React.createElement(TableRow, null, 
+												React.createElement(TableColumn, null, 
+													"Diabetes"
+												), 
+
+												React.createElement(TableColumn, null, 
+													"11/07/2015"
+												), 
+
+												React.createElement(TableColumn, null, 
+													"Seft reported"
+												), 
+
+												React.createElement(TableColumn, {className: "text-right"}, 
+													React.createElement(Button, {className: "btn btn-remove btn-sm"}, 
+														"Remove"
+													)
+												)
+											)
+										)
+									), 
+									React.createElement(Form, {className: "form-horizontal padding-round-small"}, 
+										React.createElement(Input, {type: "text", className: "form-control", placeholder: "Add new conditions"})
+									)
+								)
+							)
+						)
+					)
+				);
+		}
+	});
+	module.exports = MedicalCondition;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(324), __webpack_require__(325), __webpack_require__(319), __webpack_require__(335), __webpack_require__(337), __webpack_require__(334), __webpack_require__(303), __webpack_require__(435), __webpack_require__(436), __webpack_require__(437), __webpack_require__(438), __webpack_require__(318), __webpack_require__(338)))
+
+/***/ },
+/* 483 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalMedication = React.createClass({displayName: "MedicalMedication",
+		render: function() {
+			return (
+				React.createElement(Box, {className: "myhealth-history-box"}, 
+					React.createElement(Row, {className: "row"}, 
+						React.createElement(Column, {className: "col-xs-12"}, 
+							React.createElement(Title, {type: "h4", className: "color-main"}, 
+								"My Medications"
+							), 
+							React.createElement(Form, {className: "form-group row"}, 
+								React.createElement(Label, {className: "color-black col-sm-10 col-xs-12"}, 
+									"Are you currently taking any medication?"
+								), 
+								React.createElement(Column, {className: "col-sm-2 col-xs-12 text-right right-special"}, 
+									React.createElement(Row, {className: "row"}, 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"Yes"
+												)
+											)
+										), 
+										React.createElement(Column, null, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"No"
+												)
+											)
+										)
+									)
+								)
+							), 
+							React.createElement(Panel, {className: "table-responsive"}, 
+								React.createElement(Table, {className: "table table-info"}, 
+									React.createElement("thead", null, 
+										React.createElement(TableRow, null, 
+											React.createElement(TableHeader, null, 
+												"My Medications:"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Dosage:"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Frequency"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Reported date"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Source?"
+											), 
+
+											React.createElement(TableHeader, null
+											)
+										)
+									), 
+									React.createElement("tbody", null, 
+										React.createElement(TableRow, null, 
+											React.createElement(TableColumn, null, 
+												"Aperin"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"2 pill"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"Once daily"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"07/20/2015"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"Self Reported"
+											), 
+
+											React.createElement(TableColumn, {className: "text-right"}, 
+												React.createElement(Button, {className: "btn btn-remove btn-sm"}, 
+													"Remove"
+												)
+											)
+										), 
+										React.createElement(Form, null, 
+											React.createElement(TableRow, null, 
+												React.createElement(TableColumn, null, 
+													React.createElement(Input, {type: "text", className: "form-control", placeholder: "Add new medications:"})
+												), 
+
+												React.createElement(TableColumn, null, 
+													React.createElement(Input, {type: "text", className: "form-control width-70px", placeholder: "1 pill"})
+												), 
+
+												React.createElement(TableColumn, null, 
+													React.createElement("select", {className: "form-control"}, 
+														React.createElement("option", null, "Once"), 
+				                                        React.createElement("option", null, "Twice"), 
+				                                        React.createElement("option", null, "Three times"), 
+				                                        React.createElement("option", null, "As Needed")
+													)
+												), 
+
+												React.createElement(TableColumn, null, 
+													 React.createElement("select", {className: "form-control"}, 
+				                                        React.createElement("option", null, "Daily"), 
+				                                        React.createElement("option", null, "Hourly"), 
+				                                        React.createElement("option", null, "Weekly"), 
+				                                        React.createElement("option", null, "Mouthly")
+				                                    )
+												), 
+
+												React.createElement(TableColumn, null
+												), 
+
+												React.createElement(TableColumn, null
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = MedicalMedication;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(324), __webpack_require__(325), __webpack_require__(319), __webpack_require__(335), __webpack_require__(337), __webpack_require__(334), __webpack_require__(303), __webpack_require__(435), __webpack_require__(436), __webpack_require__(437), __webpack_require__(438), __webpack_require__(318), __webpack_require__(338)))
+
+/***/ },
+/* 484 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalAllergie = React.createClass({displayName: "MedicalAllergie",
+		render: function(){
+			return (
+				React.createElement(Box, {className: "myhealth-history-box"}, 
+					React.createElement(Row, {className: "row"}, 
+						React.createElement(Column, {className: "col-xs-12"}, 
+							React.createElement(Title, {type: "h4", className: "color-main"}, 
+								"My Allergies"
+							), 
+							React.createElement(Form, {className: "form-group row"}, 
+								React.createElement(Label, {className: "color-black col-sm-10 col-xs-12"}, 
+									"Do you have any Allergies or Drug Sensitivities?"
+								), 
+								React.createElement(Column, {className: "col-sm-2 col-xs-12 text-right right-special"}, 
+									React.createElement(Row, {className: "row"}, 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"Yes"
+												)
+											)
+										), 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"No"
+												)
+											)
+										)
+									)
+								)
+							), 
+							React.createElement(Panel, {className: "table-responsive"}, 
+								React.createElement(Table, {className: "table table-info"}, 
+									React.createElement("thead", null, 
+										React.createElement(TableRow, null, 
+											React.createElement(TableHeader, null, 
+												"My Allergies:"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Severity:"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Reaction:"
+											), 
+
+											React.createElement(TableHeader, null, 
+												"Source?"
+											), 
+
+											React.createElement(TableHeader, null
+											)
+										)
+									), 
+									React.createElement("tbody", null, 
+										React.createElement(TableRow, null, 
+											React.createElement(TableColumn, null, 
+												"Antibiotic"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"Unspecified"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"Strong"
+											), 
+
+											React.createElement(TableColumn, null, 
+												"Seft Reported"
+											), 
+
+											React.createElement(TableColumn, {className: "text-right"}, 
+												React.createElement(Button, {className: "btn btn-remove btn-sm"}, 
+													"Remove"
+												)
+											)
+										), 
+										React.createElement(Form, {className: "form-inline"}, 
+											React.createElement(TableRow, null, 
+												React.createElement(TableColumn, null, 
+													React.createElement(Input, {type: "text", className: "fofm-control"})
+												), 
+
+												React.createElement(TableColumn, null, 
+													React.createElement(Label, {className: "control-label"}, 
+														"Severity:"
+													), 
+													React.createElement("select", {className: "form-control"}, 
+	                                                    React.createElement("option", null, "Not sure"), 
+	                                                    React.createElement("option", null, "Mild"), 
+	                                                    React.createElement("option", null, "Moderate"), 
+	                                                    React.createElement("option", null, "Severe")
+	                                                )
+												), 
+
+												React.createElement(TableColumn, null, 
+													React.createElement(Wrap, {className: "form-group"}, 
+														React.createElement(Label, {className: "control-label"}, 
+															"Rashes on the skin"
+														), 
+														React.createElement(Input, {type: "text", className: "form-control", placeholder: "Rashes on the skin"})
+													)
+												), 
+
+												React.createElement(TableColumn, null
+												), 
+
+												React.createElement(TableColumn, null
+												)
+											)
+										)
+									)
+								)	
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = MedicalAllergie;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(324), __webpack_require__(325), __webpack_require__(319), __webpack_require__(335), __webpack_require__(337), __webpack_require__(334), __webpack_require__(303), __webpack_require__(435), __webpack_require__(436), __webpack_require__(437), __webpack_require__(438), __webpack_require__(318), __webpack_require__(338)))
+
+/***/ },
+/* 485 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableHeader, TableColumn, Button, Hr, Input) {var MedicalSerieAndProcedure = React.createClass({displayName: "MedicalSerieAndProcedure",
+		render: function(){
+			return (
+				React.createElement(Box, {className: "myhealth-history-box"}, 
+					React.createElement(Row, {className: "row"}, 
+						React.createElement(Column, {className: "col-xs-12"}, 
+							React.createElement(Title, {type: "h4", className: "color-main"}, 
+								"My Surgeries and Procedures"
+							), 
+							React.createElement(Form, {className: "form-group row"}, 
+								React.createElement(Label, {className: "color-black col-sm-10 col-xs-12"}, 
+									"Have you ever had any surgeries or medical procedures?"
+								), 
+								React.createElement(Column, {className: "col-sm-2 col-xs-12 text-right right-special"}, 
+									React.createElement(Row, {className: "row"}, 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"Yes"
+												)
+											)
+										), 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"No"
+												)
+											)
+										)
+									)
+								)
+							), 
+							React.createElement(Panel, {className: "table-responsive"}, 
+								React.createElement(Table, {className: "table table-info"}, 
+									React.createElement("thead", null, 
+										React.createElement(TableHeader, null, 
+											"My Conditions:"
+										), 
+
+										React.createElement(TableHeader, null, 
+											"Reported Date"
+										), 
+
+										React.createElement(TableHeader, null, 
+											"Source?" 
+										), 
+
+										React.createElement(TableHeader, null
+										)
+									), 
+									React.createElement("tbody", null, 
+										React.createElement(TableColumn, null, 
+											"Diabetes"
+										), 
+
+										React.createElement(TableColumn, null, 
+											"11/07/2015"
+										), 
+
+										React.createElement(TableColumn, null, 
+											"Seft reported"
+										), 
+
+										React.createElement(TableColumn, {className: "text-right"}, 
+											React.createElement(Button, {className: "btn btn-remove btn-sm"}, 
+												"Remove"
+											)
+										)
+									)
+								), 
+								React.createElement(Row, {className: "row"}, 
+									React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+										React.createElement(Hr, {className: "border-blue no-margin-top"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Ankle"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement(Label, {className: "color-black"}, 
+														"When"
+													), 
+													React.createElement("select", {className: "color-black select-sm"}, 
+	                                                    React.createElement("option", {value: ""}, "Don't know"), 
+	                                                    React.createElement("option", {value: "father"}, "1988"), 
+	                                                    React.createElement("option", {value: "mother"}, "2015")
+	                                                )
+												)
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"CABG (Bypass surgery)"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Craniotomy"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Gall bladder"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Hip replacement"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Lung resection"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Plastic Surgery"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "form-group"}, 
+													React.createElement(Input, {type: "text", className: "form-control", placeholder: "other"})
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										)
+									), 
+									React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+										React.createElement(Hr, {className: "border-blue no-margin-top"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Appendectomy"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Colon resection"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Ear Tubes"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Head or neck"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"EKnee"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Pacemaker"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"}), 
+										React.createElement(Form, {className: "form-group row"}, 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12"}, 
+												React.createElement(Wrap, {className: "radio"}, 
+													React.createElement("input", {type: "radio"}), 
+													React.createElement(Label, {className: "color-black"}, 
+														"Wrist"
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 right-special text-right"}, 
+												React.createElement(Label, {className: "color-black"}, 
+													"When"
+												), 
+												React.createElement("select", {className: "color-black select-sm"}, 
+	                                                React.createElement("option", {value: ""}, "Don't know"), 
+	                                                React.createElement("option", {value: "father"}, "1988"), 
+	                                                React.createElement("option", {value: "mother"}, "2015")
+	                                            )
+											)
+										), 
+										React.createElement(Hr, {className: "border-bluelight no-margin-top margin-bottom"})
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = MedicalSerieAndProcedure;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(324), __webpack_require__(325), __webpack_require__(319), __webpack_require__(335), __webpack_require__(337), __webpack_require__(334), __webpack_require__(303), __webpack_require__(435), __webpack_require__(437), __webpack_require__(438), __webpack_require__(318), __webpack_require__(473), __webpack_require__(338)))
+
+/***/ },
+/* 486 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap) {var MedicalPrimaryCare = React.createClass({displayName: "MedicalPrimaryCare",
+		render: function(){
+			return (
+				React.createElement(Box, {className: "myhealth-history-box"}, 
+					React.createElement(Row, {className: "row"}, 
+						React.createElement(Column, {className: "col-xs-12"}, 
+							React.createElement(Title, {type: "h4", className: "color-main"}, 
+								"Primary Care doctors"
+							), 
+							React.createElement(Form, {className: "form-group row"}, 
+								React.createElement(Label, {className: "color-black col-sm-10 col-xs-12"}, 
+									"Do you have a primary care physician?"
+								), 
+								React.createElement(Column, {className: "col-sm-2 col-xs-12 text-right right-special"}, 
+									React.createElement(Row, {className: "row"}, 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"Yes"
+												)
+											)
+										), 
+										React.createElement(Column, {className: "col-xs-6"}, 
+											React.createElement(Wrap, {className: "radio"}, 
+												React.createElement("input", {type: "radio"}), 
+												React.createElement(Label, {className: "color-black"}, 
+													"No"
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = MedicalPrimaryCare;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(324), __webpack_require__(325), __webpack_require__(319), __webpack_require__(335), __webpack_require__(337), __webpack_require__(334)))
+
+/***/ },
+/* 487 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var RunTest = __webpack_require__(488);
+	var BeginTest = __webpack_require__(489);
+	var Computer = React.createClass({displayName: "Computer",
+		componentDidMount: function(){
+			this.refs.runTest.show();
+		},
+		getInitialState: function(){
+			return { display: "none"};
+		},
+		show: function(){
+			this.setState({
+				display: "block"
+			});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		handlerRunTest: function(){
+			this.refs.runTest.hide();
+			this.refs.beginTest.show();
+		},
+		handlerBeginTest: function(keyRef){
+			console.log(keyRef);
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(RunTest, {ref: "runTest", onClick: this.handlerRunTest}), 
+					React.createElement(BeginTest, {ref: "beginTest", onClick: this.handlerBeginTest}), 
+					React.createElement(Wrap, {className: "text-center margin-bottom-6x"}, 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Back"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Continute"
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = Computer;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307)))
+
+/***/ },
+/* 488 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Sentence, Link) {var RunTest = React.createClass({displayName: "RunTest",
+		propTypes: {
+				onClick: React.PropTypes.func
+			},
+		getInitialState: function(){
+			return {display: "none"};
+		},
+		show: function(){
+			this.setState({
+				display: "block"
+			});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		handlerRun: function(){
+			this.props.onClick();
+		},
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius", style: {display: this.state.display}}, 
+					React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-btns"}, 
+							React.createElement(Title, {type: "h4", className: "no-margin"}, 
+								"Test My Computer"
+							)
+						)
+					), 
+					React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+						React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger text-center"}, 
+							React.createElement(Sentence, null, 
+								"Is your computer ready for your visit?"
+							), 
+							React.createElement(Sentence, {className: "font-size-12px"}, 
+								"This test was last run on 7/7/2015"
+							), 
+							React.createElement(Link, {className: "btn btn-primary", onClick: this.handlerRun}, 
+								"Run Test"
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = RunTest;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(319), __webpack_require__(324), __webpack_require__(321), __webpack_require__(307)))
+
+/***/ },
+/* 489 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Image, Header, Title, Link, Divider, Wrap, Panel, Wizard) {var StepComputer = __webpack_require__(490);
+	var TestInternet = __webpack_require__(491);
+	var BeginTest = React.createClass({displayName: "BeginTest",
+		getInitialState: function(){
+				return {
+					display: "none"
+				};
+			},
+		show: function(){
+			this.setState({
+				display: "block"
+			});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		onClick: function(keyRef){
+			console.log(keyRef);
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(Box, {className: "header-profile-box"}, 
+						React.createElement(Image, {src: "images/icon-test-computer-body.png", style: {width: "41", height: "41"}}), 
+						React.createElement(Header, {className: "header-title"}, 
+							React.createElement(Title, {type: "h2", className: "dashboard"}, 
+								React.createElement(Link, null, 
+									"Test Computer"
+								)
+							)
+						), 
+						React.createElement(Divider, null)
+					), 
+					React.createElement(Wrap, {className: "test-computer-wrap arial general-wrap"}, 
+						React.createElement(Panel, {className: "panel-body panel-body-nopadding"}, 
+							React.createElement(Wizard, {className: "basic-wizard block-wizard"}, 
+								React.createElement(StepComputer, {onClick: this.onClick}), 
+								React.createElement(TestInternet, null)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = BeginTest;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(333), __webpack_require__(304), __webpack_require__(327), __webpack_require__(319), __webpack_require__(307), __webpack_require__(323), __webpack_require__(334), __webpack_require__(303), __webpack_require__(474)))
+
+/***/ },
+/* 490 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link, Image, Span) {var StepComputer = React.createClass({displayName: "StepComputer",
+		module: "internet",
+		$module: null,
+		propTypes: {
+			onClick: React.PropTypes.func
+		},
+		componentDidMount: function(){
+			this.$module = $(React.findDOMNode(this.refs[this.module]));
+			this.setActive();
+		},
+		componenWillUnMount: function(){
+			this.module = "internet";
+			this.$module = null;
+		},
+		onClick: function(keyRef){
+			this.module = keyRef;
+			this.$module = $(React.findDOMNode(this.refs[this.module]));
+			this.setActive();
+			this.props.onClick(this.module);
+		},
+		setActive: function(){
+			for(var key in this.refs){
+				if(this.module === key){
+					this.refs[key].addClass("active");
+				}
+				else{
+					this.refs[key].removeClass("active");
+				}
+			}
+		},
+		getStep: function(){
+			return this.module;
+		},
+		render: function(){
+			return (
+				React.createElement(List, {className: "nav nav-pills nav-justified"}, 
+					React.createElement(ListItem, {ref: "internet"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"internet")}, 
+							React.createElement(Image, {className: "margin-right", src: "images/icon-internet-test.png", width: "37", height: "39"}), 
+							React.createElement(Span, null, 
+								"Internet"
+							)
+						)
+					), 
+					React.createElement(ListItem, {ref: "video"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"video")}, 
+							React.createElement(Image, {className: "margin-right-small", src: "images/icon-video-test.png", width: "37", height: "39"}), 
+							React.createElement(Span, null, 
+								"Video"
+							)
+						)
+					), 
+					React.createElement(ListItem, {ref: "webcam"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"webcam")}, 
+							React.createElement(Image, {className: "margin-right-small", src: "images/icon-webcam-test.png", width: "37", height: "39"}), 
+							React.createElement(Span, null, 
+								"Webcam"
+							)
+						)
+					), 
+					React.createElement(ListItem, {ref: "microphone"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"microphone")}, 
+							React.createElement(Image, {className: "margin-right-small", src: "images/icon-micro-test.png", width: "37", height: "39"}), 
+							React.createElement(Span, null, 
+								"Microphone"
+							)
+						)
+					), 
+					React.createElement(ListItem, {ref: "speaker"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"speaker")}, 
+							React.createElement(Image, {className: "margin-right-small", src: "images/icon-speaker-test.png", width: "37", height: "39"}), 
+							React.createElement(Span, null, 
+								"Speaker"
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = StepComputer;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(191), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307), __webpack_require__(304), __webpack_require__(312)))
+
+/***/ },
+/* 491 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Wrap, Box, Title, Link, Divider) {var TestInternet = React.createClass({displayName: "TestInternet",
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "tab-content"}, 
+					React.createElement(Panel, {className: "tab-pane active"}, 
+						React.createElement(Wrap, {className: "border-bluelight border-round padding-round-large text-center"}, 
+							React.createElement(Box, {className: "test-computer-box"}, 
+								React.createElement(Title, {type: "h2", className: "color-main"}, 
+									"Test your internet connection"
+								), 
+								React.createElement(Link, {className: "margin-top btn btn-primary"}, 
+									"Begin Test"
+								)
+							), 
+							React.createElement(Divider, {className: "border-bluelight"}), 
+							React.createElement(Link, {className: "margin-top btn btn-primary"}, 
+								"Skip"
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = TestInternet;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(334), __webpack_require__(333), __webpack_require__(319), __webpack_require__(307), __webpack_require__(323)))
+
+/***/ },
+/* 492 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link, Sentence, Span) {var TermOfUse  = __webpack_require__(493);
+	var StepConfirmation = React.createClass({displayName: "StepConfirmation",
+		getInitialState: function(){
+			return {display: "none"};
+		},
+		show: function(){
+			this.setState({
+				display: "block"
+			});
+		},
+		hide: function(){
+			this.setState({
+				display: "none"
+			});
+		},
+		render: function(){
+			return (
+				React.createElement("div", {style: {display: this.state.display}}, 
+					React.createElement(TermOfUse, null), 
+					React.createElement(Wrap, {className: "text-center margin-bottom-6x"}, 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Back"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary btn-lg"}, 
+									"Connect"
+								)
+							)
+						)
+					), 
+					React.createElement(Sentence, null, 
+						React.createElement(Span, {className: "color-red"}, 
+							"*"
+						), 
+						"Your credit card will only be charged upon completion of this conversation. Charges will appear on your credit card bill as \"BCBSM\", Inc. \"All charges for completed conversations are final. For more details, please refer to our refund policy.\"" 
+					)
+				)
+				);
+		}
+	});
+	module.exports = StepConfirmation;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307), __webpack_require__(321), __webpack_require__(312)))
+
+/***/ },
+/* 493 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Sentence, Form, Wrap, Column, Label, Span, Bold, Input) {var TermOfUse = React.createClass({displayName: "TermOfUse",
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+					React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-btns"}, 
+							React.createElement(Title, {type: "h4", className: "no-margin"}, 
+								"Terms of Use"
+							)
+						)
+					), 
+					React.createElement(Panel, {className: "panel-body padding-round-large"}, 
+						React.createElement(Panel, {className: "padding-bottom-larger padding-top-larger"}, 
+							React.createElement(Sentence, null, 
+								"Please acknowledge that you have read the following statements by typing your first and last initials (i.e, \"DN\") in the box below. Check the box to the left of the statement to indicate your agreement. You must accept Terms of Use in order to proceed."
+							), 
+							React.createElement(Panel, {className: "border-main border-round text-center margin-bottom margin-top padding-round"}, 
+								React.createElement(Sentence, {className: "color-black"}, 
+									"You have reported that you 're currently located in California."
+								), 
+								React.createElement(Sentence, {className: "color-black"}, 
+									'If you are now located in a defferent state, please update your location in My Account -> My Profile'
+								)
+							), 
+							React.createElement(Form, null, 
+								React.createElement(Wrap, {className: "form-group"}, 
+									React.createElement(Column, {className: "col-sm-offset-1 col-sm-10"}, 
+										React.createElement(Wrap, {className: "checkbox"}, 
+											React.createElement(Label, null, 
+												React.createElement("input", {type: "checkbox"}), 
+												"I give permission for this doctor to see my Medication History and", 
+												React.createElement(Span, {className: "color-main"}, 
+													React.createElement(Bold, null, 
+														"Health Summary"
+													)
+												), 
+												"(Optional)"
+											)
+										)
+									)
+								), 
+								React.createElement(Wrap, {className: "form-group"}, 
+									React.createElement(Column, {className: "col-sm-offset-1 col-sm-10"}, 
+										React.createElement(Wrap, {className: "checkbox"}, 
+											React.createElement(Label, null, 
+												React.createElement("input", {type: "checkbox"}), 
+												"I certify that I have read anh accept the", 
+												React.createElement(Span, {className: "color-main"}, 
+													React.createElement(Bold, null, 
+														"Statement from Blue Cross Blue Shield of Minnesota"
+													)
+												), 
+												"(Required)"
+											)
+										)
+									)
+								), 
+								React.createElement(Wrap, {className: "form-group"}, 
+									React.createElement(Column, {className: "col-sm-2 col-sm-offset-1"}, 
+										React.createElement(Input, {type: "text", className: "form-control"})
+									), 
+									React.createElement(Column, {className: "col-sm-9"}, 
+										"Your initials (\"DN\")"
+									)
+								)
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = TermOfUse;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(303), __webpack_require__(319), __webpack_require__(321), __webpack_require__(335), __webpack_require__(334), __webpack_require__(325), __webpack_require__(337), __webpack_require__(312), __webpack_require__(322), __webpack_require__(338)))
+
+/***/ },
+/* 494 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link) {var Step = React.createClass({displayName: "Step",
+		$module: null,
+		module: "doctor",
+		propTypes:{
+			onClick: React.PropTypes.func,
+		},
+		componentDidMount: function(){
+			this.$module = $(React.findDOMNode(this.refs[this.module]));
+			this.setActive();
+		},
+		componentWillUnmount: function(){
+			this.$module = null;
+			this.module = "doctor";
+		},
+		onClick: function(keyRef){
+			this.module = keyRef;
+			this.$module = $(React.findDOMNode(this.refs[this.module]));
+			this.setActive();
+			this.props.onClick(this.getStep());
+		},
+		setActive: function(){
+			for(var key in this.refs){
+				if(key===this.module){
+					this.$module.addClass("active");
+				}
+				else {
+					var $item = $(React.findDOMNode(this.refs[key]));
+						$item.removeClass("active");
+				}
+			}
+		},
+		getStep: function(){
+			return this.module;
+		},
+		render: function(){
+			return (
+				React.createElement(List, {className: "nav nav-pills nav-justified"}, 
+					React.createElement(ListItem, {ref: "doctor"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"doctor")}, "Choose Doctor")
+					), 
+					React.createElement(ListItem, {ref: "medical"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"medical")}, "Medical History")
+					), 
+					React.createElement(ListItem, {ref: "computer"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"computer")}, "Test Computer")
+					), 
+					React.createElement(ListItem, {ref: "payment"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"payment")}, "Payment")
+					), 
+					React.createElement(ListItem, {ref: "confirm"}, 
+						React.createElement(Link, {onClick: this.onClick.bind(this,"confirm")}, "Confirmation")
+					)
+				)
+				);
+		}
+	});
+	module.exports = Step;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(191), __webpack_require__(310), __webpack_require__(311), __webpack_require__(307)))
 
 /***/ }
 /******/ ]);
