@@ -176,25 +176,11 @@ var main = {
 					else{
 						res.status(400).json({data: "Accout not exist!"})
 					}
->>>>>>> origin/master
 				})
 				.catch(function(error){
 					res.status(500).json(error);
 				})
 			},
-<<<<<<< HEAD
-			function(callback){
-				var body = 'Your username: '+postData.username+'<br/>Your password: '+password
-					+'<br/>Please activate, click this link <a href="'+config.domain+config.defaultUrl+'client/users/token/'+postData.token+'">Activate this</a>';
-				mail.templateRegistrationClientUsers(email, body)
-				.then(function(response){
-					res.status(200).json({data: 'success'});
-				}, function(error){
-					res.status(500).json({error: 'mail not send'});
-				})
-			}
-		])
-=======
 			function(response, callback){
 				//check password
 				if(passwordHash.verify(postData.password, response.password)) {
@@ -233,7 +219,6 @@ var main = {
 				}
 			}
 			]);
->>>>>>> origin/master
 	}
 }
 
