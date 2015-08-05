@@ -24,6 +24,33 @@ var Function = {
 		if(is.empty(value) || is.null(value))
 			return '';
 		else return value;
+	},
+	checkToken: function(req, res, next){
+
+		var authorization = req.headers.authorization;
+		if(is.not.undefined(authorization) &&
+			is.not.empty(authorization)){
+
+			var split = authorization.split(" ");
+			var token = split[1];
+
+			knex('users')
+				.where({'token': token})
+				.then(function(response){
+					if(response.length > 0){
+						next();
+					}
+					else {
+						res.status(403).json("error");
+					}
+				})
+				.catch(function(error){
+					res.status(403).json(error);
+				});
+		} else {
+			res.status(403).json("error");
+		}
+		
 	}
 }
 

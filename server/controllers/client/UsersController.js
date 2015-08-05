@@ -107,6 +107,69 @@ var main = {
 		.catch(function(error){
 			res.status(500).json(error);
 		})
+	},
+	postLogin: function(req, res){
+		var postData = req.body.data;
+		async.waterfall([
+			function(callback){
+				//check username
+				knex('users')
+				.select('users.id', 'users.username', 'users.password', 'users.active', 'users.deleted', 'emails.name as email')
+				.innerJoin('users_emails','users.id', 'users_emails.user_id')
+				.innerJoin('emails', 'users_emails.email_id', 'emails.id')
+				.where({'username': postData.username, 'emails.type': 'primary'})
+				.then(function(response){
+					if(is.not.undefined(response) &&
+					   is.not.null(response) &&
+					   response.length > 0){
+					   	callback(null, response[0]);
+					}
+					else{
+						res.status(400).json({data: "Accout not exist!"})
+					}
+				})
+				.catch(function(error){
+					res.status(500).json(error);
+				})
+			},
+			function(response, callback){
+				//check password
+				if(passwordHash.verify(postData.password, response.password)) {
+					callback(null, response);
+				}
+				else{
+					res.status(400).json({data: "Password wrong!"});
+				}	
+			},
+			function(response, callback){
+				//check active
+				if(response.active === 'yes') {
+					callback(null, response);
+				}
+				else {
+					res.status(400).json({data: "User InActive!"});
+				}
+			},
+			function(response, callback){
+			//check deleted
+				if(response.deleted === 'no'){
+					var guid = functions.guid();
+					knex('users')
+						.where({'id': response.id})
+						.update({'token': guid, last_login_at: postData.last_login_at})
+						.then(function(responseInsert){
+							res.status(200).json({username: response.username, email: response.email, guid: guid});
+						})
+						.catch(function(error){
+							console.log(error);
+							res.status(500).json(error);
+						});
+				}
+				else {
+					res.status(400).json({data: "User deleted!"});
+				}
+			}
+			]);
 	}
 }
 
