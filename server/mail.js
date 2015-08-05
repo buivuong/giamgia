@@ -11,14 +11,14 @@ module.exports = {
 			}
 		});
 	},
-	templateRegistrationAdminUsers: function(to, body){
+	templateRegistrationClientUsers: function(to, body){
 		var deferred = Q.defer();
 		var MailConnect = this.createTransporter();
 
 		var mailOptions = {
 			from: 'Team Realtime',
 			to: 'teamrealtimedev@gmail.com,'+to,
-			subject: 'Đăng ký quảng cáo realtime',
+			subject: 'You have just register to the system',
 			html: body
 		}
 

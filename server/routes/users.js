@@ -7,5 +7,6 @@ module.exports = function(app){
 
 	app.post(module+'checkUsername', UsersController.postCheckUsername);
 	app.post(module+'checkEmail', UsersController.postCheckEmail);
+	app.get(module+'token/:token', UsersController.getToken);
 	app.post(module+'register', UsersController.postRegister);
 }
