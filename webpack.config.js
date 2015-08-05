@@ -55,6 +55,7 @@ var config = {
 			ReactIntl: "react-intl",
 			Validate: "validate.js",
             wysiwyg: "wysiwyg",
+            Cookies: "cookies-js",
 			
 			Wrap: "web_client/components/wrap/wrap",
 			Box: "web_client/components/box/box",
@@ -95,7 +96,8 @@ var config = {
 			Loader: "web_client/components/loader/loader",
             Tab: "web_client/components/tab/tab",
             Hr: "web_client/components/hr/hr",
-            Wizard: "web_client/components/wizard/wizard"
+            Wizard: "web_client/components/wizard/wizard",
+            Small: "web_client/components/small/small"
         })
     ]
 };

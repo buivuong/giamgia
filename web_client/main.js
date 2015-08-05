@@ -74,6 +74,8 @@ var Client_Register = require('client/user/components/register/view');
 var Client_Session = require('client/session/components/core');
 var Client_Session_Steps = require('client/session/components/steps/steps');
 
+var Client_Login  = require('client/user/components/login/view');
+
 var routes = (
     <Route handler={App} name="app" path="/">
         <Route handler={Client} name="client">
@@ -96,6 +98,7 @@ var routes = (
                     <Route handler={Client_Session_Steps} name="client_session_steps" path="steps" />
                 </Route>
             </Route>
+            <Route handler={Client_Login} name="client_login" path="login" />
         </Route>
     </Route>
 );
@@ -109,6 +112,24 @@ function renderApp(locale){
 }
 
 Router.run(routes, function(Handler){
+    if(is.not.undefined(Cookies.get('client'))){
+        var client = JSON.parse(Cookies.get('client'));
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                if (settings.url.indexOf("/signalr") == -1)
+                    jqXHR.setRequestHeader('Authorization', 'Bearer ' + client.guid);
+                return true;
+            }
+        });
+    } else {
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                if (settings.url.indexOf("/signalr") == -1)
+                    jqXHR.setRequestHeader('Authorization', '');
+                return true;
+            }
+        });
+    }
     CurrentHandler = Handler;
     renderApp(initData);
 })

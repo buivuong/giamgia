@@ -13,6 +13,18 @@ var UserStore = Reflux.createStore({
 		this.listenTo(UserActions.register, this.onRegister);
 		this.listenTo(UserActions.checkUsername, this.onCheckUsername);
 		this.listenTo(UserActions.checkEmail, this.onCheckEmail);
+		this.listenTo(UserActions.Login, this.onLogin);
+	},
+	onLogin: function(dataPost){
+		$.post(baseUrl+'login', {data: dataPost})
+		.done(function(response){
+			UserActions.Login.completed({data: response});
+		})
+		.fail(function(error){
+			if(error.status!=='403'){
+				UserActions.Login.failed({status: error.status, data: JSON.parse(error.responseText)});
+			}
+		});
 	},
 	onCheckUsername: function(data){
 		$.post(baseUrl+'checkUsername', {data: data})
