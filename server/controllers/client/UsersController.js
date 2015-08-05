@@ -129,43 +129,36 @@ var main = {
 				.catch(trx.rollback)
 		}
 
-		var callback_insert_user = function(){
-			var deferred = Q.defer();
-
-			knex.transaction(function(trx){
-				knex('users')
-				.transacting(trx)
-				.insert(postData)
-				.then(function(response){
-					return callback_insert_email(trx);
+		async.waterfall([
+			function(callback){
+				knex.transaction(function(trx){
+					knex('users')
+					.transacting(trx)
+					.insert(postData)
+					.then(function(response){
+						return callback_insert_email(trx);
+					})
+					.then(trx.commit)
+					.catch(trx.rollback)
 				})
-				.then(trx.commit)
-				.catch(trx.rollback)
-			})
-			.then(function(response){
-				deferred.resolve(response);
-			})
-			.catch(function(error){
-				deferred.reject(error);
-			})
-
-			return deferred.promise;
-		}
-
-		callback_insert_user()
-		.then(function(response){
-			var body = 'Your username: '+postData.username+'<br/>Your password: '+password
-					+'<br/>Please activate, click this link <a href="'+config.domain+'/api/hospital/v1/client/users/token/'+postData.token+'">Activate this</a>';
-			mail.templateRegistrationClientUsers(email, body)
-			.then(function(response){
-				res.status(200).json({data: 'success'});
-			}, function(error){
-				res.status(500).json({error: 'mail not send'});
-			})
-		})
-		.catch(function(error){
-			res.status(500).json({data: 'error'});
-		})
+				.then(function(response){
+					callback(null);
+				})
+				.catch(function(error){
+					res.status(500).json(error);
+				})
+			},
+			function(callback){
+				var body = 'Your username: '+postData.username+'<br/>Your password: '+password
+					+'<br/>Please activate, click this link <a href="'+config.domain+config.defaultUrl+'client/users/token/'+postData.token+'">Activate this</a>';
+				mail.templateRegistrationClientUsers(email, body)
+				.then(function(response){
+					res.status(200).json({data: 'success'});
+				}, function(error){
+					res.status(500).json({error: 'mail not send'});
+				})
+			}
+		])
 	}
 }
 
