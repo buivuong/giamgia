@@ -2,7 +2,7 @@ var My = require('client/templates/my');
 var IntlMixin = ReactIntl.IntlMixin;
 
 var View = React.createClass({
-	mixins: [IntlMixin],
+	mixins: [IntlMixin, CheckToken],
 	render: function(){
 		return (
 			<div>

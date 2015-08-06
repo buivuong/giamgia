@@ -8,6 +8,9 @@ var config = require('config');
 var mail = require('mail');
 
 var main = {
+	getCheckToken: function(req, res){
+		res.json({data: 'success'});
+	},
 	getToken: function(req, res){
 		var token = req.params.token;
 
@@ -209,7 +212,7 @@ var main = {
 						.where({'id': response.id})
 						.update({'token': guid, last_login_at: postData.last_login_at})
 						.then(function(responseInsert){
-							res.status(200).json({username: response.username, email: response.email, guid: guid});
+							res.status(200).json({id: response.id, username: response.username, email: response.email, guid: guid});
 						})
 						.catch(function(error){
 							console.log(error);

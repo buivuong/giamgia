@@ -13,7 +13,17 @@ var UserStore = Reflux.createStore({
 		this.listenTo(UserActions.register, this.onRegister);
 		this.listenTo(UserActions.checkUsername, this.onCheckUsername);
 		this.listenTo(UserActions.checkEmail, this.onCheckEmail);
+		this.listenTo(UserActions.checkToken, this.onCheckToken);
 		this.listenTo(UserActions.Login, this.onLogin);
+	},
+	onCheckToken: function(){
+		$.get(baseUrl+'checkToken')
+		.done(function(response){
+			UserActions.checkToken.completed({data: response});
+		})
+		.fail(function(error){
+			UserActions.checkToken.failed({status: error.status, data: JSON.parse(error.responseText)});
+		});
 	},
 	onLogin: function(dataPost){
 		$.post(baseUrl+'login', {data: dataPost})
