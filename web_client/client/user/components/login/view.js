@@ -24,7 +24,7 @@ var View = React.createClass({
 					<Bottom />
 				</Panel>
 			</Section>
-			);
+		);
 	}
 });
 module.exports = View;

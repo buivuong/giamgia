@@ -1,10 +1,25 @@
 var Leftmenu = React.createClass({
 	$root: null,
+	pathName: '',
+	contextTypes: {
+		router: React.PropTypes.func
+	},
+	componentWillMount: function(){
+		this.pathName = this.context.router.getCurrentPathname();
+	},
 	componentWillUnmount: function(){
 		this.$root = null;
+		this.pathName = '';
 	},
 	componentDidMount: function(){
 		this.$root = $(React.findDOMNode(this));
+
+		if(is.not.empty(this.pathName)  && is.not.undefined(this.pathName)){
+			if(this.pathName.indexOf('consultation') !== -1 
+				|| this.pathName.indexOf('health') !== -1){
+				this.refs.myhealth.addClass('active');
+			}
+		}
 
 		this.$root.find('a').live({
 			mouseenter: function(){
@@ -30,13 +45,13 @@ var Leftmenu = React.createClass({
 	render: function(){
 		return (
 			<List className="nav nav-pills nav-stacked nav-bracket">
-				<ListItem className="active">
+				<ListItem>
 					<Link>
 						<Image src="images/icon-home.png"/>
 						<Span>Home</Span>
 					</Link>
 				</ListItem>
-				<ListItem>
+				<ListItem ref="myhealth">
 					<Link>
 						<Image src="images/icon-myheart.png"/>
 						<Span>My Health</Span>

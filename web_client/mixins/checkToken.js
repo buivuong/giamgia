@@ -6,7 +6,7 @@ var checkToken = {
 		router: React.PropTypes.func
 	},
 	user: null,
-	componentWillMount: function(){
+	componentDidMount: function(){
 		UserActions.checkToken.triggerPromise()
 		.then(function(response){})
 		.catch(function(error){
@@ -15,6 +15,9 @@ var checkToken = {
 
 		var client = JSON.parse(Cookies.get('client'));
 		this.user = client;
+	},
+	componentWillUnmount: function(){
+		this.user = null;
 	}
 }
 
