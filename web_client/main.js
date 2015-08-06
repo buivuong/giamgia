@@ -101,8 +101,8 @@ var routes = (
                     <Route handler={Client_Session_Steps} name="client_session_steps" path="steps" />
                 </Route>
                 <Route handler={Client_My_Account} name="client_my_account" path="my-account" />
-                 <Route handler={Client_My_Account_View} name="client_my_account_view" path="my-account-profile">
-                 </Route>
+                    <Route handler={Client_My_Account_View} name="client_my_account_view" path="my-account-profile">
+                </Route>
             </Route>
             <Route handler={Client_Login} name="client_login" path="login" />
         </Route>

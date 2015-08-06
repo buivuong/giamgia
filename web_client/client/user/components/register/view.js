@@ -3,7 +3,7 @@ var IntlMixin = ReactIntl.IntlMixin;
 var FormRegister = require('client/user/components/register/form');
 
 var Register = React.createClass({
-	mixins: [IntlMixin],
+	mixins: [IntlMixin, CheckNoToken],
 	componentWillMount: function(){
 		$('body').addClass('signin');
 	},

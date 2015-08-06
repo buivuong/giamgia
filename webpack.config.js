@@ -95,9 +95,11 @@ var config = {
 			LabelError: "web_client/components/label/error",
 			Loader: "web_client/components/loader/loader",
             Tab: "web_client/components/tab/tab",
-            Hr: "web_client/components/hr/hr",
             Wizard: "web_client/components/wizard/wizard",
-            Small: "web_client/components/small/small"
+            Small: "web_client/components/small/small",
+			
+			CheckToken: "web_client/mixins/checkToken",
+			CheckNoToken: "web_client/mixins/checkNoToken"
         })
     ]
 };

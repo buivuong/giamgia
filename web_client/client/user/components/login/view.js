@@ -1,7 +1,10 @@
 var Left = require('client/user/components/login/left');
 var FormLogin = require('client/user/components/login/formLogin');
 var Bottom = require('client/user/components/login/bottom');
+var IntlMixin = ReactIntl.IntlMixin;
+
 var View = React.createClass({
+	mixins: [IntlMixin, CheckNoToken],
 	componentWillMount: function(){
 		$("body").addClass("signin");
 	},

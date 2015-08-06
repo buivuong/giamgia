@@ -1,8 +1,9 @@
 var UserActions = require('client/user/UserActions');
 var Config = require('config');
+
 var FormLogin = React.createClass({
-	onClick: function(){
-		console.log(this.refs.user_name.getValue());
+	contextTypes: {
+		router: React.PropTypes.func
 	},
 	onSubmit: function(event){
 		this.refs.labelError.removeError();
@@ -12,6 +13,9 @@ var FormLogin = React.createClass({
 		UserActions.Login.triggerPromise(serializedObject)
 		.then(function(response){
 			Cookies.set('client', JSON.stringify(response.data));
+			setTimeout(function(){
+				this.context.router.transitionTo('client_consultation');
+			}.bind(this), 200)
 			this.refs.loader.hide();
 		}.bind(this))
 		.catch(function(error){
