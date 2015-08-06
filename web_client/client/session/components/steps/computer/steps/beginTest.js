@@ -1,5 +1,9 @@
 var StepComputer = require('client/templates/stepComputer');
 var TestInternet = require('client/session/components/steps/computer/steps/testInternet');
+var TestMicrophone = require('client/session/components/steps/computer/steps/testMicrophone');
+var TestSpeaker = require('client/session/components/steps/computer/steps/testSpeaker');
+var TestVideo = require('client/session/components/steps/computer/steps/testVideo');
+var TestWebcam = require('client/session/components/steps/computer/steps/testWebcam');
 var BeginTest = React.createClass({
 	getInitialState: function(){
 			return {
@@ -37,7 +41,11 @@ var BeginTest = React.createClass({
 					<Panel className="panel-body panel-body-nopadding">
 						<Wizard className="basic-wizard block-wizard">
 							<StepComputer onClick={this.onClick}/>
-							<TestInternet />
+							<TestInternet ref="internet"/>
+							<TestMicrophone ref="microphone"/>
+							<TestSpeaker ref="speaker"/>
+							<TestVideo ref="video"/>
+							<TestWebcam ref="webcam" />
 						</Wizard>
 					</Panel>
 				</Wrap>

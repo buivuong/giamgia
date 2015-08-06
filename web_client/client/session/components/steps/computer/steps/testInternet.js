@@ -1,7 +1,19 @@
 var TestInternet = React.createClass({
+	getInitialState: function(){
+		return {display: "none"};
+	},
+	show: function(){
+		this.setState({
+			display: "none"});
+	}
+	,
+	hide: function(){
+		this.setState({
+			display: "block"});
+	},
 	render: function(){
 		return (
-			<Panel className="tab-content">
+			<Panel className="tab-content" style={{display: this.state.display}}>
 				<Panel className="tab-pane active">
 					<Wrap className="border-bluelight border-round padding-round-large text-center">
 						<Box className="test-computer-box">

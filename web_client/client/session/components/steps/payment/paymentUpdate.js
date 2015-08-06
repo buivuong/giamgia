@@ -28,7 +28,7 @@ var PaymentUpdate = React.createClass({
 									Enter coupon code
 								</Link>
 							</Sentence>
-							<Hr className="border-bluelight" />
+							<Divider className="border-bluelight" />
 							<Title type="h3" className="color-main">
 								Credit Card Information
 							</Title>

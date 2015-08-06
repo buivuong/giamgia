@@ -2,7 +2,7 @@ var Step = React.createClass({
 	$module: null,
 	module: "doctor",
 	propTypes:{
-		onClick: React.PropTypes.func,
+		onClickTab: React.PropTypes.func,
 	},
 	componentDidMount: function(){
 		this.$module = $(React.findDOMNode(this.refs[this.module]));
@@ -16,7 +16,7 @@ var Step = React.createClass({
 		this.module = keyRef;
 		this.$module = $(React.findDOMNode(this.refs[this.module]));
 		this.setActive();
-		this.props.onClick(this.getStep());
+		this.props.onClickTab(this.getStep());
 	},
 	setActive: function(){
 		for(var key in this.refs){

@@ -72,7 +72,7 @@ var MedicalSerieAndProcedure = React.createClass({
 							</Table>
 							<Row className="row">
 								<Column className="col-sm-6 col-xs-12">
-									<Hr className="border-blue no-margin-top" />
+									<Divider className="border-blue no-margin-top" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -95,7 +95,7 @@ var MedicalSerieAndProcedure = React.createClass({
 											</Wrap>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -116,7 +116,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -137,7 +137,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -158,7 +158,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -179,7 +179,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -200,7 +200,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -221,7 +221,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="form-group">
@@ -241,7 +241,7 @@ var MedicalSerieAndProcedure = React.createClass({
 									</Form>
 								</Column>
 								<Column className="col-sm-6 col-xs-12">
-									<Hr className="border-blue no-margin-top" />
+									<Divider className="border-blue no-margin-top" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -262,7 +262,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -283,7 +283,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -304,7 +304,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -325,7 +325,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -346,7 +346,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -367,7 +367,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 									<Form className="form-group row">
 										<Column className="col-sm-6 col-xs-12">
 											<Wrap className="radio">
@@ -388,7 +388,7 @@ var MedicalSerieAndProcedure = React.createClass({
                                             </select>
 										</Column>
 									</Form>
-									<Hr className="border-bluelight no-margin-top margin-bottom" />
+									<Divider className="border-bluelight no-margin-top margin-bottom" />
 								</Column>
 							</Row>
 						</Panel>

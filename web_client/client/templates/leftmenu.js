@@ -1,5 +1,8 @@
 var Leftmenu = React.createClass({
 	$root: null,
+	componentWillUnmount: function(){
+		this.$root = null;
+	},
 	componentDidMount: function(){
 		this.$root = $(React.findDOMNode(this));
 

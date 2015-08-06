@@ -76,6 +76,9 @@ var Client_Session_Steps = require('client/session/components/steps/steps');
 
 var Client_Login  = require('client/user/components/login/view');
 
+var Client_My_Account = require('client/user/components/myAccount/core');
+var Client_My_Account_View = require('client/user/components/myAccount/view');
+
 var routes = (
     <Route handler={App} name="app" path="/">
         <Route handler={Client} name="client">
@@ -97,6 +100,9 @@ var routes = (
                 <Route handler={Client_Session} name="client_session" path="session">
                     <Route handler={Client_Session_Steps} name="client_session_steps" path="steps" />
                 </Route>
+                <Route handler={Client_My_Account} name="client_my_account" path="my-account" />
+                 <Route handler={Client_My_Account_View} name="client_my_account_view" path="my-account-profile">
+                 </Route>
             </Route>
             <Route handler={Client_Login} name="client_login" path="login" />
         </Route>
