@@ -14,7 +14,7 @@ var	Steps = React.createClass({
 	componenWillUnMount: function(){
 		this.tabRefs = null;
 	},
-	onClick: function(keyParams){
+	onClickTab: function(keyParams){
 		for(var i=0; i<this.tabRefs.length; i++){
 			if(this.tabRefs[i]===keyParams){
 				this.refs[this.tabRefs[i]].show();
@@ -42,12 +42,12 @@ var	Steps = React.createClass({
 								Choose Doctor
 							</Title>
 						</Header>
-						<Hr/>
+						<Divider />
 				</Box>
 				<Box className="connect-box general-wrap">
 					<Panel className="panel-body panel-body-nopadding">
 						<Wizard className="basic-wizard">
-							<StepTemplate ref="step" onClick={this.onClick}/>
+							<StepTemplate ref="step" onClickTab={this.onClickTab}/>
 							<Tab className="tab-content">
 								<Tab className="tab-pane active">
 									<Row className="row">

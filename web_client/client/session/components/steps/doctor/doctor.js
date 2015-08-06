@@ -1,3 +1,5 @@
+
+
 var AboutVisit = require('client/session/components/steps/doctor/aboutVisit');
 var AboutYou = require('client/session/components/steps/doctor/aboutYou');
 var StepChooseDoctor = React.createClass({
