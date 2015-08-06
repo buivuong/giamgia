@@ -4,6 +4,8 @@ var async = require('async');
 var functions = require('functions');
 var validate = require("valid");
 var passwordHash = require('password-hash');
+var config = require('config');
+var mail = require('mail');
 
 var main = {
 	getToken: function(req, res){
@@ -126,23 +128,36 @@ var main = {
 				.catch(trx.rollback)
 		}
 
-		knex.transaction(function(trx){
-			knex('users')
-			.transacting(trx)
-			.insert(postData)
-			.then(function(response){
-				return callback_insert_email(trx);
-			})
-			.then(trx.commit)
-			.catch(trx.rollback)
-		})
-		.then(function(response){
-			res.status(200).json({data: 'success'});
-			
-		})
-		.catch(function(error){
-			res.status(500).json(error);
-		})
+		async.waterfall([
+			function(callback){
+				knex.transaction(function(trx){
+					knex('users')
+					.transacting(trx)
+					.insert(postData)
+					.then(function(response){
+						return callback_insert_email(trx);
+					})
+					.then(trx.commit)
+					.catch(trx.rollback)
+				})
+				.then(function(response){		
+					callback(null);
+				})
+				.catch(function(error){
+					res.status(500).json(error);
+				})
+			},
+			function(callback){
+				var body = 'Your username: '+postData.username+'<br/>Your password: '+password
+					+'<br/>Please activate, click this link <a href="'+config.domain+config.defaultUrl+'client/users/token/'+postData.token+'">Activate this</a>';
+				mail.templateRegistrationClientUsers(email, body)
+				.then(function(response){
+					res.status(200).json({data: 'success'});
+				}, function(error){
+					res.status(500).json({error: 'mail not send'});
+				})
+			}
+		]);
 	},
 	postLogin: function(req, res){
 		var postData = req.body.data;
