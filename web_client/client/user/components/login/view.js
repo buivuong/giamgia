@@ -5,7 +5,7 @@ var View = React.createClass({
 	componentWillMount: function(){
 		$("body").addClass("signin");
 	},
-	componentWillUnMount: function(){
+	componentWillUnmount: function(){
 		$("body").removeClass("signin");
 	},
 	render: function(){

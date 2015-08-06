@@ -50297,7 +50297,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {
-
 	var AboutVisit = __webpack_require__(479);
 	var AboutYou = __webpack_require__(480);
 	var StepChooseDoctor = React.createClass({displayName: "StepChooseDoctor",
@@ -51912,7 +51911,7 @@
 		componentWillMount: function(){
 			$("body").addClass("signin");
 		},
-		componentWillUnMount: function(){
+		componentWillUnmount: function(){
 			$("body").removeClass("signin");
 		},
 		render: function(){
@@ -52190,7 +52189,8 @@
 /* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Wrap) {var MyAccount = __webpack_require__(506);
+	/* WEBPACK VAR INJECTION */(function(React, Link, Wrap) {var MyAccount = __webpack_require__(506);
+	var MyProfile = __webpack_require__(507);
 	var View  = React.createClass({displayName: "View",
 		onClickTab: function(keyRef){
 			console.log(keyRef);
@@ -52198,15 +52198,27 @@
 		render: function(){
 			return (
 				React.createElement("div", null, 
+					React.createElement("div", {className: "quicklink-box"}, 
+						React.createElement(Link, {className: "color-grey"}, 
+							"Home"
+						), 
+						React.createElement(Link, {className: "quicklink color-grey"}, 
+							"My Account"
+						), 
+						React.createElement(Link, {className: "quicklink color-grey"}, 
+							"My Profile"
+						)
+					), 
 					React.createElement(Wrap, {className: "general-wrap"}, 
 						React.createElement(MyAccount, {ref: "myAccount", onClickTab: this.onClickTab})
-					)
+					), 
+					React.createElement(MyProfile, null)
 				)
 				);
 		}
 	});
 	module.exports = View;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(335)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(308), __webpack_require__(335)))
 
 /***/ },
 /* 506 */
@@ -52283,6 +52295,174 @@
 	});
 	module.exports = MyAccount;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(311), __webpack_require__(312), __webpack_require__(308), __webpack_require__(305)))
+
+/***/ },
+/* 507 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Box, Header, Title, Divider) {var Identification = __webpack_require__(508);
+	var PersonalInformation = __webpack_require__(509);
+	var MyProfile = React.createClass({displayName: "MyProfile",
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement(Box, {className: "header-profile-box no-img-header-box"}, 
+						React.createElement(Box, {className: "img-box"}), 
+						React.createElement(Header, {className: "header-title"}, 
+							React.createElement(Title, {type: "h2", className: "dashboard"}, 
+								"My Profile"
+							)
+						), 
+						React.createElement(Divider, null)
+					), 
+					React.createElement(Identification, null), 
+					React.createElement(PersonalInformation, null)
+				)
+				);
+		}
+	});
+	module.exports = MyProfile;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(334), __webpack_require__(328), __webpack_require__(320), __webpack_require__(324)))
+
+/***/ },
+/* 508 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, Row, Column, Panel, Title, Link, Table, TableRow, TableHeader, TableColumn, Sentence, Image) {var Identification  = React.createClass({displayName: "Identification",
+		render: function(){
+			return (
+				React.createElement(Wrap, {className: "general-wrap myaccount-box margin-bottom-large margin-top-large"}, 
+						React.createElement(Row, {className: "row"}, 
+							React.createElement(Column, {className: "col-xs-12"}, 
+								React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+									React.createElement(Panel, {className: "panel-heading no-border-radius"}, 
+										React.createElement(Panel, {className: "panel-btns"}, 
+											React.createElement(Title, {type: "h4", className: "no-margin"}, 
+												"Identification"
+											), 
+											React.createElement(Link, {className: "btn btn-sm btn-primary pull-right font-size-12px color-white no-border-radius"}, 
+												"Edit"
+											)
+										)
+									), 
+									React.createElement(Panel, {className: "panel-body"}, 
+										React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger"}, 
+											React.createElement(Column, {className: "col-sm-offset-1 col-sm-5 col-xs-12"}, 
+												React.createElement(Table, null, 
+													React.createElement(TableRow, null, 
+														React.createElement(TableHeader, null, 
+															"Name:"
+														), 
+														React.createElement(TableColumn, null, 
+															"Đặng Thị Huyền Trang"
+														)
+													), 
+													React.createElement(TableRow, null, 
+														React.createElement(TableHeader, null, 
+															"Email:"
+														), 
+														React.createElement(TableColumn, null, 
+															"dieu@offer.vn"
+														)
+													)
+												)
+											), 
+											React.createElement(Column, {className: "col-sm-6 col-xs-12 border-bluelight border-left"}, 
+												React.createElement(Wrap, {className: "padding-right-large padding-left-large"}, 
+													React.createElement(Sentence, {className: "no-margin-bottom discription"}, 
+														React.createElement(Image, {src: "images/identification_03.png", style: {width: "82", height: "99"}}), 
+														"Your name and email address are used as a primary identification for Online Care Anywhere." + " " + 
+														"You recommend that you used a private email address, since you may choose to receive private" + " " + 
+														"health information by email"
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				);
+		}
+	});
+	module.exports = Identification;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(335), __webpack_require__(325), __webpack_require__(326), __webpack_require__(304), __webpack_require__(320), __webpack_require__(308), __webpack_require__(436), __webpack_require__(437), __webpack_require__(438), __webpack_require__(439), __webpack_require__(322), __webpack_require__(305)))
+
+/***/ },
+/* 509 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Header, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Wrap, Sentence, Image) {var PersonalInformation = React.createClass({displayName: "PersonalInformation",
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+				    React.createElement(Header, {className: "panel-heading no-border-radius"}, 
+				        React.createElement(Panel, {className: "panel-btns"}, 
+				          React.createElement(Title, {type: "h4", className: "no-margin"}, 
+				          	"Personal Information"
+				          ), 
+				          React.createElement(Link, {className: "btn btn-sm btn-primary pull-right font-size-12px color-white no-border-radius"}, 
+				          	"Edit"
+				          )
+				        )
+				    ), 
+					    React.createElement(Panel, {className: "panel-body"}, 
+					        React.createElement(Row, {className: "row padding-bottom-larger padding-top-larger"}, 
+						          React.createElement(Column, {className: "col-sm-offset-1 col-sm-5 col-xs-12"}, 
+						            React.createElement(Table, null, 
+							            React.createElement(TableRow, null, 
+							                React.createElement(TableHeader, null, 
+							                	"Date of Birth:"
+							                ), 
+							                React.createElement(TableColumn, null, 
+							                	"01/08/1990"
+							                )
+							            ), 
+
+							             React.createElement(TableRow, null, 
+							                React.createElement(TableHeader, null, 
+							                	"Gender:"
+							                ), 
+							                React.createElement(TableColumn, null, 
+							                	"Female"
+							                )
+							            ), 
+
+							            React.createElement(TableRow, null, 
+							                React.createElement(TableHeader, null, "Home Address:"), 
+							                React.createElement(TableColumn, null)
+							            ), 
+
+							            React.createElement(TableRow, null, 
+							                React.createElement(TableHeader, null, "Alternate Address:"), 
+							                React.createElement(TableColumn, null)
+							            ), 
+
+							            React.createElement(TableRow, null, 
+							                React.createElement(TableHeader, null, "Phone:"), 
+							                React.createElement(TableColumn, null)
+							            )
+							        )
+							    ), 
+					          React.createElement(Column, {className: "col-sm-6 col-xs-12 border-bluelight border-left"}, 
+					            React.createElement(Wrap, {className: "padding-right-large padding-left-large"}, 
+					              React.createElement(Sentence, {className: "no-margin-bottom discription"}, 
+						              	React.createElement(Image, {src: "images/personal_03.png", style: {width: "82", height: "99"}}), 
+						              	"Your name and email address are used as a primary identification for" + " " + 
+						              	"Online Care Anywhere. You recommend that you used a private email address," + " " + 
+						              	"since you may choose to receive private health information by email"
+					              )
+					            )
+					          )
+					        )
+				        )
+			      )
+				);
+		}
+	});
+	module.exports = PersonalInformation;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(304), __webpack_require__(328), __webpack_require__(320), __webpack_require__(308), __webpack_require__(325), __webpack_require__(326), __webpack_require__(436), __webpack_require__(437), __webpack_require__(438), __webpack_require__(439), __webpack_require__(335), __webpack_require__(322), __webpack_require__(305)))
 
 /***/ }
 /******/ ]);
