@@ -3,7 +3,8 @@ var Config = {
 	baseServerUrlClient: 'http://localhost:3001/api/hospital/v1/client/',
 	serverTimezone: 'Australia/Perth',
 	clientTimezone: 'Asia/Ho_Chi_Minh',
-	lang: 'gb'
+	lang: 'gb',
+	defaultClient: 'client_consultation'
 }
 
 module.exports = Config;

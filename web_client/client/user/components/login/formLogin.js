@@ -14,7 +14,7 @@ var FormLogin = React.createClass({
 		.then(function(response){
 			Cookies.set('client', JSON.stringify(response.data));
 			setTimeout(function(){
-				this.context.router.transitionTo('client_consultation');
+				this.context.router.transitionTo(Config.defaultClient);
 			}.bind(this), 200)
 			this.refs.loader.hide();
 		}.bind(this))
@@ -26,7 +26,7 @@ var FormLogin = React.createClass({
 	render: function(){
 		return (
 			<Form ref="form" type="form" onSubmit={this.onSubmit}>
-				<Loader ref="loader" />
+				<Loader ref="loader"/>
 				<Title type="h4" className="nomargin">
 					Sign In
 				</Title>
