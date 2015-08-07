@@ -6,6 +6,7 @@ var validate = require("valid");
 var passwordHash = require('password-hash');
 var config = require('config');
 var mail = require('mail');
+var moment = require('moment');
 
 var main = {
 	getCheckToken: function(req, res){
@@ -224,7 +225,54 @@ var main = {
 				}
 			}
 			]);
+	},
+	checkOldPassword: function(req, res){
+		var data = req.body.data;
+		knex('users')
+			.select('password')
+			.where({'id': data.id})
+			.then(function(result){
+				if(result.length > 0){
+					if(passwordHash.verify(data.old_password, result[0].password)){
+						res.status(200).json("password same");
+					}
+					else {
+						res.status(400).json("password wrong");
+					}
+				}
+				else {
+					res.status(403).json("forbidden");
+				}
+			})
+			.catch(function(error){
+				res.status(500).json(error);
+			});
+	},
+	changePassword: function(req, res){
+		var postData = req.body.data;
+		var password = passwordHash.generate(postData.new_password);
+		async.waterfall([
+			function(callback){
+			knex('users')
+				.where({'id': postData.id})
+				.update({'password': password})
+				.then(function(result){
+				 callback(null);
+				})
+				.catch(function(error){
+					res.status(500).json(error);
+				});
+			},
+			function(callback){
+				var body = "Your password change: " + postData.change_password_at;
+				mail.templateUserChangePassword(postData.email, body)
+					.then(function(response){
+						res.status(200).json({data: "send mail success"});
+					}, function(error){
+						res.status(500).json({error: "send mail failed!" });
+				});
+				}
+			]);
 	}
 }
-
 module.exports = main;

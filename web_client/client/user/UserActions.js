@@ -3,7 +3,9 @@ var UserActions = Reflux.createActions({
 	checkUsername: {children: ["completed", "failed"]},
 	checkEmail: {children: ["completed", "failed"]},
 	checkToken: {children: ["completed", "failed"]},
-	Login: {children: ["completed", "failed"]}
+	login: {children: ["completed", "failed"]},
+	checkOldPassword: {children: ["completed", "failed"]},
+	changePassword: {children: ["completed", "failed"]}
 });
 
 module.exports = UserActions;

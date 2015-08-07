@@ -50,5 +50,26 @@ module.exports = {
 		})
 
 		return deferred.promise;
+	},
+	templateUserChangePassword: function(to, body){
+		var deferred = Q.defer();
+		var MailConnect = this.createTransporter();
+
+		var mailOptions = {
+			from: "Team Realtime",
+			to: to,
+			subject: "Change Password",
+			html: body
+		};
+
+		MailConnect.sendMail(mailOptions, function(error, info){
+			if(error){
+				deferred.reject(error);
+			}
+			if(info){
+				deferred.resolve({status: 'success'});
+			}
+		});
+		return deferred.promise;
 	}
 }

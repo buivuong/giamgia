@@ -167,7 +167,8 @@ var FormRegister = React.createClass({
 			this.refs.password_repeat.addError();
 			this.refs.password_repeat_label.addError();
 			this.refs.password_repeat_error.addError("Must like password");
-		}else{
+		} 
+		else {
 			this.validation.password_repeat = true;
 			this.refs.password_repeat.removeError();
 			this.refs.password_repeat_label.removeError();
@@ -226,7 +227,7 @@ var FormRegister = React.createClass({
 
 			this.refs.loader.show();
 			UserActions.checkEmail.triggerPromise({email: email})
-			.then(function(response){
+				.then(function(response){
 				this.refs.loader.hide();
 				this.validation_server.email = true;
 				this.refs.email.removeError();

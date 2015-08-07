@@ -47,16 +47,16 @@ var MyAccount = React.createClass({
 						Payment Information
 					</Link>
 				</ListItem>
-				<ListItem ref="buillingActivity">
-					<Link className="no-padding-left" onClick={this.onClick.bind(null, "buillingActivity")}>
+				<ListItem ref="billingActivity">
+					<Link className="no-padding-left" onClick={this.onClick.bind(null, "billingActivity")}>
 						<Image className="margin-right bg-blue" 
 						       src="images/icon-billing.png" 
 						       style={{width: "48", height: "48"}} />
 						Billing Activity
 					</Link>
 				</ListItem>
-				<ListItem ref="loginCreadential">
-					<Link className="no-padding-left" onClick={this.onClick.bind(null, "loginCreadential")}>
+				<ListItem ref="loginCredential">
+					<Link className="no-padding-left" onClick={this.onClick.bind(null, "loginCredential")}>
 						<Image className="margin-right bg-violet" 
 						       src="images/icon-login.png" 
 						       style={{width: "48", height: "48"}} />

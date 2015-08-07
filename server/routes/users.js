@@ -11,4 +11,6 @@ module.exports = function(app){
 	app.post(module+'register', UsersController.postRegister);
 	app.post(module+'login', UsersController.postLogin);
 	app.get(module+'token/:token', UsersController.getToken);
+	app.post(module+'check-old-password', UsersController.checkOldPassword);
+	app.post(module+'change-password', UsersController.changePassword);
 }

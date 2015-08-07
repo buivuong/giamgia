@@ -14,7 +14,9 @@ var UserStore = Reflux.createStore({
 		this.listenTo(UserActions.checkUsername, this.onCheckUsername);
 		this.listenTo(UserActions.checkEmail, this.onCheckEmail);
 		this.listenTo(UserActions.checkToken, this.onCheckToken);
-		this.listenTo(UserActions.Login, this.onLogin);
+		this.listenTo(UserActions.login, this.onLogin);
+		this.listenTo(UserActions.checkOldPassword, this.oncCheckOldPassword);
+		this.listenTo(UserActions.changePassword, this.onChangePassword);
 	},
 	onCheckToken: function(){
 		$.get(baseUrl+'checkToken')
@@ -28,11 +30,11 @@ var UserStore = Reflux.createStore({
 	onLogin: function(dataPost){
 		$.post(baseUrl+'login', {data: dataPost})
 		.done(function(response){
-			UserActions.Login.completed({data: response});
+			UserActions.login.completed({data: response});
 		})
 		.fail(function(error){
 			if(error.status!=='403'){
-				UserActions.Login.failed({status: error.status, data: JSON.parse(error.responseText)});
+				UserActions.login.failed({status: error.status, data: JSON.parse(error.responseText)});
 			}
 		});
 	},
@@ -65,6 +67,28 @@ var UserStore = Reflux.createStore({
 			if(error.status !== '403')
 				UserActions.register.failed(JSON.parse(error.responseText));
 		})
+	},
+	oncCheckOldPassword: function(data){
+		$.post(baseUrl+'check-old-password',{data: data})
+			.done(function(response){
+				UserActions.checkOldPassword.completed(response);
+			})
+			.fail(function(error){
+				if(error.status !== '403'){
+					UserActions.checkOldPassword.failed({status: error.status, data: JSON.parse(error.responseText)});
+				}
+			});
+	},
+	onChangePassword: function(data){
+		$.post(baseUrl+'change-password',{data: data})
+			.done(function(response){
+				UserActions.changePassword.completed(response);
+			})
+			.fail(function(error){
+				if(error.status !== '403') {
+					UserActions.changePassword.failed(JSON.parse(error.responseText));
+				}
+			});
 	}
 });
 

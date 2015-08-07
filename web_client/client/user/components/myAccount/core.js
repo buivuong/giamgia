@@ -1,8 +1,8 @@
 var Router = require('react-router');
+
+
 var Core = React.createClass({
-	contextTypes: {
-		router: React.PropTypes.func
-	},
+	mixins: [CheckToken],
 	onClick: function(toRouter){
 		this.context.router.transitionTo("client_my_account_view");
 	},

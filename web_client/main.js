@@ -24,6 +24,10 @@ require('select2');
 require('spinner.css');
 require('custom.css');
 
+require('alertify.css');
+require('alertify-default.css');
+require('alertify');
+
 var Router = require('react-router');
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;

@@ -1,8 +1,28 @@
 var MyAccount = require('client/templates/myAccount');
 var MyProfile = require('client/user/components/myAccount/myProfile/view');
+var BuillingActivity = require('client/user/components/myAccount/billingActivity/billingActivity');
+var LoginCredential = require('client/user/components/myAccount/loginCredential/view');
+var PaymentInfomation = require('client/user/components/myAccount/paymentInfomation/paymentInfomation');
+
 var View  = React.createClass({
+	modules: null,
+	mixins: [CheckToken],
+	componentDidMount: function(){
+		this.modules = ["myProfile", "paymentInfomation", "billingActivity", "loginCredential"];
+		this.refs["myProfile"].show(); //set default
+	},
+	componenWillUnmount: function(){
+		this.modules = null;
+	},
 	onClickTab: function(keyRef){
-		console.log(keyRef);
+		for(var i = 0; i < this.modules.length; i++){
+			if(this.modules[i] === keyRef){
+				this.refs[this.modules[i]].show();
+			}
+			else{
+				this.refs[this.modules[i]].hide();
+			}
+		}
 	},
 	render: function(){
 		return (
@@ -21,7 +41,10 @@ var View  = React.createClass({
 				<Wrap className="general-wrap">
 					<MyAccount ref="myAccount" onClickTab={this.onClickTab}/>
 				</Wrap>
-				<MyProfile />
+				<MyProfile ref="myProfile"/>
+				<PaymentInfomation ref="paymentInfomation"/>
+				<BuillingActivity ref="billingActivity"/>
+				<LoginCredential ref="loginCredential"/>
 			</div>
 			);
 	}

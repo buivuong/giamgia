@@ -10,7 +10,7 @@ var FormLogin = React.createClass({
 		this.refs.loader.show();
 		var serializedObject = this.refs.form.getSerializedObject();
 			serializedObject.last_login_at = moment().tz(Config.serverTimezone).format("YYYY-MM-DD HH:mm:ss");
-		UserActions.Login.triggerPromise(serializedObject)
+		UserActions.login.triggerPromise(serializedObject)
 		.then(function(response){
 			Cookies.set('client', JSON.stringify(response.data));
 			setTimeout(function(){

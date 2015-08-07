@@ -56,6 +56,7 @@ var config = {
 			Validate: "validate.js",
             wysiwyg: "wysiwyg",
             Cookies: "cookies-js",
+            alertify: "alertify",
 			
 			Wrap: "web_client/components/wrap/wrap",
 			Box: "web_client/components/box/box",
@@ -97,7 +98,7 @@ var config = {
             Tab: "web_client/components/tab/tab",
             Wizard: "web_client/components/wizard/wizard",
             Small: "web_client/components/small/small",
-			
+
 			CheckToken: "web_client/mixins/checkToken",
 			CheckNoToken: "web_client/mixins/checkNoToken"
         })
@@ -132,5 +133,9 @@ config.addVendor('spinner.css', lib_dir+'/spinner.css');
 config.addVendor('custom.css', lib_dir+'/custom.css');
 
 config.addVendor('jquery-mask-input', bower_dir+'/jquery.inputmask/dist/jquery.inputmask.bundle.min.js');
+
+config.addVendor('alertify', bower_dir+'/alertify/src/alertify.js');
+config.addVendor('alertify.css', bower_dir+'/alertify/themes/alertify.core.css');
+config.addVendor('alertify-default.css', bower_dir+'/alertify/themes/alertify.default.css');
 
 module.exports = config;
