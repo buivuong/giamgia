@@ -1,6 +1,8 @@
 var My = require('client/templates/my');
 var IntlMixin = ReactIntl.IntlMixin;
 
+var WebRTC = require('components/webrtc/webrtc');
+
 var View = React.createClass({
 	mixins: [IntlMixin, CheckToken],
 	render: function(){
@@ -46,26 +48,7 @@ var View = React.createClass({
 								</Form>
 							</Panel>
 							<Panel className="table-responsive border-round">
-								<Table className="table table-primary">
-									<thead>
-										<TableRow>
-											<TableHeader>Patient</TableHeader>
-											<TableHeader>Disease</TableHeader>
-											<TableHeader>Doctor</TableHeader>
-											<TableHeader>Time</TableHeader>
-											<TableHeader>Result</TableHeader>
-										</TableRow>
-									</thead>
-									<tbody>
-										<TableRow className="detailed-exam">
-											<TableColumn>Dieu Nguyen</TableColumn>
-											<TableColumn>Headache</TableColumn>
-											<TableColumn>Peter Tran</TableColumn>
-											<TableColumn>From 01/04/2015 to 05/07/2015</TableColumn>
-											<TableColumn><Link className="text-underline">View Detail</Link></TableColumn>
-										</TableRow>
-									</tbody>
-								</Table>
+								<WebRTC/>
 							</Panel>
 						</Column>
 					</Row>
