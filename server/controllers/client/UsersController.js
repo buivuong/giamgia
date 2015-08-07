@@ -216,7 +216,6 @@ var main = {
 							res.status(200).json({id: response.id, username: response.username, email: response.email, guid: guid});
 						})
 						.catch(function(error){
-							console.log(error);
 							res.status(500).json(error);
 						});
 				}
@@ -224,6 +223,7 @@ var main = {
 					res.status(400).json({data: "User deleted!"});
 				}
 			}
+<<<<<<< HEAD
 			]);
 	},
 	checkOldPassword: function(req, res){
@@ -273,6 +273,9 @@ var main = {
 				});
 				}
 			]);
+=======
+		]);
+>>>>>>> origin/master
 	}
 }
 module.exports = main;
