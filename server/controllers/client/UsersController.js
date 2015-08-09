@@ -132,8 +132,6 @@ var main = {
 				.catch(trx.rollback)
 		}
 
-		async.waterfall([
-			function(callback){
 				knex.transaction(function(trx){
 					knex('users')
 					.transacting(trx)
@@ -145,23 +143,18 @@ var main = {
 					.catch(trx.rollback)
 				})
 				.then(function(response){		
-					callback(null);
+					var body = 'Your username: '+postData.username+'<br/>Your password: '+password
+					+'<br/>Please activate, click this link <a href="'+config.domain+config.defaultUrl+'client/users/token/'+postData.token+'">Activate this</a>';
+					mail.templateRegistrationClientUsers(email, body)
+					.then(function(response){
+						res.status(200).json({data: 'success'});
+					}, function(error){
+						res.status(500).json({error: 'mail not send'});
+					});
 				})
 				.catch(function(error){
 					res.status(500).json(error);
-				})
-			},
-			function(callback){
-				var body = 'Your username: '+postData.username+'<br/>Your password: '+password
-					+'<br/>Please activate, click this link <a href="'+config.domain+config.defaultUrl+'client/users/token/'+postData.token+'">Activate this</a>';
-				mail.templateRegistrationClientUsers(email, body)
-				.then(function(response){
-					res.status(200).json({data: 'success'});
-				}, function(error){
-					res.status(500).json({error: 'mail not send'});
-				})
-			}
-		]);
+				});
 	},
 	postLogin: function(req, res){
 		var postData = req.body.data;
@@ -223,7 +216,6 @@ var main = {
 					res.status(400).json({data: "User deleted!"});
 				}
 			}
-<<<<<<< HEAD
 			]);
 	},
 	checkOldPassword: function(req, res){
@@ -251,31 +243,31 @@ var main = {
 	changePassword: function(req, res){
 		var postData = req.body.data;
 		var password = passwordHash.generate(postData.new_password);
-		async.waterfall([
-			function(callback){
-			knex('users')
+		knex.transaction(function(trx){
+			return trx.into('users')
 				.where({'id': postData.id})
 				.update({'password': password})
 				.then(function(result){
-				 callback(null);
+					return;
 				})
 				.catch(function(error){
 					res.status(500).json(error);
 				});
-			},
-			function(callback){
-				var body = "Your password change: " + postData.change_password_at;
+		})
+		.then(function(trx){
+			var body = "Your password change: " + postData.change_password_at;
 				mail.templateUserChangePassword(postData.email, body)
-					.then(function(response){
-						res.status(200).json({data: "send mail success"});
-					}, function(error){
-						res.status(500).json({error: "send mail failed!" });
+				.then(function(response){
+					trx.commit;
+					res.status(200).json({data: "send mail success"});
+				}, function(error){
+					trx.rollback;
+					res.status(500).json({error: "send mail failed!" });
 				});
-				}
-			]);
-=======
-		]);
->>>>>>> origin/master
+		})
+		.catch(function(){
+			trx.rollback;
+		});
 	}
 }
 module.exports = main;
