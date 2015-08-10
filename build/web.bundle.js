@@ -116,18 +116,24 @@
 	var Client_Consultation = __webpack_require__(439);
 	var Client_Consultation_View = __webpack_require__(440);
 
-	var Client_Appointment = __webpack_require__(471);
-	var Client_Appointment_View = __webpack_require__(472);
+	var Client_Appointment = __webpack_require__(468);
+	var Client_Appointment_View = __webpack_require__(469);
 
-	var Client_Register = __webpack_require__(473);
+	var Client_Register = __webpack_require__(474);
 
-	var Client_Session = __webpack_require__(479);
-	var Client_Session_Steps = __webpack_require__(480);
+	var Client_Session = __webpack_require__(480);
+	var Client_Session_Steps = __webpack_require__(481);
 
-	var Client_Login  = __webpack_require__(506);
+	var Client_Login  = __webpack_require__(507);
 
-	var Client_My_Account = __webpack_require__(511);
-	var Client_My_Account_View = __webpack_require__(512);
+	var Client_My_Account = __webpack_require__(512);
+	var Client_My_Account_View = __webpack_require__(513);
+
+	var Client_Health = __webpack_require__(527);
+	var Client_Health_History = __webpack_require__(528);
+
+	var Client_WebRTC_Video = __webpack_require__(530);
+	var Client_WebRTC_Chat = __webpack_require__(532);
 
 	var routes = (
 	    React.createElement(Route, {handler: App, name: "app", path: "/"}, 
@@ -143,6 +149,10 @@
 	                    React.createElement(DefaultRoute, {handler: Client_Consultation_View}), 
 	                    React.createElement(Route, {handler: Client_Consultation_View, name: "client_consultation_view", path: "view"})
 	                ), 
+	                React.createElement(Route, {handler: Client_Health, name: "client_health", path: "health"}, 
+	                    React.createElement(DefaultRoute, {handler: Client_Health_History}), 
+	                    React.createElement(Route, {handler: Client_Health_History, name: "client_health_history", path: "history"})
+	                ), 
 	                React.createElement(Route, {handler: Client_Appointment, name: "client_appointment", path: "appointment"}, 
 	                    React.createElement(DefaultRoute, {handler: Client_Appointment_View}), 
 	                    React.createElement(Route, {handler: Client_Appointment_View, name: "client_appointment_view", path: "view"})
@@ -150,9 +160,13 @@
 	                React.createElement(Route, {handler: Client_Session, name: "client_session", path: "session"}, 
 	                    React.createElement(Route, {handler: Client_Session_Steps, name: "client_session_steps", path: "steps"})
 	                ), 
-	                React.createElement(Route, {handler: Client_My_Account, name: "client_my_account", path: "my-account"}), 
-	                    React.createElement(Route, {handler: Client_My_Account_View, name: "client_my_account_view", path: "my-account-profile"}
-	                )
+	                React.createElement(Route, {handler: Client_My_Account, name: "client_my_account", path: "my-account"}, 
+	                    React.createElement(Route, {handler: Client_My_Account_View, name: "client_my_account_view", path: "my-account-profile"})
+	                ), 
+
+	                React.createElement(Route, {handler: Client_WebRTC_Video, name: "client_webrtc_video", path: "webrtc-video"}), 
+	                React.createElement(Route, {handler: Client_WebRTC_Chat, name: "client_webrtc_chat", path: "webrtc-chat"})
+
 	            ), 
 	            React.createElement(Route, {handler: Client_Login, name: "client_login", path: "login"})
 	        )
@@ -27216,7 +27230,7 @@
 
 
 	// module
-	exports.push([module.id, ".alertify,\n.alertify-show,\n.alertify-log {\n\t-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\n\t   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\n\t    -ms-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\n\t     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\n\t        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */\n}\n.alertify-hide {\n\t-webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t   -moz-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t    -ms-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t     -o-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t        transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */\n}\n.alertify-log-hide {\n\t-webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t   -moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t    -ms-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t     -o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\n\t        transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */\n}\n.alertify-cover {\n\tposition: fixed; z-index: 99999;\n\ttop: 0; right: 0; bottom: 0; left: 0;\n\tbackground-color:white;\n\tfilter:alpha(opacity=0);\n\topacity:0;\n}\n\t.alertify-cover-hidden {\n\t\tdisplay: none;\n\t}\n.alertify {\n\tposition: fixed; z-index: 99999;\n\ttop: 50px; left: 50%;\n\twidth: 550px;\n\tmargin-left: -275px;\n\topacity: 1;\n}\n\t.alertify-hidden {\n\t\t-webkit-transform: translate(0,-150px);\n\t\t   -moz-transform: translate(0,-150px);\n\t\t    -ms-transform: translate(0,-150px);\n\t\t     -o-transform: translate(0,-150px);\n\t\t        transform: translate(0,-150px);\n\t\topacity: 0;\n\t\tdisplay: none;\n\t}\n\t/* overwrite display: none; for everything except IE6-8 */\n\t:root *> .alertify-hidden {\n\t\tdisplay: block;\n\t\tvisibility: hidden;\n\t}\n.alertify-logs {\n\tposition: fixed;\n\tz-index: 5000;\n\tbottom: 10px;\n\tright: 10px;\n\twidth: 300px;\n}\n.alertify-logs-hidden {\n\tdisplay: none;\n}\n\t.alertify-log {\n\t\tdisplay: block;\n\t\tmargin-top: 10px;\n\t\tposition: relative;\n\t\tright: -300px;\n\t\topacity: 0;\n\t}\n\t.alertify-log-show {\n\t\tright: 0;\n\t\topacity: 1;\n\t}\n\t.alertify-log-hide {\n\t\t-webkit-transform: translate(300px, 0);\n\t\t   -moz-transform: translate(300px, 0);\n\t\t    -ms-transform: translate(300px, 0);\n\t\t     -o-transform: translate(300px, 0);\n\t\t        transform: translate(300px, 0);\n\t\topacity: 0;\n\t}\n\t.alertify-dialog {\n\t\tpadding: 25px;\n\t}\n\t\t.alertify-resetFocus {\n\t\t\tborder: 0;\n\t\t\tclip: rect(0 0 0 0);\n\t\t\theight: 1px;\n\t\t\tmargin: -1px;\n\t\t\toverflow: hidden;\n\t\t\tpadding: 0;\n\t\t\tposition: absolute;\n\t\t\twidth: 1px;\n\t\t}\n\t\t.alertify-inner {\n\t\t\ttext-align: center;\n\t\t}\n\t\t.alertify-text {\n\t\t\tmargin-bottom: 15px;\n\t\t\twidth: 100%;\n\t\t\t-webkit-box-sizing: border-box;\n\t\t\t   -moz-box-sizing: border-box;\n\t\t\t        box-sizing: border-box;\n\t\t\tfont-size: 100%;\n\t\t}\n\t\t.alertify-buttons {\n\t\t}\n\t\t\t.alertify-button,\n\t\t\t.alertify-button:hover,\n\t\t\t.alertify-button:active,\n\t\t\t.alertify-button:visited {\n\t\t\t\tbackground: none;\n\t\t\t\ttext-decoration: none;\n\t\t\t\tborder: none;\n\t\t\t\t/* line-height and font-size for input button */\n\t\t\t\tline-height: 1.5;\n\t\t\t\tfont-size: 100%;\n\t\t\t\tdisplay: inline-block;\n\t\t\t\tcursor: pointer;\n\t\t\t\tmargin-left: 5px;\n\t\t\t}\n\n@media only screen and (max-width: 680px) {\n\t.alertify,\n\t.alertify-logs {\n\t\twidth: 90%;\n\t\t-webkit-box-sizing: border-box;\n\t\t   -moz-box-sizing: border-box;\n\t\t        box-sizing: border-box;\n\t}\n\t.alertify {\n\t\tleft: 5%;\n\t\tmargin: 0;\n\t}\n}\n", ""]);
+	exports.push([module.id, ".alertify,\r\n.alertify-show,\r\n.alertify-log {\r\n\t-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\r\n\t   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\r\n\t    -ms-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\r\n\t     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);\r\n\t        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */\r\n}\r\n.alertify-hide {\r\n\t-webkit-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t   -moz-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t    -ms-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t     -o-transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t        transition: all 250ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */\r\n}\r\n.alertify-log-hide {\r\n\t-webkit-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t   -moz-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t    -ms-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t     -o-transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045);\r\n\t        transition: all 500ms cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */\r\n}\r\n.alertify-cover {\r\n\tposition: fixed; z-index: 99999;\r\n\ttop: 0; right: 0; bottom: 0; left: 0;\r\n\tbackground-color:white;\r\n\tfilter:alpha(opacity=0);\r\n\topacity:0;\r\n}\r\n\t.alertify-cover-hidden {\r\n\t\tdisplay: none;\r\n\t}\r\n.alertify {\r\n\tposition: fixed; z-index: 99999;\r\n\ttop: 50px; left: 50%;\r\n\twidth: 550px;\r\n\tmargin-left: -275px;\r\n\topacity: 1;\r\n}\r\n\t.alertify-hidden {\r\n\t\t-webkit-transform: translate(0,-150px);\r\n\t\t   -moz-transform: translate(0,-150px);\r\n\t\t    -ms-transform: translate(0,-150px);\r\n\t\t     -o-transform: translate(0,-150px);\r\n\t\t        transform: translate(0,-150px);\r\n\t\topacity: 0;\r\n\t\tdisplay: none;\r\n\t}\r\n\t/* overwrite display: none; for everything except IE6-8 */\r\n\t:root *> .alertify-hidden {\r\n\t\tdisplay: block;\r\n\t\tvisibility: hidden;\r\n\t}\r\n.alertify-logs {\r\n\tposition: fixed;\r\n\tz-index: 5000;\r\n\tbottom: 10px;\r\n\tright: 10px;\r\n\twidth: 300px;\r\n}\r\n.alertify-logs-hidden {\r\n\tdisplay: none;\r\n}\r\n\t.alertify-log {\r\n\t\tdisplay: block;\r\n\t\tmargin-top: 10px;\r\n\t\tposition: relative;\r\n\t\tright: -300px;\r\n\t\topacity: 0;\r\n\t}\r\n\t.alertify-log-show {\r\n\t\tright: 0;\r\n\t\topacity: 1;\r\n\t}\r\n\t.alertify-log-hide {\r\n\t\t-webkit-transform: translate(300px, 0);\r\n\t\t   -moz-transform: translate(300px, 0);\r\n\t\t    -ms-transform: translate(300px, 0);\r\n\t\t     -o-transform: translate(300px, 0);\r\n\t\t        transform: translate(300px, 0);\r\n\t\topacity: 0;\r\n\t}\r\n\t.alertify-dialog {\r\n\t\tpadding: 25px;\r\n\t}\r\n\t\t.alertify-resetFocus {\r\n\t\t\tborder: 0;\r\n\t\t\tclip: rect(0 0 0 0);\r\n\t\t\theight: 1px;\r\n\t\t\tmargin: -1px;\r\n\t\t\toverflow: hidden;\r\n\t\t\tpadding: 0;\r\n\t\t\tposition: absolute;\r\n\t\t\twidth: 1px;\r\n\t\t}\r\n\t\t.alertify-inner {\r\n\t\t\ttext-align: center;\r\n\t\t}\r\n\t\t.alertify-text {\r\n\t\t\tmargin-bottom: 15px;\r\n\t\t\twidth: 100%;\r\n\t\t\t-webkit-box-sizing: border-box;\r\n\t\t\t   -moz-box-sizing: border-box;\r\n\t\t\t        box-sizing: border-box;\r\n\t\t\tfont-size: 100%;\r\n\t\t}\r\n\t\t.alertify-buttons {\r\n\t\t}\r\n\t\t\t.alertify-button,\r\n\t\t\t.alertify-button:hover,\r\n\t\t\t.alertify-button:active,\r\n\t\t\t.alertify-button:visited {\r\n\t\t\t\tbackground: none;\r\n\t\t\t\ttext-decoration: none;\r\n\t\t\t\tborder: none;\r\n\t\t\t\t/* line-height and font-size for input button */\r\n\t\t\t\tline-height: 1.5;\r\n\t\t\t\tfont-size: 100%;\r\n\t\t\t\tdisplay: inline-block;\r\n\t\t\t\tcursor: pointer;\r\n\t\t\t\tmargin-left: 5px;\r\n\t\t\t}\r\n\r\n@media only screen and (max-width: 680px) {\r\n\t.alertify,\r\n\t.alertify-logs {\r\n\t\twidth: 90%;\r\n\t\t-webkit-box-sizing: border-box;\r\n\t\t   -moz-box-sizing: border-box;\r\n\t\t        box-sizing: border-box;\r\n\t}\r\n\t.alertify {\r\n\t\tleft: 5%;\r\n\t\tmargin: 0;\r\n\t}\r\n}\r\n", ""]);
 
 	// exports
 
@@ -27256,7 +27270,7 @@
 
 
 	// module
-	exports.push([module.id, "/**\n * Default Look and Feel\n */\n.alertify,\n.alertify-log {\n\tfont-family: sans-serif;\n}\n.alertify {\n\tbackground: #FFF;\n\tborder: 10px solid #333; /* browsers that don't support rgba */\n\tborder: 10px solid rgba(0,0,0,.7);\n\tborder-radius: 8px;\n\tbox-shadow: 0 3px 3px rgba(0,0,0,.3);\n\t-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */\n\t   -moz-background-clip: padding;     /* Firefox 3.6 */\n\t        background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */\n}\n\t.alertify-text {\n\t\tborder: 1px solid #CCC;\n\t\tpadding: 10px;\n\t\tborder-radius: 4px;\n\t}\n\t.alertify-button {\n\t\tborder-radius: 4px;\n\t\tcolor: #FFF;\n\t\tfont-weight: bold;\n\t\tpadding: 6px 15px;\n\t\ttext-decoration: none;\n\t\ttext-shadow: 1px 1px 0 rgba(0,0,0,.5);\n\t\tbox-shadow: inset 0 1px 0 0 rgba(255,255,255,.5);\n\t\tbackground-image: -webkit-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\n\t\tbackground-image:    -moz-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\n\t\tbackground-image:     -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\n\t\tbackground-image:      -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\n\t\tbackground-image:         linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\n\t}\n\t.alertify-button:hover,\n\t.alertify-button:focus {\n\t\toutline: none;\n\t\tbackground-image: -webkit-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\n\t\tbackground-image:    -moz-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\n\t\tbackground-image:     -ms-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\n\t\tbackground-image:      -o-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\n\t\tbackground-image:         linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\n\t}\n\t.alertify-button:focus {\n\t\tbox-shadow: 0 0 15px #2B72D5;\n\t}\n\t.alertify-button:active {\n\t\tposition: relative;\n\t\tbox-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);\n\t}\n\t\t.alertify-button-cancel,\n\t\t.alertify-button-cancel:hover,\n\t\t.alertify-button-cancel:focus {\n\t\t\tbackground-color: #FE1A00;\n\t\t\tborder: 1px solid #D83526;\n\t\t}\n\t\t.alertify-button-ok,\n\t\t.alertify-button-ok:hover,\n\t\t.alertify-button-ok:focus {\n\t\t\tbackground-color: #5CB811;\n\t\t\tborder: 1px solid #3B7808;\n\t\t}\n\n.alertify-log {\n\tbackground: #1F1F1F;\n\tbackground: rgba(0,0,0,.9);\n\tpadding: 15px;\n\tborder-radius: 4px;\n\tcolor: #FFF;\n\ttext-shadow: -1px -1px 0 rgba(0,0,0,.5);\n}\n\t.alertify-log-error {\n\t\tbackground: #FE1A00;\n\t\tbackground: rgba(254,26,0,.9);\n\t}\n\t.alertify-log-success {\n\t\tbackground: #5CB811;\n\t\tbackground: rgba(92,184,17,.9);\n\t}", ""]);
+	exports.push([module.id, "/**\r\n * Default Look and Feel\r\n */\r\n.alertify,\r\n.alertify-log {\r\n\tfont-family: sans-serif;\r\n}\r\n.alertify {\r\n\tbackground: #FFF;\r\n\tborder: 10px solid #333; /* browsers that don't support rgba */\r\n\tborder: 10px solid rgba(0,0,0,.7);\r\n\tborder-radius: 8px;\r\n\tbox-shadow: 0 3px 3px rgba(0,0,0,.3);\r\n\t-webkit-background-clip: padding;     /* Safari 4? Chrome 6? */\r\n\t   -moz-background-clip: padding;     /* Firefox 3.6 */\r\n\t        background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */\r\n}\r\n\t.alertify-text {\r\n\t\tborder: 1px solid #CCC;\r\n\t\tpadding: 10px;\r\n\t\tborder-radius: 4px;\r\n\t}\r\n\t.alertify-button {\r\n\t\tborder-radius: 4px;\r\n\t\tcolor: #FFF;\r\n\t\tfont-weight: bold;\r\n\t\tpadding: 6px 15px;\r\n\t\ttext-decoration: none;\r\n\t\ttext-shadow: 1px 1px 0 rgba(0,0,0,.5);\r\n\t\tbox-shadow: inset 0 1px 0 0 rgba(255,255,255,.5);\r\n\t\tbackground-image: -webkit-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\r\n\t\tbackground-image:    -moz-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\r\n\t\tbackground-image:     -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\r\n\t\tbackground-image:      -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\r\n\t\tbackground-image:         linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));\r\n\t}\r\n\t.alertify-button:hover,\r\n\t.alertify-button:focus {\r\n\t\toutline: none;\r\n\t\tbackground-image: -webkit-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\r\n\t\tbackground-image:    -moz-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\r\n\t\tbackground-image:     -ms-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\r\n\t\tbackground-image:      -o-linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\r\n\t\tbackground-image:         linear-gradient(top, rgba(0,0,0,.1), rgba(0,0,0,0));\r\n\t}\r\n\t.alertify-button:focus {\r\n\t\tbox-shadow: 0 0 15px #2B72D5;\r\n\t}\r\n\t.alertify-button:active {\r\n\t\tposition: relative;\r\n\t\tbox-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);\r\n\t}\r\n\t\t.alertify-button-cancel,\r\n\t\t.alertify-button-cancel:hover,\r\n\t\t.alertify-button-cancel:focus {\r\n\t\t\tbackground-color: #FE1A00;\r\n\t\t\tborder: 1px solid #D83526;\r\n\t\t}\r\n\t\t.alertify-button-ok,\r\n\t\t.alertify-button-ok:hover,\r\n\t\t.alertify-button-ok:focus {\r\n\t\t\tbackground-color: #5CB811;\r\n\t\t\tborder: 1px solid #3B7808;\r\n\t\t}\r\n\r\n.alertify-log {\r\n\tbackground: #1F1F1F;\r\n\tbackground: rgba(0,0,0,.9);\r\n\tpadding: 15px;\r\n\tborder-radius: 4px;\r\n\tcolor: #FFF;\r\n\ttext-shadow: -1px -1px 0 rgba(0,0,0,.5);\r\n}\r\n\t.alertify-log-error {\r\n\t\tbackground: #FE1A00;\r\n\t\tbackground: rgba(254,26,0,.9);\r\n\t}\r\n\t.alertify-log-success {\r\n\t\tbackground: #5CB811;\r\n\t\tbackground: rgba(92,184,17,.9);\r\n\t}", ""]);
 
 	// exports
 
@@ -31013,7 +31027,8 @@
 		baseServerUrlClient: 'http://localhost:3001/api/hospital/v1/client/',
 		serverTimezone: 'Australia/Perth',
 		clientTimezone: 'Asia/Ho_Chi_Minh',
-		lang: 'gb'
+		lang: 'gb',
+		defaultClient: 'client_consultation'
 	}
 
 	module.exports = Config;
@@ -31312,10 +31327,23 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var Link = React.createClass({displayName: "Link",
+		$root: null,
 		propTypes: {
 			className: React.PropTypes.string,
 			style: React.PropTypes.object,
 			onClick: React.PropTypes.func
+		},
+		componentDidMount: function(){
+			this.$root = React.findDOMNode(this);
+		},
+		componentWillUnmount: function(){
+			this.$root = null;
+		},
+		addDisabled: function(){
+			this.$root.setAttribute("disabled", true);
+		},
+		clearDisabled: function(){
+			this.$root.removeAttribute("disabled");
 		},
 		render: function(){
 			return (
@@ -31353,13 +31381,28 @@
 /* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link, Image, Span) {var Leftmenu = React.createClass({displayName: "Leftmenu",
+	/* WEBPACK VAR INJECTION */(function(React, $, is, List, ListItem, Link, Image, Span) {var Leftmenu = React.createClass({displayName: "Leftmenu",
 		$root: null,
+		pathName: '',
+		contextTypes: {
+			router: React.PropTypes.func
+		},
+		componentWillMount: function(){
+			this.pathName = this.context.router.getCurrentPathname();
+		},
 		componentWillUnmount: function(){
 			this.$root = null;
+			this.pathName = '';
 		},
 		componentDidMount: function(){
 			this.$root = $(React.findDOMNode(this));
+
+			if(is.not.empty(this.pathName)  && is.not.undefined(this.pathName)){
+				if(this.pathName.indexOf('consultation') !== -1 
+					|| this.pathName.indexOf('health') !== -1){
+					this.refs.myhealth.addClass('active');
+				}
+			}
 
 			this.$root.find('a').live({
 				mouseenter: function(){
@@ -31385,13 +31428,13 @@
 		render: function(){
 			return (
 				React.createElement(List, {className: "nav nav-pills nav-stacked nav-bracket"}, 
-					React.createElement(ListItem, {className: "active"}, 
+					React.createElement(ListItem, null, 
 						React.createElement(Link, null, 
 							React.createElement(Image, {src: "images/icon-home.png"}), 
 							React.createElement(Span, null, "Home")
 						)
 					), 
-					React.createElement(ListItem, null, 
+					React.createElement(ListItem, {ref: "myhealth"}, 
 						React.createElement(Link, null, 
 							React.createElement(Image, {src: "images/icon-myheart.png"}), 
 							React.createElement(Span, null, "My Health")
@@ -31415,7 +31458,7 @@
 	});
 
 	module.exports = Leftmenu;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(310), __webpack_require__(318)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(191), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(310), __webpack_require__(318)))
 
 /***/ },
 /* 316 */
@@ -45966,8 +46009,10 @@
 /* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckToken, Breadcrump, Link, Box, Header, Title, Divider, Wrap, Row, Column, Panel, Form, Label, Input, Image, Table, TableRow, TableHeader, TableColumn) {var My = __webpack_require__(470);
+	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckToken, Breadcrump, Link, Box, Header, Title, Divider, Wrap, Row, Column, Panel, Form, Label, Input, Image) {var My = __webpack_require__(466);
 	var IntlMixin = ReactIntl.IntlMixin;
+
+	var WebRTC = __webpack_require__(467);
 
 	var View = React.createClass({displayName: "View",
 		mixins: [IntlMixin, CheckToken],
@@ -46014,26 +46059,7 @@
 									)
 								), 
 								React.createElement(Panel, {className: "table-responsive border-round"}, 
-									React.createElement(Table, {className: "table table-primary"}, 
-										React.createElement("thead", null, 
-											React.createElement(TableRow, null, 
-												React.createElement(TableHeader, null, "Patient"), 
-												React.createElement(TableHeader, null, "Disease"), 
-												React.createElement(TableHeader, null, "Doctor"), 
-												React.createElement(TableHeader, null, "Time"), 
-												React.createElement(TableHeader, null, "Result")
-											)
-										), 
-										React.createElement("tbody", null, 
-											React.createElement(TableRow, {className: "detailed-exam"}, 
-												React.createElement(TableColumn, null, "Dieu Nguyen"), 
-												React.createElement(TableColumn, null, "Headache"), 
-												React.createElement(TableColumn, null, "Peter Tran"), 
-												React.createElement(TableColumn, null, "From 01/04/2015 to 05/07/2015"), 
-												React.createElement(TableColumn, null, React.createElement(Link, {className: "text-underline"}, "View Detail"))
-											)
-										)
-									)
+									React.createElement(WebRTC, null)
 								)
 							)
 						)
@@ -46044,7 +46070,7 @@
 	});
 
 	module.exports = View;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(441), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(340), __webpack_require__(330), __webpack_require__(331), __webpack_require__(309), __webpack_require__(341), __webpack_require__(343), __webpack_require__(344), __webpack_require__(310), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(441), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(340), __webpack_require__(330), __webpack_require__(331), __webpack_require__(309), __webpack_require__(341), __webpack_require__(343), __webpack_require__(344), __webpack_require__(310)))
 
 /***/ },
 /* 441 */
@@ -46058,7 +46084,7 @@
 			router: React.PropTypes.func
 		},
 		user: null,
-		componentWillMount: function(){
+		componentDidMount: function(){
 			UserActions.checkToken.triggerPromise()
 			.then(function(response){})
 			.catch(function(error){
@@ -46067,6 +46093,9 @@
 
 			var client = JSON.parse(Cookies.get('client'));
 			this.user = client;
+		},
+		componentWillUnmount: function(){
+			this.user = null;
 		}
 	}
 
@@ -49967,94 +49996,6 @@
 /* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React) {var Table = React.createClass({displayName: "Table",
-		propTypes: {
-			className: React.PropTypes.string,
-			style: React.PropTypes.object,
-			onClick: React.PropTypes.func
-		},
-		render: function(){
-			return (
-				React.createElement("table", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
-					this.props.children
-				)
-			)
-		}
-	});
-
-	module.exports = Table;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-/* 467 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {var TableRow = React.createClass({displayName: "TableRow",
-		propTypes: {
-			className: React.PropTypes.string,
-			style: React.PropTypes.object,
-			onClick: React.PropTypes.func
-		},
-		render: function(){
-			return (
-				React.createElement("tr", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
-					this.props.children
-				)
-			)
-		}
-	});
-
-	module.exports = TableRow;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-/* 468 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {var TableHeader = React.createClass({displayName: "TableHeader",
-		propTypes: {
-			className: React.PropTypes.string,
-			style: React.PropTypes.object,
-			onClick: React.PropTypes.func
-		},
-		render: function(){
-			return (
-				React.createElement("th", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
-					this.props.children
-				)
-			)
-		}
-	});
-
-	module.exports = TableHeader;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-/* 469 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(React) {var TableColumn = React.createClass({displayName: "TableColumn",
-		propTypes: {
-			className: React.PropTypes.string,
-			style: React.PropTypes.object,
-			onClick: React.PropTypes.func
-		},
-		render: function(){
-			return (
-				React.createElement("td", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
-					this.props.children
-				)
-			)
-		}
-	});
-
-	module.exports = TableColumn;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ },
-/* 470 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, Wrap, List, ListItem, Link, Image) {var IntlMixin = ReactIntl.IntlMixin;
 
 	var My = React.createClass({displayName: "My",
@@ -50104,7 +50045,134 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(310)))
 
 /***/ },
-/* 471 */
+/* 467 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var WebRTC = React.createClass({displayName: "WebRTC",
+		pc1: null,
+		pc2: null,
+		sendChannel: null,
+		receiveChannel: null,
+		localStream: null,
+		sdpConstraints: {
+			mandatory: {
+				OfferToReceiveAudio: true,
+				OfferToReceiveVideo: true
+			}
+		},
+		componentDidMount: function(){
+			React.findDOMNode(this.refs.start).disabled = false;
+			React.findDOMNode(this.refs.call).disabled = true;
+			React.findDOMNode(this.refs.hangup).disabled = true;
+		},
+		gotStream: function(stream){
+			React.findDOMNode(this.refs.local).src = webkitURL.createObjectURL(stream);
+			this.localStream = stream;
+			React.findDOMNode(this.refs.call).disabled = false;
+		},
+		start: function(){
+			React.findDOMNode(this.refs.start).disabled = true;
+			navigator.webkitGetUserMedia({audio: true, video: true}, this.gotStream, function(){});
+		},
+		call: function(){
+			React.findDOMNode(this.refs.call).disabled = true;
+			React.findDOMNode(this.refs.hangup).disabled = false;
+
+			var videoTracks = this.localStream.getVideoTracks();
+			var audioTracks = this.localStream.getAudioTracks();
+			var servers = null;
+
+			this.pc1 = new webkitRTCPeerConnection(servers);
+
+			this.pc1.onicecandidate = function(event){
+				if(event.candidate){
+					this.pc2.addIceCandidate(new RTCIceCandidate(event.candidate));
+				}
+			}.bind(this)
+
+			this.pc2 = new webkitRTCPeerConnection(servers);
+			this.pc2.onicecandidate = function(){
+				if(event.candidate){
+					this.pc1.addIceCandidate(new RTCIceCandidate(event.candidate));
+				}
+			}.bind(this)
+
+			this.pc2.onaddstream = function(event){
+				React.findDOMNode(this.refs.remote).src = webkitURL.createObjectURL(event.stream);
+			}.bind(this)
+
+			this.pc1.addStream(this.localStream);
+			this.pc1.createOffer(function(desc){
+				this.pc1.setLocalDescription(desc);
+				this.pc2.setRemoteDescription(desc);
+				this.pc2.createAnswer(function(desc){
+					this.pc2.setLocalDescription(desc);
+					this.pc1.setRemoteDescription(desc);
+				}.bind(this), null, this.sdpConstraints);
+			}.bind(this));
+		},
+		hangup: function(){
+			this.pc1.close();
+			this.pc2.close();
+			this.pc1 = null;
+			this.pc2 = null;
+
+			React.findDOMNode(this.refs.hangup).disabled = true;
+			React.findDOMNode(this.refs.call).disabled = false;
+		},
+		createConnection: function(){
+			var servers = null;
+			this.pc1 = new webkitRTCPeerConnection(servers, {
+				optional: [{RtpDataChannels: true}]
+			});
+
+			try{
+				this.sendChannel = this.pc1.createDataChannel('sendDataChannel', {reliable: false});
+			}catch(e){
+				alert('You need Chrome M25 or later with --enable-data-channels flag');
+			}
+
+			this.pc1.onicecandidate = function(event){
+				if(event.candidate)
+					this.pc2.addIceCandidate(event.candidate);
+			}
+			this.sendChannel.onopen = function(){
+				
+			}
+		},
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-md-6"}, 
+							React.createElement("h2", null, "Send Data"), 
+							React.createElement("textarea", {ref: "dataChannelSend", rows: "5", cols: "15", disabled: "true"}), 
+							React.createElement("button", {ref: "startButton", onClick: this.createConnection}, "Start"), 
+							React.createElement("button", {ref: "sendButton", onClick: this.sendData}, "Send Data"), 
+							React.createElement("button", {ref: "closeButton", onClick: this.closeDataChannel}, "Stop Send Data")
+						), 
+						React.createElement("div", {className: "col-md-6"}, 
+							React.createElement("h2", null, "Received Data"), 
+							React.createElement("textarea", {ref: "dataChannelReceive", rows: "5", cols: "15", disabled: "true"})
+						)
+					), 
+					React.createElement("video", {ref: "local", autoPlay: "true", muted: "true"}), 
+					React.createElement("video", {ref: "remote", autoPlay: "true"}), 
+					React.createElement("button", {onClick: this.start, ref: "start"}, "Start"), 
+					React.createElement("button", {onClick: this.call, ref: "call"}, "Call"), 
+					React.createElement("button", {onClick: this.hangup, ref: "hangup"}, "Hangup"), 
+					React.createElement("textarea", {ref: "text1"}), 
+					React.createElement("textarea", {ref: "text2"})
+				)
+			)
+		}
+	});
+
+	module.exports = WebRTC;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(ReactIntl, React) {var Router = __webpack_require__(263);
@@ -50125,10 +50193,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2)))
 
 /***/ },
-/* 472 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, Breadcrump, Link, Box, Header, Title, Divider, Panel, Table, TableRow, TableHeader, TableColumn) {var My = __webpack_require__(470);
+	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, Breadcrump, Link, Box, Header, Title, Divider, Panel, Table, TableRow, TableHeader, TableColumn) {var My = __webpack_require__(466);
 	var IntlMixin = ReactIntl.IntlMixin;
 
 	var View = React.createClass({displayName: "View",
@@ -50187,15 +50255,103 @@
 	});
 
 	module.exports = View;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(309), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(309), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473)))
+
+/***/ },
+/* 470 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var Table = React.createClass({displayName: "Table",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("table", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+			)
+		}
+	});
+
+	module.exports = Table;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 471 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var TableRow = React.createClass({displayName: "TableRow",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("tr", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+			)
+		}
+	});
+
+	module.exports = TableRow;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 472 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var TableHeader = React.createClass({displayName: "TableHeader",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("th", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+			)
+		}
+	});
+
+	module.exports = TableHeader;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(React) {var TableColumn = React.createClass({displayName: "TableColumn",
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+			onClick: React.PropTypes.func
+		},
+		render: function(){
+			return (
+				React.createElement("td", {className: this.props.className, onClick: this.props.onClick, style: this.props.style}, 
+					this.props.children
+				)
+			)
+		}
+	});
+
+	module.exports = TableColumn;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 474 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckNoToken, $, Section, Panel, Row, Column, Wrap, Image, Title, Bold, Sentence, Icon) {var IntlMixin = ReactIntl.IntlMixin;
 
-	var FormRegister = __webpack_require__(475);
+	var FormRegister = __webpack_require__(476);
 
 	var Register = React.createClass({displayName: "Register",
 		mixins: [IntlMixin, CheckNoToken],
@@ -50250,23 +50406,24 @@
 	});
 
 	module.exports = Register;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(474), __webpack_require__(193), __webpack_require__(308), __webpack_require__(309), __webpack_require__(330), __webpack_require__(331), __webpack_require__(340), __webpack_require__(310), __webpack_require__(325), __webpack_require__(328), __webpack_require__(327), __webpack_require__(314)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(475), __webpack_require__(193), __webpack_require__(308), __webpack_require__(309), __webpack_require__(330), __webpack_require__(331), __webpack_require__(340), __webpack_require__(310), __webpack_require__(325), __webpack_require__(328), __webpack_require__(327), __webpack_require__(314)))
 
 /***/ },
-/* 474 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var UserActions = __webpack_require__(442);
 	var UserStore = __webpack_require__(463);
+	var Config = __webpack_require__(302);
 
 	var checkNoToken = {
 		contextTypes: {
 			router: React.PropTypes.func
 		},
-		componentWillMount: function(){
+		componentDidMount: function(){
 			UserActions.checkToken.triggerPromise()
 			.then(function(response){
-				this.context.router.transitionTo('client_consultation');
+				this.context.router.transitionTo(Config.defaultClient);
 			}.bind(this))
 			.catch(function(error){}.bind(this))
 		}
@@ -50276,12 +50433,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 475 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, moment, Form, Loader, Title, Sentence, Link, Bold, Label, Row, Column, Input, LabelError, Button) {var IntlMixin = ReactIntl.IntlMixin;
 	var Valid = __webpack_require__(345);
-	var FormModel = __webpack_require__(478);
+	var FormModel = __webpack_require__(479);
 	var UserActions = __webpack_require__(442);
 	var UserStore = __webpack_require__(463);
 	var Config = __webpack_require__(302);
@@ -50647,10 +50804,10 @@
 	});
 
 	module.exports = FormRegister;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(348), __webpack_require__(341), __webpack_require__(476), __webpack_require__(325), __webpack_require__(327), __webpack_require__(313), __webpack_require__(328), __webpack_require__(343), __webpack_require__(330), __webpack_require__(331), __webpack_require__(344), __webpack_require__(477), __webpack_require__(324)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(348), __webpack_require__(341), __webpack_require__(477), __webpack_require__(325), __webpack_require__(327), __webpack_require__(313), __webpack_require__(328), __webpack_require__(343), __webpack_require__(330), __webpack_require__(331), __webpack_require__(344), __webpack_require__(478), __webpack_require__(324)))
 
 /***/ },
-/* 476 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, $) {var Loader = React.createClass({displayName: "Loader",
@@ -50680,7 +50837,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193)))
 
 /***/ },
-/* 477 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, $) {var LabelError = React.createClass({displayName: "LabelError",
@@ -50716,7 +50873,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193)))
 
 /***/ },
-/* 478 */
+/* 479 */
 /***/ function(module, exports) {
 
 	var Model = {
@@ -50747,7 +50904,7 @@
 	module.exports = Model;
 
 /***/ },
-/* 479 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var Router = __webpack_require__(263),
@@ -50763,15 +50920,15 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 480 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Breadcrump, Link, Box, Header, Title, Divider, Panel, Wizard, Tab, Row, Column) {var Doctor = __webpack_require__(485);
-	var Medical = __webpack_require__(488);
-	var Computer = __webpack_require__(494);
-	var Payment = __webpack_require__(483);
-	var Confirm = __webpack_require__(503);
-	var StepTemplate = __webpack_require__(505);
+	/* WEBPACK VAR INJECTION */(function(React, Breadcrump, Link, Box, Header, Title, Divider, Panel, Wizard, Tab, Row, Column) {var Doctor = __webpack_require__(486);
+	var Medical = __webpack_require__(489);
+	var Computer = __webpack_require__(495);
+	var Payment = __webpack_require__(484);
+	var Confirm = __webpack_require__(504);
+	var StepTemplate = __webpack_require__(506);
 
 	var	Steps = React.createClass({displayName: "Steps",
 		tabRefs: null,
@@ -50837,10 +50994,10 @@
 		}
 	});
 	module.exports = Steps;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(309), __webpack_require__(481), __webpack_require__(482), __webpack_require__(330), __webpack_require__(331)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(309), __webpack_require__(482), __webpack_require__(483), __webpack_require__(330), __webpack_require__(331)))
 
 /***/ },
-/* 481 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var Wizard = React.createClass({displayName: "Wizard",
@@ -50861,7 +51018,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 482 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var Tab = React.createClass({displayName: "Tab",
@@ -50884,10 +51041,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 483 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var PaymentUpdate = __webpack_require__(484);
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var PaymentUpdate = __webpack_require__(485);
 	var StepPayment = React.createClass({displayName: "StepPayment",
 		getInitialState: function(){
 			return {display: "none"};
@@ -50926,7 +51083,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
 
 /***/ },
-/* 484 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Wrap, Sentence, Bold, Span, Link, Divider, Form, Label, Input) {var PaymentUpdate = React.createClass({displayName: "PaymentUpdate",
@@ -51097,12 +51254,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(330), __webpack_require__(331), __webpack_require__(340), __webpack_require__(327), __webpack_require__(328), __webpack_require__(318), __webpack_require__(313), __webpack_require__(329), __webpack_require__(341), __webpack_require__(343), __webpack_require__(344)))
 
 /***/ },
-/* 485 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {
-	var AboutVisit = __webpack_require__(486);
-	var AboutYou = __webpack_require__(487);
+	var AboutVisit = __webpack_require__(487);
+	var AboutYou = __webpack_require__(488);
 	var StepChooseDoctor = React.createClass({displayName: "StepChooseDoctor",
 		getInitialState: function(){
 			return {display: "none"};
@@ -51139,7 +51296,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
 
 /***/ },
-/* 486 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Box, Image, Wrap, Sentence, Form, Bold, Input) {var AboutVisit = React.createClass({displayName: "AboutVisit",
@@ -51193,7 +51350,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(330), __webpack_require__(331), __webpack_require__(339), __webpack_require__(310), __webpack_require__(340), __webpack_require__(327), __webpack_require__(341), __webpack_require__(328), __webpack_require__(344)))
 
 /***/ },
-/* 487 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Column, Form, Label, Span, Input) {var AboutYou = React.createClass({displayName: "AboutYou",
@@ -51231,14 +51388,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(330), __webpack_require__(331), __webpack_require__(341), __webpack_require__(343), __webpack_require__(318), __webpack_require__(344)))
 
 /***/ },
-/* 488 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var MedicalCondition = __webpack_require__(489);
-	var MedicalMedication = __webpack_require__(490);
-	var MedicalAllergie = __webpack_require__(491);
-	var MedicalSerieAndProcedure = __webpack_require__(492);
-	var MedicalPrimaryCare = __webpack_require__(493);
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var MedicalCondition = __webpack_require__(490);
+	var MedicalMedication = __webpack_require__(491);
+	var MedicalAllergie = __webpack_require__(492);
+	var MedicalSerieAndProcedure = __webpack_require__(493);
+	var MedicalPrimaryCare = __webpack_require__(494);
 	var StepMedicalHistory = React.createClass({displayName: "StepMedicalHistory",
 		getInitialState: function(){
 			return {display: "none"};
@@ -51281,7 +51438,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
 
 /***/ },
-/* 489 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalCondition = React.createClass({displayName: "MedicalCondition",
@@ -51371,10 +51528,10 @@
 		}
 	});
 	module.exports = MedicalCondition;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(324), __webpack_require__(344)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(324), __webpack_require__(344)))
 
 /***/ },
-/* 490 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalMedication = React.createClass({displayName: "MedicalMedication",
@@ -51512,10 +51669,10 @@
 		}
 	});
 	module.exports = MedicalMedication;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(324), __webpack_require__(344)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(324), __webpack_require__(344)))
 
 /***/ },
-/* 491 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableRow, TableHeader, TableColumn, Button, Input) {var MedicalAllergie = React.createClass({displayName: "MedicalAllergie",
@@ -51644,10 +51801,10 @@
 		}
 	});
 	module.exports = MedicalAllergie;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(324), __webpack_require__(344)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(324), __webpack_require__(344)))
 
 /***/ },
-/* 492 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap, Panel, Table, TableHeader, TableColumn, Button, Divider, Input) {var MedicalSerieAndProcedure = React.createClass({displayName: "MedicalSerieAndProcedure",
@@ -52051,10 +52208,10 @@
 		}
 	});
 	module.exports = MedicalSerieAndProcedure;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(466), __webpack_require__(468), __webpack_require__(469), __webpack_require__(324), __webpack_require__(329), __webpack_require__(344)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340), __webpack_require__(309), __webpack_require__(470), __webpack_require__(472), __webpack_require__(473), __webpack_require__(324), __webpack_require__(329), __webpack_require__(344)))
 
 /***/ },
-/* 493 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Box, Row, Column, Title, Form, Label, Wrap) {var MedicalPrimaryCare = React.createClass({displayName: "MedicalPrimaryCare",
@@ -52101,11 +52258,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(330), __webpack_require__(331), __webpack_require__(325), __webpack_require__(341), __webpack_require__(343), __webpack_require__(340)))
 
 /***/ },
-/* 494 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var RunTest = __webpack_require__(495);
-	var BeginTest = __webpack_require__(496);
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link) {var RunTest = __webpack_require__(496);
+	var BeginTest = __webpack_require__(497);
 	var Computer = React.createClass({displayName: "Computer",
 		componentDidMount: function(){
 			this.refs.runTest.show();
@@ -52157,7 +52314,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
 
 /***/ },
-/* 495 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Row, Sentence, Link) {var RunTest = React.createClass({displayName: "RunTest",
@@ -52211,15 +52368,15 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(330), __webpack_require__(327), __webpack_require__(313)))
 
 /***/ },
-/* 496 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Box, Image, Header, Title, Link, Divider, Wrap, Panel, Wizard) {var StepComputer = __webpack_require__(498);
-	var TestInternet = __webpack_require__(499);
-	var TestMicrophone = __webpack_require__(500);
-	var TestSpeaker = __webpack_require__(497);
-	var TestVideo = __webpack_require__(501);
-	var TestWebcam = __webpack_require__(502);
+	/* WEBPACK VAR INJECTION */(function(React, Box, Image, Header, Title, Link, Divider, Wrap, Panel, Wizard) {var StepComputer = __webpack_require__(499);
+	var TestInternet = __webpack_require__(500);
+	var TestMicrophone = __webpack_require__(501);
+	var TestSpeaker = __webpack_require__(498);
+	var TestVideo = __webpack_require__(502);
+	var TestWebcam = __webpack_require__(503);
 	var BeginTest = React.createClass({displayName: "BeginTest",
 		getInitialState: function(){
 				return {
@@ -52270,10 +52427,10 @@
 		}
 	});
 	module.exports = BeginTest;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(310), __webpack_require__(333), __webpack_require__(325), __webpack_require__(313), __webpack_require__(329), __webpack_require__(340), __webpack_require__(309), __webpack_require__(481)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(310), __webpack_require__(333), __webpack_require__(325), __webpack_require__(313), __webpack_require__(329), __webpack_require__(340), __webpack_require__(309), __webpack_require__(482)))
 
 /***/ },
-/* 497 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var TestSpeaker = React.createClass({displayName: "TestSpeaker",
@@ -52302,7 +52459,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 498 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link, Image, Span) {var StepComputer = React.createClass({displayName: "StepComputer",
@@ -52389,7 +52546,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(310), __webpack_require__(318)))
 
 /***/ },
-/* 499 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Wrap, Box, Title, Link, Divider) {var TestInternet = React.createClass({displayName: "TestInternet",
@@ -52432,7 +52589,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(340), __webpack_require__(339), __webpack_require__(325), __webpack_require__(313), __webpack_require__(329)))
 
 /***/ },
-/* 500 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var TestMicrophone  = React.createClass({displayName: "TestMicrophone",
@@ -52459,7 +52616,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 501 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var TestVideo = React.createClass({displayName: "TestVideo",
@@ -52484,7 +52641,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 502 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var TestWebcam = React.createClass({displayName: "TestWebcam",
@@ -52513,10 +52670,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 503 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link, Sentence, Span) {var TermOfUse  = __webpack_require__(504);
+	/* WEBPACK VAR INJECTION */(function(React, Wrap, List, ListItem, Link, Sentence, Span) {var TermOfUse  = __webpack_require__(505);
 	var StepConfirmation = React.createClass({displayName: "StepConfirmation",
 		getInitialState: function(){
 			return {display: "none"};
@@ -52563,7 +52720,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(327), __webpack_require__(318)))
 
 /***/ },
-/* 504 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Sentence, Form, Wrap, Column, Label, Span, Bold, Input) {var TermOfUse = React.createClass({displayName: "TermOfUse",
@@ -52642,7 +52799,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(327), __webpack_require__(341), __webpack_require__(340), __webpack_require__(331), __webpack_require__(343), __webpack_require__(318), __webpack_require__(328), __webpack_require__(344)))
 
 /***/ },
-/* 505 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link) {var Step = React.createClass({displayName: "Step",
@@ -52705,12 +52862,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
 
 /***/ },
-/* 506 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckNoToken, $, Section, Panel, Row, Column) {var Left = __webpack_require__(507);
-	var FormLogin = __webpack_require__(508);
-	var Bottom = __webpack_require__(510);
+	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckNoToken, $, Section, Panel, Row, Column) {var Left = __webpack_require__(508);
+	var FormLogin = __webpack_require__(509);
+	var Bottom = __webpack_require__(511);
 	var IntlMixin = ReactIntl.IntlMixin;
 
 	var View = React.createClass({displayName: "View",
@@ -52734,14 +52891,14 @@
 						React.createElement(Bottom, null)
 					)
 				)
-				);
+			);
 		}
 	});
 	module.exports = View;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(474), __webpack_require__(193), __webpack_require__(308), __webpack_require__(309), __webpack_require__(330), __webpack_require__(331)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(475), __webpack_require__(193), __webpack_require__(308), __webpack_require__(309), __webpack_require__(330), __webpack_require__(331)))
 
 /***/ },
-/* 507 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Column, Wrap, Panel, Image, Title, Bold, List, ListItem, Icon, Link) {var Left = React.createClass({displayName: "Left",
@@ -52791,7 +52948,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(331), __webpack_require__(340), __webpack_require__(309), __webpack_require__(310), __webpack_require__(325), __webpack_require__(328), __webpack_require__(316), __webpack_require__(317), __webpack_require__(314), __webpack_require__(313)))
 
 /***/ },
-/* 508 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, moment, Cookies, Form, Loader, Title, Column, LabelError, Input, Link, Small, Button) {var UserActions = __webpack_require__(442);
@@ -52810,7 +52967,7 @@
 			.then(function(response){
 				Cookies.set('client', JSON.stringify(response.data));
 				setTimeout(function(){
-					this.context.router.transitionTo('client_consultation');
+					this.context.router.transitionTo(Config.defaultClient);
 				}.bind(this), 200)
 				this.refs.loader.hide();
 			}.bind(this))
@@ -52843,10 +53000,10 @@
 		}
 	});
 	module.exports = FormLogin;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(348), __webpack_require__(192), __webpack_require__(341), __webpack_require__(476), __webpack_require__(325), __webpack_require__(331), __webpack_require__(477), __webpack_require__(344), __webpack_require__(313), __webpack_require__(509), __webpack_require__(324)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(348), __webpack_require__(192), __webpack_require__(341), __webpack_require__(477), __webpack_require__(325), __webpack_require__(331), __webpack_require__(478), __webpack_require__(344), __webpack_require__(313), __webpack_require__(510), __webpack_require__(324)))
 
 /***/ },
-/* 509 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var Small = React.createClass({displayName: "Small",
@@ -52866,7 +53023,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 510 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Wrap, Link) {var Bottom  = React.createClass({displayName: "Bottom",
@@ -52890,7 +53047,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(340), __webpack_require__(313)))
 
 /***/ },
-/* 511 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, CheckToken, Box, Link, Image, Header, Title, Divider, Wrap, Row, Column, Span) {var Router = __webpack_require__(263);
@@ -52997,14 +53154,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(441), __webpack_require__(339), __webpack_require__(313), __webpack_require__(310), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(340), __webpack_require__(330), __webpack_require__(331), __webpack_require__(318)))
 
 /***/ },
-/* 512 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, CheckToken, Link, Wrap) {var MyAccount = __webpack_require__(513);
-	var MyProfile = __webpack_require__(514);
-	var BuillingActivity = __webpack_require__(519);
-	var LoginCredential = __webpack_require__(520);
-	var PaymentInfomation = __webpack_require__(525);
+	/* WEBPACK VAR INJECTION */(function(React, CheckToken, Link, Wrap) {var MyAccount = __webpack_require__(514);
+	var MyProfile = __webpack_require__(515);
+	var BuillingActivity = __webpack_require__(520);
+	var LoginCredential = __webpack_require__(521);
+	var PaymentInfomation = __webpack_require__(526);
 
 	var View  = React.createClass({displayName: "View",
 		modules: null,
@@ -53055,7 +53212,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(441), __webpack_require__(313), __webpack_require__(340)))
 
 /***/ },
-/* 513 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, $, List, ListItem, Link, Image) {var MyAccount = React.createClass({displayName: "MyAccount",
@@ -53131,13 +53288,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(193), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(310)))
 
 /***/ },
-/* 514 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Box, Header, Title, Divider, Wrap, Row, Column) {var Identification = __webpack_require__(515);
-	var PersonalInformation = __webpack_require__(516);
-	var HealthInsurance = __webpack_require__(517);
-	var MyChildren = __webpack_require__(518);
+	/* WEBPACK VAR INJECTION */(function(React, Box, Header, Title, Divider, Wrap, Row, Column) {var Identification = __webpack_require__(516);
+	var PersonalInformation = __webpack_require__(517);
+	var HealthInsurance = __webpack_require__(518);
+	var MyChildren = __webpack_require__(519);
 	var MyProfile = React.createClass({displayName: "MyProfile",
 		getInitialState: function(){
 				return {
@@ -53184,7 +53341,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(340), __webpack_require__(330), __webpack_require__(331)))
 
 /***/ },
-/* 515 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Wrap, Sentence, Image) {var Identification  = React.createClass({displayName: "Identification",
@@ -53240,10 +53397,10 @@
 		}
 	});
 	module.exports = Identification;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
 
 /***/ },
-/* 516 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Wrap, Sentence, Image) {var PersonalInformation = React.createClass({displayName: "PersonalInformation",
@@ -53324,10 +53481,10 @@
 		}
 	});
 	module.exports = PersonalInformation;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
 
 /***/ },
-/* 517 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Wrap, Sentence, Image) {var HealthInsurance = React.createClass({displayName: "HealthInsurance",
@@ -53381,10 +53538,10 @@
 		}
 	});
 	module.exports = HealthInsurance;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(340), __webpack_require__(327), __webpack_require__(310)))
 
 /***/ },
-/* 518 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Link, Row, Column, Sentence, Icon, Wrap, Image) {var MyChildren = React.createClass({displayName: "MyChildren",
@@ -53426,7 +53583,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(327), __webpack_require__(314), __webpack_require__(340), __webpack_require__(310)))
 
 /***/ },
-/* 519 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var BuillingActivity = React.createClass({displayName: "BuillingActivity",
@@ -53457,11 +53614,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 520 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, Box, Header, Title, Divider, Row, Column) {var Identification = __webpack_require__(521);
-	var PhoneAndPin = __webpack_require__(524);
+	/* WEBPACK VAR INJECTION */(function(React, Box, Header, Title, Divider, Row, Column) {var Identification = __webpack_require__(522);
+	var PhoneAndPin = __webpack_require__(525);
 
 	var View = React.createClass({displayName: "View",
 		getInitialState: function(){
@@ -53508,10 +53665,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(329), __webpack_require__(330), __webpack_require__(331)))
 
 /***/ },
-/* 521 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, alertify, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Dialog, DialogContent, DialogHeader, DialogBody) {var FormChangePassWord = __webpack_require__(522);
+	/* WEBPACK VAR INJECTION */(function(React, alertify, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn, Dialog, DialogContent, DialogHeader, DialogBody) {var FormChangePassWord = __webpack_require__(523);
 	var Identification = React.createClass({displayName: "Identification",
 		onClick: function(){
 			this.refs.form.refresh();
@@ -53581,16 +53738,17 @@
 		}
 	});
 	module.exports = Identification;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(262), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469), __webpack_require__(321), __webpack_require__(322), __webpack_require__(323), __webpack_require__(326)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(262), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(321), __webpack_require__(322), __webpack_require__(323), __webpack_require__(326)))
 
 /***/ },
-/* 522 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React, CheckToken, moment, Form, Loader, Row, Column, Label, Input, LabelError, Divider, Wrap, List, ListItem, Link, Button) {var FormModel = __webpack_require__(523);
+	/* WEBPACK VAR INJECTION */(function(React, CheckToken, moment, Form, Loader, Row, Column, Label, Input, LabelError, Divider, Wrap, List, ListItem, Link, Button) {var FormModel = __webpack_require__(524);
 	var Valid = __webpack_require__(345);
 	var UserActions = __webpack_require__(442);
 	var UserStore = __webpack_require__(463);
+	var Config = __webpack_require__(302);
 	var FormChangePassWord = React.createClass({displayName: "FormChangePassWord",
 		validation: {
 			old_password: false,
@@ -53641,6 +53799,7 @@
 				var serializedObject = this.refs.form.getSerializedObject();
 					serializedObject.id = this.user.id;
 					serializedObject.email = this.user.email;
+					serializedObject.change_password_at = moment().tz(Config.serverTimezone).format("DD/MM/YYYY HH:mm:ss");
 				this.refs.loader.show();
 				UserActions.changePassword.triggerPromise(serializedObject)
 					.then(function(response){
@@ -53819,10 +53978,10 @@
 		}
 	});
 	module.exports = FormChangePassWord;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(441), __webpack_require__(348), __webpack_require__(341), __webpack_require__(476), __webpack_require__(330), __webpack_require__(331), __webpack_require__(343), __webpack_require__(344), __webpack_require__(477), __webpack_require__(329), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(324)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(441), __webpack_require__(348), __webpack_require__(341), __webpack_require__(477), __webpack_require__(330), __webpack_require__(331), __webpack_require__(343), __webpack_require__(344), __webpack_require__(478), __webpack_require__(329), __webpack_require__(340), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313), __webpack_require__(324)))
 
 /***/ },
-/* 523 */
+/* 524 */
 /***/ function(module, exports) {
 
 	var Model = {
@@ -53839,7 +53998,7 @@
 	module.exports = Model;
 
 /***/ },
-/* 524 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React, Panel, Title, Link, Row, Column, Table, TableRow, TableHeader, TableColumn) {var PhoneAndPin = React.createClass({displayName: "PhoneAndPin",
@@ -53877,10 +54036,10 @@
 		}
 	});
 	module.exports = PhoneAndPin;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(466), __webpack_require__(467), __webpack_require__(468), __webpack_require__(469)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(325), __webpack_require__(313), __webpack_require__(330), __webpack_require__(331), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473)))
 
 /***/ },
-/* 525 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {var PaymentInfomation = React.createClass({displayName: "PaymentInfomation",
@@ -53909,6 +54068,617 @@
 	});
 	module.exports = PaymentInfomation;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 527 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckToken, Breadcrump, Link, Box, Header, Title, Span, List, ListItem, Image) {var Router = __webpack_require__(263);
+	var Route = Router.Route;
+	var RouteHandler = Router.RouteHandler;
+	var IntlMixin = ReactIntl.IntlMixin;
+
+	var My = __webpack_require__(466);
+
+	var Core = React.createClass({displayName: "Core",
+		mixins: [IntlMixin, CheckToken],
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement(Breadcrump, {className: "quicklink-box"}, 
+						React.createElement(Link, {className: "color-grey"}, 
+							"Home"
+						), 
+						React.createElement(Link, {className: "quicklink color-grey"}, 
+							"My Health"
+						)
+					), 
+					React.createElement(My, {module: "myhealth"}), 
+					React.createElement(Box, {className: "header-profile-box no-img-header-box"}, 
+						React.createElement(Box, {className: "img-box"}), 
+						React.createElement(Header, {className: "header-title"}, 
+							React.createElement(Title, {type: "h2", className: "dashboard"}, "My Health")
+						)
+					), 
+					React.createElement(Box, {className: "profile-title-box"}, 
+						React.createElement(Title, {type: "h3", className: "color-black no-margin-top"}, "Dieu Nguyen"), 
+						React.createElement(Span, {className: "margin-right-large sex color-black arial"}, 
+							"Gender: Female"
+						), 
+						React.createElement(Span, {className: "age color-black arial"}, 
+							"Age: 40"
+						), 
+						React.createElement(List, {className: "save-box list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "color-black"}, 
+									React.createElement(Image, {src: "images/icon-print-body.png"}), "Print"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "color-black"}, 
+									React.createElement(Image, {src: "images/icon-pdf-body.png"}), "PDF"
+								)
+							), 
+							React.createElement(ListItem, {className: "no-padding-right"}, 
+								React.createElement(Link, {className: "color-black"}, 
+									React.createElement(Image, {src: "images/icon-message-body.png"}), "Message"
+								)
+							)
+						)
+					), 
+
+					React.createElement(RouteHandler, null)
+
+				)
+			)
+		}
+	});
+
+	module.exports = Core;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(441), __webpack_require__(338), __webpack_require__(313), __webpack_require__(339), __webpack_require__(333), __webpack_require__(325), __webpack_require__(318), __webpack_require__(316), __webpack_require__(317), __webpack_require__(310)))
+
+/***/ },
+/* 528 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(ReactIntl, React, CheckToken, Box, Wrap, Title, Panel) {var MyHealthWizard = __webpack_require__(529);
+	var IntlMixin = ReactIntl.IntlMixin;
+
+	var View = React.createClass({displayName: "View",
+		mixins: [IntlMixin, CheckToken],
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement(Box, {className: "myhealth-body-box"}, 
+						React.createElement(Wrap, {className: "myhealth-history-wrap arial"}, 
+							React.createElement(Title, {type: "h3", className: "heading-h2"}, "Personal Health History"), 
+							React.createElement(Panel, {className: "panel-body panel-body-nopadding"}, 
+								React.createElement(MyHealthWizard, {module: "health_history"})
+							)
+						)
+					)
+				)
+			)
+		}
+	});
+
+	module.exports = View;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2), __webpack_require__(441), __webpack_require__(339), __webpack_require__(340), __webpack_require__(325), __webpack_require__(309)))
+
+/***/ },
+/* 529 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Wizard, List, ListItem, Link) {var MyHealthWizard = React.createClass({displayName: "MyHealthWizard",
+		propTypes: {
+			module: React.PropTypes.string
+		},
+		componentDidMount: function(){
+			this.refs[this.props.module].addClass('active');
+		},
+		render: function(){
+			return (
+				React.createElement(Wizard, {className: "basic-wizard myhealth-wizard"}, 
+					React.createElement(List, {className: "nav nav-pills nav-justified"}, 
+						React.createElement(ListItem, {ref: "health_history"}, 
+							React.createElement(Link, null, "Health History")
+						), 
+						React.createElement(ListItem, {ref: "lifestyle"}, 
+							React.createElement(Link, null, "Lifestyle")
+						), 
+						React.createElement(ListItem, {ref: "family_history"}, 
+							React.createElement(Link, null, "Family History")
+						)
+					)
+				)
+			)
+		}
+	});
+
+	module.exports = MyHealthWizard;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(482), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
+
+/***/ },
+/* 530 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Panel, Header, Title, List, ListItem, Link) {var VideoLocal = __webpack_require__(531);
+	var Core = React.createClass({displayName: "Core",
+		onQuanlity: function(quanlity){
+			this.refs.localVideo.onChangeQuanlity(quanlity);
+		},
+		onAction: function(action){
+			switch(action){
+				case "start":
+					this.refs.localVideo.start();
+					break;
+				case "call":
+					this.refs.localVideo.onCall();
+					break;
+				case "hangup":
+					this.refs.localVideo.onHangup();
+					break;
+				default: 
+					break;
+			}
+		},
+		render: function(){
+			return (
+				React.createElement(Panel, {className: "panel panel-primary panel-alt no-border-radius"}, 
+					React.createElement(Header, {className: "panel-heading no-border-radius"}, 
+						React.createElement(Panel, {className: "panel-btns"}, 
+							React.createElement(Title, {type: "h4", className: "no-margin"}, 
+								"Demo WebRTC"
+							)
+						)
+					), 
+					React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary", onClick: this.onQuanlity.bind(null, "qvgaConstraints")}, 
+									"Low"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary", onClick: this.onQuanlity.bind(null, "vgaConstraints")}, 
+									"Medium"
+								)
+							), 
+							React.createElement(ListItem, null, 
+								React.createElement(Link, {className: "btn btn-primary", onClick: this.onQuanlity.bind(null, "hdConstraints")}, 
+									"Hight"
+								)
+							)
+						), 
+							React.createElement(VideoLocal, {ref: "localVideo"}), 
+						React.createElement(List, {className: "list-inline"}, 
+							React.createElement(ListItem, null, 
+							React.createElement(Link, {ref: "btnStart", className: "btn btn-primary", onClick: this.onAction.bind(null, "start")}, 
+								"Check Device"
+							)
+							), 
+							React.createElement(ListItem, null, 
+							React.createElement(Link, {ref: "btnCall", className: "btn btn-primary", onClick: this.onAction.bind(null, "call")}, 
+								"Call"
+							)
+							), 
+							React.createElement(ListItem, null, 
+							React.createElement(Link, {ref: "btnHangup", className: "btn btn-primary", onClick: this.onAction.bind(null, "hangup")}, 
+								"Hangup"
+							)
+							)
+						)
+				)
+				);
+		}
+	}); 
+	module.exports = Core;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(309), __webpack_require__(333), __webpack_require__(325), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
+
+/***/ },
+/* 531 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {var is = __webpack_require__(191);
+	var VideoWebRTC = React.createClass({displayName: "VideoWebRTC",
+		localVideo: null,
+		remoteVideo: null,
+		localStream: null,
+		localPeerConnection: null,
+		remotePeerConnection: null,
+		quanlity: "qvgaConstraints",
+		constraints: {
+			qvgaConstraints: {
+			video: {
+				mandatory: {
+					maxWidth: 320,
+					maxHeight: 240
+					}
+				}
+			},
+			vgaConstraints: {
+				video: {
+					mandatory: {
+						maxWidth: 640,
+						maxHeight: 480
+					}
+				}
+			},
+			hdConstraints: {
+				video: {
+					mandatory: {
+						minWidth: 1280,
+						minHeight: 960
+					}
+				}
+			}
+		},
+		propTypes: {
+			className: React.PropTypes.string,
+			style: React.PropTypes.object,
+		},
+		componentDidMount: function(){
+			this.localVideo = React.findDOMNode(this.refs.localVideo);
+			this.remoteVideo = React.findDOMNode(this.refs.remoteVideo);
+		},
+		componentWillUnmount: function(){
+			this.localVideo = null;
+			this.remoteVideo = null;
+			this.constraints = null;
+			this.quanlity = null;
+		},
+		log: function(text){
+			console.log("At time:" + (performance.now()/1000).toFixed(3) + "----->" + text);
+		},
+		start: function(){
+			this.log("Requesting local stream");
+			navigator.getUserMedia = navigator.getUserMedia ||
+				    				 navigator.webkitGetUserMedia ||
+				    				 navigator.mozGetUserMedia;
+			navigator.getUserMedia(this.constraints[this.quanlity], this.successCallback, this.errorCallback);
+		},
+		successCallback: function(stream){
+			this.log("Received local stream");
+			if(window.URL){
+				//chrome
+				this.localVideo.src = window.URL.createObjectURL(stream);
+			}
+			else {
+				//firefox, opera
+				this.localVideo.src = stream;
+			}
+			this.localVideo.play();
+			this.localStream = stream;
+		},
+		errorCallback: function(error){
+			console.log(error);
+		},
+		onChangeQuanlity: function(quanlity){
+			this.quanlity = quanlity;
+				if(this.localStream){
+				this.localStream.src = null;
+				this.localStream.stop();
+			}
+			this.start();
+		},
+		onCall: function(){
+			if(navigator.webkitGetUserMedia && 
+			   is.not.null(this.localStream) &&
+			   is.not.null(this.remoteStream)){
+				if(this.localStream.getVideoTracks().length > 0){
+					this.log("Using video device: " + this.localStream.getVideoTracks()[0].label);
+				}
+				if(this.localStream.getAudioTracks().length > 0){
+					this.log("Using audio device: " + this.localStream.getAudioTracks()[0].label);
+				}
+			}
+
+			//chorme
+			if(navigator.webkitGetUserMedia){
+				RTCPeerConnection = webkitRTCPeerConnection;
+			}
+			else {
+				//firefox
+				RTCPeerConnection = mozRTCPeerConnection;
+				RTCSessionDescription = mozRTCSessionDescription;
+				RTCIceCandidate = mozRTCIceCandidate;
+			}
+			this.log("RTCPeerConnection object:" + RTCPeerConnection);
+
+			var servers = null;
+
+			this.localPeerConnection = new RTCPeerConnection(servers);
+			this.log("Create local peer connection object localPeerConnection");
+			this.localPeerConnection.onicecandidate = this.gotLocalIceCandidate;
+
+			this.remotePeerConnection = new RTCPeerConnection(servers);
+			this.log("Creaate remote peer connection object remotePeerConnection");
+			this.remotePeerConnection.onicecandidate = this.gotRemoteIceCandidate;
+			this.remotePeerConnection.onaddstream = this.gotRemoteStream;
+			this.localPeerConnection.addStream(this.localStream);
+			this.log("Added localStream to localPeerConnection");
+			this.localPeerConnection.createOffer(this.gotLocalDescription, this.onSignalingError);
+		},
+		onSignalingError: function(error){
+			console.log("Fail to create signaling message: " + error.name);
+		},
+		gotLocalDescription: function(description){
+			this.localPeerConnection.setLocalDescription(description);
+			this.log("Offer from localPeerConnection: \n" + description.sdp);
+
+			this.remotePeerConnection.setRemoteDescription(description);
+			this.remotePeerConnection.createAnswer(this.gotRemoteDescription, this.onSignalingError);
+		},
+		gotRemoteDescription: function(description){
+			this.remotePeerConnection.setLocalDescription(description);
+			this.log("Answer form remotePeerConnection: \n" + description.sdp);
+
+			this.localPeerConnection.setRemoteDescription(description);
+		},
+		onHangup: function(){
+			this.log("Ending call");
+			if(is.not.null(this.localPeerConnection)){
+				this.localPeerConnection.close();
+				this.localStream = null;
+			}
+			if(is.not.null(this.remotePeerConnection)){
+				this.remotePeerConnection.close();
+				this.remoteStream = null;
+			}
+		},
+		gotRemoteStream: function(event){
+			if(window.URL){
+				this.remoteVideo.src = window.URL.createObjectURL(event.stream);
+			}
+			else {
+				this.remoteVideo.src = event.stream;
+			}
+			this.remoteVideo.play();
+			this.log("Received stream");
+		},
+		gotLocalIceCandidate: function(event){
+			if(event.candidate){
+				this.remotePeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
+				this.log("Local ICE candiate: \n" + event.candidate.candidate);
+			}
+		},
+		gotRemoteIceCandidate: function(event){
+			if(event.candidate){
+				this.localPeerConnection.addIceCandidate(new RTCIceCandidate(event.candidate));
+				this.log("Remote ICE candidate: \n" + event.candidate.candidate);
+			}
+		},
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement("video", {ref: "localVideo", className: this.props.className, style: this.props.style, onClick: this.onClick}
+					), 
+					React.createElement("video", {ref: "remoteVideo", className: this.props.className, style: this.props.style, onClick: this.onClick}
+					)
+				)
+				);
+		}
+	});
+	module.exports = VideoWebRTC;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 532 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, List, ListItem, Link) {var ChatLocal = __webpack_require__(533);
+	var CoreChat = React.createClass({displayName: "CoreChat",
+		onChat: function(action){
+			switch(action){
+				case "start":
+					this.refs.chat.createConnection();
+					break;
+				case "send":
+					this.refs.chat.sendData();
+					break;
+				case "stop":
+					this.refs.chat.closeDataChannels();
+					break;
+				default: break;
+			}
+		},
+		render: function(){
+			return (
+				React.createElement("div", null, 
+				React.createElement(List, {className: "list-inline"}, 
+						React.createElement(ListItem, null, 
+							React.createElement(Link, {className: "btn btn-primary", onClick: this.onChat.bind(null, "start")}, 
+								"Start"
+							)
+						), 
+						React.createElement(ListItem, null, 
+							React.createElement(Link, {className: "btn btn-primary", onClick: this.onChat.bind(null, "send")}, 
+								"Send"
+							)
+						), 
+						React.createElement(ListItem, null, 
+							React.createElement(Link, {className: "btn btn-primary", onClick: this.onChat.bind(null, "stop")}, 
+								"Stop"
+							)
+						)
+					), 
+					React.createElement(ChatLocal, {ref: "chat"})
+				)
+				);
+		}
+	});
+	module.exports = CoreChat;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(316), __webpack_require__(317), __webpack_require__(313)))
+
+/***/ },
+/* 533 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, Row, Column) {var ChatLocal = React.createClass({displayName: "ChatLocal",
+		sendChannel: null,
+		receiveChannel: null,
+		dataChannelSend: null,
+		dataChannelReceive: null,
+		localPeerConnection: null,
+		remotePeerConnection: null,
+		componentDidMount: function(){
+			this.dataChannelSend = React.findDOMNode(this.refs.dataChannelSend);
+			this.dataChannelReceive = React.findDOMNode(this.refs.dataChannelReceive);
+		},
+		componentWillUnmount: function(){
+			this.sendChannel = null;
+			this.receiveChannel = null;
+			this.localPeerConnection = null;
+			this.remotePeerConnection = null;
+			this.dataChannelSend = null;
+			this.dataChanelReceive = null;
+		},
+		log: function(text){
+			console.log("At time: " + (performance.now()/1000).toFixed(3) + "--->" + text);
+		},
+		createConnection: function(){
+			if(navigator.webkitGetUserMedia){
+				RTCPeerConnection = webkitRTCPeerConnection;
+			}
+			else if(navigator.mozGetUserMedia){
+				RTCPeerConnection = mozRTCPeerConnection;
+				RTCSessionDescription = mozRTCSessionDescription;
+				RTCIceCandidate = mozRTCIceCandidate;
+			}
+			this.log("RTCPeerConnection object:" + RTCPeerConnection);
+
+			var servers = null;
+			var pc_constraints = {
+				'optional': [
+				{
+					'DtlsSrtpKeyAgreement': true
+				}
+				]};
+			this.localPeerConnection = new RTCPeerConnection(servers, pc_constraints);
+			this.log("Create local peer connection object, with Data Chanel");
+			try{
+				this.sendChannel = this.localPeerConnection.createDataChannel("sendDataChanel", {"reliable": true});
+				this.log("Created reliable send data chanel");
+			}
+			catch(e){
+				alert("Failed to create data chanel!");
+				this.log("createDataChanel failed with following message:" + e.message);
+			}
+
+			this.localPeerConnection.onicecandidate = this.gotLocalCandidate;
+
+			this.sendChannel.onopen = this.handleSendChannelStateChange;
+			this.sendChannel.onclose = this.handleSendChannelStateChange;
+
+			this.remotePeerConnection = new RTCPeerConnection(servers, pc_constraints);
+			this.log("Create remote peer connection object, with DataChanel");
+
+			this.remotePeerConnection.onicecandidate = this.gotRemoteIceCandidate;
+			this.remotePeerConnection.ondatachannel = this.gotReceiveChannel;
+
+			this.localPeerConnection.createOffer(this.gotLocalDescription, this.onSignalingError);
+		},
+		onSignalingError: function(error){
+			console.log("Failed to create signaling message: " + error.name);
+		},
+		sendData: function(){
+			this.sendChannel.send(this.getValue("dataChannelSend"));
+			this.log("send data:"+this.getValue("dataChannelSend"));
+		},
+		closeDataChannels: function(){
+			this.log("Closing data chanel");
+			this.sendChannel.close();
+			this.log("Closed data chanel with label: " + this.sendChannel.label);
+
+			this.receiveChanel.close();
+			this.log("Closed data chanel with label: " + this.receiveChannel.label);
+
+			this.localPeerConnection.close();
+			this.remotePeerConnection.close();
+
+			this.localPeerConnection = null;
+			this.remotePeerConnection = null;
+			this.log("Closed peer connection");
+
+			this.dataChannelSend.value = "";
+			this.dataChannelReceive.value ="";
+
+			this.dataChannelSend.placeholder = "1: Press start; 2: Enter text; 3 Press send.";
+		},
+		gotLocalDescription: function(desc){
+			this.localPeerConnection.setLocalDescription(desc);
+			this.remotePeerConnection.setRemoteDescription(desc);
+
+			this.remotePeerConnection.createAnswer(this.gotRemoteDescription, this.onSignalingError);
+		},
+		gotRemoteDescription: function(desc){
+			this.remotePeerConnection.setLocalDescription(desc);
+			this.log("Answer form remotePeerConnection /'s SDP: \n" + desc.sdp);
+			this.localPeerConnection.setRemoteDescription(desc);
+		},
+		gotLocalCandidate: function(event){
+			this.log("Local ice callback");
+			if(event.candidate){
+				this.remotePeerConnection.addIceCandidate(event.candidate);
+				this.log("Local Ice candidate: \n" + event.candidate.candidate);
+			}
+		},
+		gotRemoteIceCandidate: function(event){
+			this.log("Remote Ice callback");
+			if(event.candidate){
+				this.localPeerConnection.addIceCandidate(event.candidate);
+				this.log("Remote Ice candidate: \n" + event.candidate.candidate);
+			}
+		},
+		gotReceiveChannel: function(event){
+			this.log("Receive channel callback: event---->" + event);
+			this.receiveChannel = event.channel;
+
+			this.receiveChannel.onopen = this.handleReceiveChannelStateChange;
+			this.receiveChannel.onmessage = this.handleMessage;
+			this.receiveChannel.onclose = this.handleReceiveChannelStateChange;
+		},
+		handleMessage: function(event){
+			this.log("Receive message: " + event.data);
+			this.dataChannelReceive.value = event.data;
+			this.dataChannelSend.value = "";
+		},
+		handleSendChannelStateChange: function(){
+			var readyState = this.sendChannel.readyState;
+			this.log("Send chanel state is: " + readyState);
+			if(readyState == "open"){
+				this.dataChannelSend.focus();
+				this.dataChannelSend.placeholder = "";
+			}
+			else {
+				//DO NOTHING
+			}
+		},
+		handleReceiveChannelStateChange: function(){
+			var readyState = this.receiveChannel.readyState;
+			this.log("Receive chanel state is:" + readyState);
+		},
+		getValue: function(ref){
+			return React.findDOMNode(this.refs[ref]).value;
+		},
+		render: function(){
+			return (
+				React.createElement("div", null, 
+					React.createElement(Row, {className: "row"}, 
+						React.createElement(Column, {className: "col-md-5"}, 
+							React.createElement("textarea", {ref: "dataChannelSend", rows: "5", cols: "10", className: "form-control"}
+							)
+						), 
+						React.createElement(Column, {className: "col-md-5"}, 
+							React.createElement("textarea", {ref: "dataChannelReceive", rows: "5", cols: "10", className: "form-control"}
+							)
+						)
+					)
+				)
+				);
+		}
+	});
+	module.exports = ChatLocal;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(330), __webpack_require__(331)))
 
 /***/ }
 /******/ ]);

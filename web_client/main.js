@@ -86,6 +86,9 @@ var Client_My_Account_View = require('client/user/components/myAccount/view');
 var Client_Health = require('client/health/components/core');
 var Client_Health_History = require('client/health/components/history');
 
+var Client_WebRTC_Video = require('client/webRTC/coreVideo');
+var Client_WebRTC_Chat = require('client/webRTC/coreChat');
+
 var routes = (
     <Route handler={App} name="app" path="/">
         <Route handler={Client} name="client">
@@ -114,6 +117,10 @@ var routes = (
                 <Route handler={Client_My_Account} name="client_my_account" path="my-account">
                     <Route handler={Client_My_Account_View} name="client_my_account_view" path="my-account-profile"/>
                 </Route>
+
+                <Route handler={Client_WebRTC_Video} name="client_webrtc_video" path="webrtc-video" />
+                <Route handler={Client_WebRTC_Chat} name="client_webrtc_chat" path="webrtc-chat" />
+
             </Route>
             <Route handler={Client_Login} name="client_login" path="login"/>
         </Route>
